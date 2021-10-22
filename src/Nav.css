@@ -1,0 +1,19 @@
+.link {
+  transform: scale(1.5, 0.5);
+  padding-left: 20%;
+}
+
+.link:hover {
+  background-color: yellow;
+  color: black;
+}
+
+.small-link {
+  transform: scale(1.5, 0.5);
+  padding-left: 40%;
+}
+
+.small-link:hover {
+  background-color: yellow;
+  color: black;
+}
