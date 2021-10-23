@@ -155,6 +155,73 @@ const Tech: React.FC = () => {
         {/* SPACER */}
         <div className="spacer"></div>
       </div>
+
+      <div
+        style={{
+          borderRight: `${borderWidth} solid`,
+          borderBottom: `${borderWidth} solid`,
+        }}
+        className="px-3 pb-4 pt-3"
+      >
+        <Row>
+          <Col>
+            <SectionHeader borderWidth={borderWidth}>chimes.club</SectionHeader>
+          </Col>
+        </Row>
+
+        <Row>
+          <Col lg={3}>
+            <div style={textStyles}>
+              chimes.club is a pure JS music generator.
+            </div>
+          </Col>
+
+          <Col>
+            {/* External links */}
+            <Row className="px-3 pb-2">
+              <Col lg={4}>
+                <ExternalLink url="http://chimes-club.s3-website-us-west-1.amazonaws.com/">
+                  view
+                </ExternalLink>
+              </Col>
+
+              <Col lg={4}>
+                <ExternalLink url="https://www.facebook.com/ChildhoodIndustries/">
+                  github
+                </ExternalLink>
+              </Col>
+            </Row>
+
+            {/* Mixes */}
+            <Row>
+              <Col>
+                <SubSectionHeader borderWidth={borderWidth}>
+                  videos
+                </SubSectionHeader>
+              </Col>
+            </Row>
+
+            <Row className="pb-2">
+              <Col>movies?</Col>
+            </Row>
+
+            <Row>
+              <Col>
+                <SubSectionHeader borderWidth={borderWidth}>
+                  images
+                </SubSectionHeader>
+              </Col>
+            </Row>
+
+            <Row className="pb-2">
+              <Col>images?</Col>
+            </Row>
+          </Col>
+        </Row>
+
+        {/* SPACER */}
+        <div className="spacer"></div>
+      </div>
     </div>
   );
 };
