@@ -165,7 +165,9 @@ const Tech: React.FC = () => {
       >
         <Row>
           <Col>
-            <SectionHeader borderWidth={borderWidth}>chimes.club</SectionHeader>
+            <SectionHeader borderWidth={borderWidth}>
+              chimes dot club
+            </SectionHeader>
           </Col>
         </Row>
 

@@ -1,16 +1,18 @@
 import { Row, Col } from "react-bootstrap";
 import Nav from "./Nav";
 import { useLocation } from "react-router-dom";
+import { useIsMobile } from "./MobileProvider";
 
 const Header: React.FC = () => {
   const borderWidth = "3px";
   const location = useLocation();
   const onHomePage = location.pathname === "/";
+  const { isMobile } = useIsMobile();
 
   const bigHeaderStyles = {
-    fontSize: 100,
-    fontWeight: 600,
-    transform: "scale(1.1, .4)",
+    fontSize: isMobile() ? 90 : 100,
+    fontWeight: 900,
+    transform: "scale(1, .4)",
   };
 
   const bigSubHeaderStyles = {
@@ -22,7 +24,7 @@ const Header: React.FC = () => {
   const smallHeaderStyles = {
     fontSize: 30,
     fontWeight: 600,
-    transform: "scale(1.2, .5)",
+    transform: "scale(1, .5)",
     transformOrigin: "left",
   };
 
@@ -57,10 +59,18 @@ const Header: React.FC = () => {
           style={{
             borderBottom: `${borderWidth} solid`,
             borderLeft: `${borderWidth} solid`,
-            paddingLeft: "5%",
+            // paddingLeft: "5%",
           }}
         >
-          <div style={smallHeaderStyles}>Michael Overton Brown</div>
+          {!isMobile() ? (
+            <div style={smallHeaderStyles}>Michael Overton Brown</div>
+          ) : (
+            <div>
+              <div style={smallHeaderStyles}>Michael</div>
+              <div style={smallHeaderStyles}>Overton</div>
+              <div style={smallHeaderStyles}>Brown</div>
+            </div>
+          )}
         </Col>
       </Row>
       <Row>

@@ -1,5 +1,6 @@
 import { Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { useIsMobile } from "./MobileProvider";
 import "./Nav.css";
 
 type Props = {
@@ -7,9 +8,11 @@ type Props = {
 };
 
 const Nav: React.FC<Props> = ({ home }) => {
+  const { isMobile } = useIsMobile();
+
   const linkStyles = {
     fontSize: 65,
-    fontWeight: 500,
+    fontWeight: 600,
     textDecoration: "none",
     color: "#15ff00", // this color must match App.css
   };
@@ -26,7 +29,7 @@ const Nav: React.FC<Props> = ({ home }) => {
       <Row>
         <Col>
           <Link style={linkStyles} to="/tech">
-            <div className="link">tech +</div>
+            <div className="link">tech</div>
           </Link>
         </Col>
       </Row>
@@ -34,7 +37,7 @@ const Nav: React.FC<Props> = ({ home }) => {
       <Row>
         <Col>
           <Link style={linkStyles} to="/music">
-            <div className="link">music +</div>
+            <div className="link">music</div>
           </Link>
         </Col>
       </Row>
@@ -42,7 +45,7 @@ const Nav: React.FC<Props> = ({ home }) => {
       <Row>
         <Col>
           <Link style={linkStyles} to="/art">
-            <div className="link">3d +</div>
+            <div className="link">3d</div>
           </Link>
         </Col>
       </Row>
@@ -50,38 +53,70 @@ const Nav: React.FC<Props> = ({ home }) => {
       <Row>
         <Col>
           <Link style={linkStyles} to="/info">
-            <div className="link">info +</div>
+            <div className="link">info</div>
           </Link>
         </Col>
       </Row>
     </div>
   ) : (
     <div className="p-2">
-      <Row>
-        <Col>
-          <Link style={smallLinkStyles} to="/tech">
-            <div className="link">tech</div>
-          </Link>
-        </Col>
+      {!isMobile() ? (
+        <Row>
+          <Col>
+            <Link style={smallLinkStyles} to="/tech">
+              <div className="link">tech</div>
+            </Link>
+          </Col>
 
-        <Col>
-          <Link style={smallLinkStyles} to="/music">
-            <div className="link">music</div>
-          </Link>
-        </Col>
+          <Col>
+            <Link style={smallLinkStyles} to="/music">
+              <div className="link">music</div>
+            </Link>
+          </Col>
 
-        <Col>
-          <Link style={smallLinkStyles} to="/art">
-            <div className="link">3d</div>
-          </Link>
-        </Col>
+          <Col>
+            <Link style={smallLinkStyles} to="/art">
+              <div className="link">3d</div>
+            </Link>
+          </Col>
 
-        <Col>
-          <Link style={smallLinkStyles} to="/info">
-            <div className="link">info</div>
-          </Link>
-        </Col>
-      </Row>
+          <Col>
+            <Link style={smallLinkStyles} to="/info">
+              <div className="link">info</div>
+            </Link>
+          </Col>
+        </Row>
+      ) : (
+        <div>
+          <Row>
+            <Col>
+              <Link style={smallLinkStyles} to="/tech">
+                <div className="link">tech</div>
+              </Link>
+            </Col>
+
+            <Col>
+              <Link style={smallLinkStyles} to="/music">
+                <div className="link">music</div>
+              </Link>
+            </Col>
+          </Row>
+
+          <Row>
+            <Col>
+              <Link style={smallLinkStyles} to="/art">
+                <div className="link">3d</div>
+              </Link>
+            </Col>
+
+            <Col>
+              <Link style={smallLinkStyles} to="/info">
+                <div className="link">info</div>
+              </Link>
+            </Col>
+          </Row>
+        </div>
+      )}
     </div>
   );
 };
