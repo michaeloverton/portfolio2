@@ -1,6 +1,6 @@
 import { Row, Col } from "react-bootstrap";
 import Nav from "./Nav";
-import { Link, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 const Header: React.FC = () => {
   const location = useLocation();
@@ -40,9 +40,9 @@ const Header: React.FC = () => {
   ) : (
     <div>
       <Row>
-        <Col lg={6} className="border-bottom border-end border-5">
+        {/* <Col lg={6} className="border-bottom border-end border-5">
           <div style={smallHeaderStyles}>Michael Overton Brown</div>
-        </Col>
+        </Col> */}
 
         <Col className="border-bottom border-start border-5">
           <Nav home={onHomePage} />

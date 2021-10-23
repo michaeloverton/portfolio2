@@ -1,0 +1,12 @@
+.music-link {
+  transform: scale(1, 0.5);
+}
+
+.music-link:hover {
+  background-color: yellow;
+  color: black;
+}
+
+.spacer {
+  height: 150px;
+}

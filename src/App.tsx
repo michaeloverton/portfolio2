@@ -6,6 +6,7 @@ import Tech from "./Tech";
 import Music from "./Music";
 import Art from "./Art";
 import Header from "./Header";
+import Footer from "./Footer";
 
 function App() {
   return (
@@ -28,7 +29,7 @@ function App() {
             </Route>
           </Switch>
 
-          {/* <Footer /> */}
+          <Footer />
         </Container>
       </div>
     </Router>

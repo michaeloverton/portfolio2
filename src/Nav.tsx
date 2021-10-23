@@ -15,8 +15,8 @@ const Nav: React.FC<Props> = ({ home }) => {
   };
 
   const smallLinkStyles = {
-    fontSize: 30,
-    fontWeight: 400,
+    fontSize: 40,
+    fontWeight: 600,
     textDecoration: "none",
     color: "white",
   };
@@ -42,7 +42,7 @@ const Nav: React.FC<Props> = ({ home }) => {
       <Row>
         <Col>
           <Link style={linkStyles} to="/art">
-            <div className="link">art +</div>
+            <div className="link">3d +</div>
           </Link>
         </Col>
       </Row>
@@ -50,13 +50,13 @@ const Nav: React.FC<Props> = ({ home }) => {
       <Row>
         <Col>
           <Link style={linkStyles} to="/about">
-            <div className="link">about +</div>
+            <div className="link">info +</div>
           </Link>
         </Col>
       </Row>
     </div>
   ) : (
-    <div className="p-3">
+    <div className="p-2">
       <Row>
         <Col>
           <Link style={smallLinkStyles} to="/tech">
@@ -72,13 +72,13 @@ const Nav: React.FC<Props> = ({ home }) => {
 
         <Col>
           <Link style={smallLinkStyles} to="/art">
-            <div className="link">art</div>
+            <div className="link">3d</div>
           </Link>
         </Col>
 
         <Col>
           <Link style={smallLinkStyles} to="/about">
-            <div className="link">about</div>
+            <div className="link">info</div>
           </Link>
         </Col>
       </Row>
