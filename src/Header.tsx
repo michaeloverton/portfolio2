@@ -10,7 +10,7 @@ const Header: React.FC = () => {
   const bigHeaderStyles = {
     fontSize: 100,
     fontWeight: 600,
-    transform: "scale(1, .5)",
+    transform: "scale(1.1, .4)",
   };
 
   const bigSubHeaderStyles = {
@@ -20,9 +20,10 @@ const Header: React.FC = () => {
   };
 
   const smallHeaderStyles = {
-    fontSize: 40,
+    fontSize: 30,
     fontWeight: 600,
-    transform: "scale(1, .5)",
+    transform: "scale(1.2, .5)",
+    transformOrigin: "left",
   };
 
   return onHomePage ? (
@@ -50,16 +51,23 @@ const Header: React.FC = () => {
       </Row>
     </div>
   ) : (
-    <div>
+    <div className="mb-5">
       <Row>
-        {/* <Col lg={6} className="border-bottom border-end border-5">
-          <div style={smallHeaderStyles}>Michael Overton Brown</div>
-        </Col> */}
-
         <Col
           style={{
             borderBottom: `${borderWidth} solid`,
             borderLeft: `${borderWidth} solid`,
+            paddingLeft: "5%",
+          }}
+        >
+          <div style={smallHeaderStyles}>Michael Overton Brown</div>
+        </Col>
+      </Row>
+      <Row>
+        <Col
+          style={{
+            borderBottom: `${borderWidth} solid`,
+            borderRight: `${borderWidth} solid`,
           }}
         >
           <Nav home={onHomePage} />

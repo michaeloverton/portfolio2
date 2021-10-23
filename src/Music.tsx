@@ -35,6 +35,12 @@ const Music: React.FC = () => {
     transform: "scale(1, .5)",
   };
 
+  const subSectionHeaderStyles = {
+    fontSize: 45,
+    fontWeight: 600,
+    transform: "scale(1, .5)",
+  };
+
   return (
     <div className="pt-3">
       <div
@@ -67,7 +73,8 @@ const Music: React.FC = () => {
           </Col>
 
           <Col>
-            <Row className="px-3 pb-3">
+            {/* External links */}
+            <Row className="px-3 pb-2">
               <Col lg={4}>
                 <Link
                   style={linkStyles}
@@ -106,14 +113,58 @@ const Music: React.FC = () => {
               </Col>
             </Row>
 
+            {/* Mixes */}
+            <Row>
+              <Col>
+                <div
+                  style={{
+                    ...{
+                      borderBottom: `${borderWidth} solid`,
+                    },
+                    ...subSectionHeaderStyles,
+                  }}
+                >
+                  mixes
+                </div>
+              </Col>
+            </Row>
+
             <Row>
               <Col>
                 <iframe
                   width="100%"
-                  height="300"
+                  height="500"
                   scrolling="no"
                   allow="autoplay"
                   src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1335515035%3Fsecret_token%3Ds-PkfNxyj2oXF&color=%2354525d&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&show_teaser=true"
+                ></iframe>
+              </Col>
+            </Row>
+
+            {/* Releases */}
+            <Row>
+              <Col>
+                <div
+                  style={{
+                    ...{
+                      borderBottom: `${borderWidth} solid`,
+                    },
+                    ...subSectionHeaderStyles,
+                  }}
+                >
+                  releases
+                </div>
+              </Col>
+            </Row>
+
+            <Row>
+              <Col>
+                <iframe
+                  width="100%"
+                  height="400"
+                  scrolling="no"
+                  allow="autoplay"
+                  src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/284337507%3Fsecret_token%3Ds-cfFiV&color=%2354525d&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&show_teaser=true"
                 ></iframe>
               </Col>
             </Row>
@@ -156,7 +207,8 @@ const Music: React.FC = () => {
           </Col>
 
           <Col>
-            <Row className="px-3 pb-3">
+            {/* External links */}
+            <Row className="px-3 pb-2">
               <Col lg={4}>
                 <Link
                   style={linkStyles}
@@ -192,6 +244,22 @@ const Music: React.FC = () => {
                 >
                   <div className="music-link">mixcloud</div>
                 </Link>
+              </Col>
+            </Row>
+
+            {/* Mixes */}
+            <Row>
+              <Col>
+                <div
+                  style={{
+                    ...{
+                      borderBottom: `${borderWidth} solid`,
+                    },
+                    ...subSectionHeaderStyles,
+                  }}
+                >
+                  radio
+                </div>
               </Col>
             </Row>
 
@@ -239,6 +307,56 @@ const Music: React.FC = () => {
               <Col>
                 <Image
                   className="modified-image"
+                  src={show1}
+                  height={imageWidth}
+                />
+              </Col>
+              <Col>
+                <Image
+                  className="modified-image"
+                  src={show2}
+                  height={imageWidth}
+                />
+              </Col>
+              <Col>
+                <Image
+                  className="modified-image"
+                  src={show3}
+                  height={imageWidth}
+                />
+              </Col>
+            </Row>
+
+            <Row className="py-2">
+              <Col>
+                <Image
+                  className="modified-image"
+                  src={show4}
+                  height={imageWidth}
+                />
+              </Col>
+            </Row>
+
+            {/* Events */}
+            <Row>
+              <Col>
+                <div
+                  style={{
+                    ...{
+                      borderBottom: `${borderWidth} solid`,
+                    },
+                    ...subSectionHeaderStyles,
+                  }}
+                >
+                  events
+                </div>
+              </Col>
+            </Row>
+
+            <Row className="py-2">
+              <Col>
+                <Image
+                  className="modified-image"
                   src={event1}
                   height={imageWidth}
                 />
@@ -274,44 +392,29 @@ const Music: React.FC = () => {
                   height={imageWidth}
                 />
               </Col>
+            </Row>
+
+            {/* Label */}
+            <Row>
+              <Col>
+                <div
+                  style={{
+                    ...{
+                      borderBottom: `${borderWidth} solid`,
+                    },
+                    ...subSectionHeaderStyles,
+                  }}
+                >
+                  label
+                </div>
+              </Col>
+            </Row>
+
+            <Row>
               <Col>
                 <Image
                   className="modified-image"
                   src={tape}
-                  height={imageWidth}
-                />
-              </Col>
-            </Row>
-
-            <Row className="py-2">
-              <Col>
-                <Image
-                  className="modified-image"
-                  src={show1}
-                  height={imageWidth}
-                />
-              </Col>
-              <Col>
-                <Image
-                  className="modified-image"
-                  src={show2}
-                  height={imageWidth}
-                />
-              </Col>
-              <Col>
-                <Image
-                  className="modified-image"
-                  src={show3}
-                  height={imageWidth}
-                />
-              </Col>
-            </Row>
-
-            <Row className="py-2">
-              <Col>
-                <Image
-                  className="modified-image"
-                  src={show4}
                   height={imageWidth}
                 />
               </Col>
