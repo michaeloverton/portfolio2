@@ -10,36 +10,17 @@ import show2 from "./assets/images/shows/lot2.png";
 import show3 from "./assets/images/shows/lot3.png";
 import show4 from "./assets/images/shows/lot4.png";
 import { Link } from "react-router-dom";
+import {
+  textStyles,
+  linkStyles,
+  sectionHeaderStyles,
+  subSectionHeaderStyles,
+} from "./Globals";
 import "./Music.css";
 
 const Music: React.FC = () => {
   const imageWidth = "200px";
   const borderWidth = "3px";
-
-  const textStyles = {
-    fontSize: 30,
-    fontWeight: 700,
-    transform: "scale(1,.5)",
-  };
-
-  const linkStyles = {
-    fontSize: 30,
-    fontWeight: 600,
-    textDecoration: "none",
-    color: "#15ff00", // this color must match App.css
-  };
-
-  const sectionHeaderStyles = {
-    fontSize: 65,
-    fontWeight: 600,
-    transform: "scale(1, .5)",
-  };
-
-  const subSectionHeaderStyles = {
-    fontSize: 45,
-    fontWeight: 600,
-    transform: "scale(1, .5)",
-  };
 
   return (
     <div className="pt-3">
@@ -132,6 +113,7 @@ const Music: React.FC = () => {
             <Row>
               <Col>
                 <iframe
+                  title="witness-mix"
                   width="100%"
                   height="500"
                   scrolling="no"
@@ -160,6 +142,7 @@ const Music: React.FC = () => {
             <Row>
               <Col>
                 <iframe
+                  title="witness-release"
                   width="100%"
                   height="400"
                   scrolling="no"
@@ -266,6 +249,7 @@ const Music: React.FC = () => {
             <Row className="pb-2">
               <Col>
                 <iframe
+                  title="lotmix1"
                   width="90%"
                   height="60"
                   src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&hide_artwork=1&feed=%2Fthelotradio%2Fchildhood-with-mike-parker-karl-ewald-witness-the-lot-radio-10222016%2F"
@@ -276,6 +260,7 @@ const Music: React.FC = () => {
             <Row className="pb-2">
               <Col>
                 <iframe
+                  title="lotmix2"
                   width="90%"
                   height="60"
                   src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&hide_artwork=1&feed=%2Fthelotradio%2Fchildhood-with-karl-ewald-witness-the-lot-radio-06232016%2F"
@@ -286,6 +271,7 @@ const Music: React.FC = () => {
             <Row className="pb-2">
               <Col>
                 <iframe
+                  title="lotmix3"
                   width="90%"
                   height="60"
                   src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&hide_artwork=1&feed=%2Fthelotradio%2Fchildhood-with-karl-ewald-and-milton-bradley-the-lot-radio-08112016%2F"
@@ -296,6 +282,7 @@ const Music: React.FC = () => {
             <Row className="pb-3">
               <Col>
                 <iframe
+                  title="lotmix4"
                   width="90%"
                   height="60"
                   src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&hide_artwork=1&feed=%2Fthelotradio%2Fchildhood-with-uvb-karl-ewald-witness-the-lot-radio-12072016%2F"
