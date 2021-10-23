@@ -11,14 +11,14 @@ const Nav: React.FC<Props> = ({ home }) => {
     fontSize: 65,
     fontWeight: 500,
     textDecoration: "none",
-    color: "white",
+    color: "#15ff00", // this color must match App.css
   };
 
   const smallLinkStyles = {
     fontSize: 40,
     fontWeight: 600,
     textDecoration: "none",
-    color: "white",
+    color: "#15ff00", // this color must match App.css
   };
 
   return home ? (

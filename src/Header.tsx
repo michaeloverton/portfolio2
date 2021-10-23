@@ -3,6 +3,7 @@ import Nav from "./Nav";
 import { useLocation } from "react-router-dom";
 
 const Header: React.FC = () => {
+  const borderWidth = "3px";
   const location = useLocation();
   const onHomePage = location.pathname === "/";
 
@@ -27,12 +28,23 @@ const Header: React.FC = () => {
   return onHomePage ? (
     <div>
       <Row>
-        <Col lg={6} className="border-bottom border-end border-5">
+        <Col
+          lg={6}
+          style={{
+            borderBottom: `${borderWidth} solid`,
+            borderRight: `${borderWidth} solid`,
+          }}
+        >
           <div style={bigHeaderStyles}>Michael Overton Brown</div>
-          <div style={bigSubHeaderStyles}>technologist person</div>
+          <div style={bigSubHeaderStyles}>techno-human</div>
         </Col>
 
-        <Col className="border-bottom border-start border-5">
+        <Col
+          style={{
+            borderBottom: `${borderWidth} solid`,
+            borderLeft: `${borderWidth} solid`,
+          }}
+        >
           <Nav home={onHomePage} />
         </Col>
       </Row>
@@ -44,7 +56,12 @@ const Header: React.FC = () => {
           <div style={smallHeaderStyles}>Michael Overton Brown</div>
         </Col> */}
 
-        <Col className="border-bottom border-start border-5">
+        <Col
+          style={{
+            borderBottom: `${borderWidth} solid`,
+            borderLeft: `${borderWidth} solid`,
+          }}
+        >
           <Nav home={onHomePage} />
         </Col>
       </Row>

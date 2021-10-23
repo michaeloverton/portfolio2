@@ -7,6 +7,8 @@ import triFlow from "./assets/art/triangleundulate.mp4";
 import cubeCruise from "./assets/art/cubecruise-mp4.mp4";
 
 const Art: React.FC = () => {
+  const borderWidth = "3px";
+
   const textStyles = {
     fontSize: 50,
     fontWeight: 700,
@@ -22,7 +24,13 @@ const Art: React.FC = () => {
         </Col>
       </Row> */}
 
-      <Row className="border-top border-bottom border-end border-5">
+      <Row
+        style={{
+          borderTop: `${borderWidth} solid`,
+          borderRight: `${borderWidth} solid`,
+          borderBottom: `${borderWidth} solid`,
+        }}
+      >
         <Col>
           <video className="p-3" controls loop width={800}>
             <source src={organicLoop} type="video/mp4" />
@@ -30,7 +38,12 @@ const Art: React.FC = () => {
         </Col>
       </Row>
 
-      <Row className="border-bottom border-start border-5">
+      <Row
+        style={{
+          borderLeft: `${borderWidth} solid`,
+          borderBottom: `${borderWidth} solid`,
+        }}
+      >
         <Col>
           <video className="p-3" controls loop width={800}>
             <source src={pulseCubes} type="video/mp4" />
@@ -38,7 +51,12 @@ const Art: React.FC = () => {
         </Col>
       </Row>
 
-      <Row className="border-bottom border-end border-5">
+      <Row
+        style={{
+          borderRight: `${borderWidth} solid`,
+          borderBottom: `${borderWidth} solid`,
+        }}
+      >
         <Col>
           <video className="p-3" controls loop width={800}>
             <source src={farOrb} type="video/mp4" />
@@ -46,7 +64,12 @@ const Art: React.FC = () => {
         </Col>
       </Row>
 
-      <Row className="border-bottom border-start border-5">
+      <Row
+        style={{
+          borderLeft: `${borderWidth} solid`,
+          borderBottom: `${borderWidth} solid`,
+        }}
+      >
         <Col>
           <video className="p-3" controls loop width={800}>
             <source src={closeOrb} type="video/mp4" />
@@ -54,7 +77,12 @@ const Art: React.FC = () => {
         </Col>
       </Row>
 
-      <Row className="border-bottom border-end border-5">
+      <Row
+        style={{
+          borderRight: `${borderWidth} solid`,
+          borderBottom: `${borderWidth} solid`,
+        }}
+      >
         <Col>
           <video className="p-3" controls loop width={800}>
             <source src={triFlow} type="video/mp4" />
@@ -62,7 +90,12 @@ const Art: React.FC = () => {
         </Col>
       </Row>
 
-      <Row className="border-bottom border-start border-5">
+      <Row
+        style={{
+          borderLeft: `${borderWidth} solid`,
+          borderBottom: `${borderWidth} solid`,
+        }}
+      >
         <Col>
           <video className="p-3" controls loop width={800}>
             <source src={cubeCruise} type="video/mp4" />

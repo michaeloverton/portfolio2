@@ -14,6 +14,7 @@ import "./Music.css";
 
 const Music: React.FC = () => {
   const imageWidth = "200px";
+  const borderWidth = "3px";
 
   const textStyles = {
     fontSize: 30,
@@ -25,7 +26,7 @@ const Music: React.FC = () => {
     fontSize: 30,
     fontWeight: 600,
     textDecoration: "none",
-    color: "white",
+    color: "#15ff00", // this color must match App.css
   };
 
   const sectionHeaderStyles = {
@@ -36,10 +37,23 @@ const Music: React.FC = () => {
 
   return (
     <div className="pt-3">
-      <div className="border-top border-start border-5 px-3 pb-5">
+      <div
+        style={{
+          borderTop: `${borderWidth} solid`,
+          borderLeft: `${borderWidth} solid`,
+        }}
+        className="px-3 pb-5"
+      >
         <Row>
           <Col>
-            <div className="border-bottom border-5" style={sectionHeaderStyles}>
+            <div
+              style={{
+                ...{
+                  borderBottom: `${borderWidth} solid`,
+                },
+                ...sectionHeaderStyles,
+              }}
+            >
               witness
             </div>
           </Col>
@@ -93,20 +107,10 @@ const Music: React.FC = () => {
             </Row>
 
             <Row>
-              <iframe
-                width="40%"
-                height="20"
-                scrolling="no"
-                allow="autoplay"
-                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/298323867&color=%2354525d&inverse=true&auto_play=false&show_user=true"
-              ></iframe>
-            </Row>
-
-            <Row>
               <Col>
                 <iframe
                   width="100%"
-                  height="450"
+                  height="300"
                   scrolling="no"
                   allow="autoplay"
                   src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1335515035%3Fsecret_token%3Ds-PkfNxyj2oXF&color=%2354525d&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&show_teaser=true"
@@ -120,10 +124,24 @@ const Music: React.FC = () => {
         <div className="spacer"></div>
       </div>
 
-      <div className="border-top border-bottom border-end border-5 px-3 pb-4 pt-3">
+      <div
+        style={{
+          borderTop: `${borderWidth} solid`,
+          borderRight: `${borderWidth} solid`,
+          borderBottom: `${borderWidth} solid`,
+        }}
+        className="px-3 pb-4 pt-3"
+      >
         <Row>
           <Col>
-            <div className="border-bottom border-5" style={sectionHeaderStyles}>
+            <div
+              style={{
+                ...{
+                  borderBottom: `${borderWidth} solid`,
+                },
+                ...sectionHeaderStyles,
+              }}
+            >
               childhood industries
             </div>
           </Col>
@@ -219,43 +237,83 @@ const Music: React.FC = () => {
 
             <Row className="py-2">
               <Col>
-                <Image src={event1} width={imageWidth} />
+                <Image
+                  className="modified-image"
+                  src={event1}
+                  height={imageWidth}
+                />
               </Col>
               <Col>
-                <Image src={event2} width={imageWidth} />
+                <Image
+                  className="modified-image"
+                  src={event2}
+                  height={imageWidth}
+                />
               </Col>
               <Col>
-                <Image src={event3} width={imageWidth} />
-              </Col>
-            </Row>
-
-            <Row className="py-2">
-              <Col>
-                <Image src={event4} width={imageWidth} />
-              </Col>
-              <Col>
-                <Image src={event5} width={imageWidth} />
-              </Col>
-              <Col>
-                <Image src={tape} width={imageWidth} />
-              </Col>
-            </Row>
-
-            <Row className="py-2">
-              <Col>
-                <Image src={show1} width={imageWidth} />
-              </Col>
-              <Col>
-                <Image src={show2} width={imageWidth} />
-              </Col>
-              <Col>
-                <Image src={show3} width={imageWidth} />
+                <Image
+                  className="modified-image"
+                  src={event3}
+                  height={imageWidth}
+                />
               </Col>
             </Row>
 
             <Row className="py-2">
               <Col>
-                <Image src={show4} width={imageWidth} />
+                <Image
+                  className="modified-image"
+                  src={event4}
+                  height={imageWidth}
+                />
+              </Col>
+              <Col>
+                <Image
+                  className="modified-image"
+                  src={event5}
+                  height={imageWidth}
+                />
+              </Col>
+              <Col>
+                <Image
+                  className="modified-image"
+                  src={tape}
+                  height={imageWidth}
+                />
+              </Col>
+            </Row>
+
+            <Row className="py-2">
+              <Col>
+                <Image
+                  className="modified-image"
+                  src={show1}
+                  height={imageWidth}
+                />
+              </Col>
+              <Col>
+                <Image
+                  className="modified-image"
+                  src={show2}
+                  height={imageWidth}
+                />
+              </Col>
+              <Col>
+                <Image
+                  className="modified-image"
+                  src={show3}
+                  height={imageWidth}
+                />
+              </Col>
+            </Row>
+
+            <Row className="py-2">
+              <Col>
+                <Image
+                  className="modified-image"
+                  src={show4}
+                  height={imageWidth}
+                />
               </Col>
             </Row>
           </Col>
