@@ -9,13 +9,8 @@ import show1 from "./assets/images/shows/lot1.jpeg";
 import show2 from "./assets/images/shows/lot2.png";
 import show3 from "./assets/images/shows/lot3.png";
 import show4 from "./assets/images/shows/lot4.png";
-import { Link } from "react-router-dom";
-import {
-  textStyles,
-  linkStyles,
-  sectionHeaderStyles,
-  subSectionHeaderStyles,
-} from "./Globals";
+import { ExternalLink, SubSectionHeader, SectionHeader } from "./TextLayout";
+import { textStyles } from "./Globals";
 import "./Music.css";
 
 const Music: React.FC = () => {
@@ -33,16 +28,7 @@ const Music: React.FC = () => {
       >
         <Row>
           <Col>
-            <div
-              style={{
-                ...{
-                  borderBottom: `${borderWidth} solid`,
-                },
-                ...sectionHeaderStyles,
-              }}
-            >
-              witness
-            </div>
+            <SectionHeader borderWidth={borderWidth}>witness</SectionHeader>
           </Col>
         </Row>
 
@@ -57,56 +43,28 @@ const Music: React.FC = () => {
             {/* External links */}
             <Row className="px-3 pb-2">
               <Col lg={4}>
-                <Link
-                  style={linkStyles}
-                  to={{
-                    pathname: "https://www.facebook.com/ChildhoodIndustries/",
-                  }}
-                  target="_blank"
-                >
-                  <div className="music-link">soundcloud</div>
-                </Link>
+                <ExternalLink url="https://soundcloud.com/witnesswitness">
+                  soundcloud
+                </ExternalLink>
               </Col>
 
               <Col lg={4}>
-                <Link
-                  style={linkStyles}
-                  to={{
-                    pathname:
-                      "https://childhoodindustries.bandcamp.com/album/051515-3",
-                  }}
-                  target="_blank"
-                >
-                  <div className="music-link">bandcamp</div>
-                </Link>
+                <ExternalLink url="https://soundcloud.com/witnesswitness">
+                  bandcamp
+                </ExternalLink>
               </Col>
 
               <Col lg={4}>
-                <Link
-                  style={linkStyles}
-                  to={{
-                    pathname: "https://ra.co/dj/witness",
-                  }}
-                  target="_blank"
-                >
-                  <div className="music-link">ra</div>
-                </Link>
+                <ExternalLink url="https://ra.co/dj/witness">ra</ExternalLink>
               </Col>
             </Row>
 
             {/* Mixes */}
             <Row>
               <Col>
-                <div
-                  style={{
-                    ...{
-                      borderBottom: `${borderWidth} solid`,
-                    },
-                    ...subSectionHeaderStyles,
-                  }}
-                >
+                <SubSectionHeader borderWidth={borderWidth}>
                   mixes
-                </div>
+                </SubSectionHeader>
               </Col>
             </Row>
 
@@ -126,16 +84,9 @@ const Music: React.FC = () => {
             {/* Releases */}
             <Row>
               <Col>
-                <div
-                  style={{
-                    ...{
-                      borderBottom: `${borderWidth} solid`,
-                    },
-                    ...subSectionHeaderStyles,
-                  }}
-                >
+                <SubSectionHeader borderWidth={borderWidth}>
                   releases
-                </div>
+                </SubSectionHeader>
               </Col>
             </Row>
 
@@ -168,16 +119,9 @@ const Music: React.FC = () => {
       >
         <Row>
           <Col>
-            <div
-              style={{
-                ...{
-                  borderBottom: `${borderWidth} solid`,
-                },
-                ...sectionHeaderStyles,
-              }}
-            >
+            <SectionHeader borderWidth={borderWidth}>
               childhood industries
-            </div>
+            </SectionHeader>
           </Col>
         </Row>
 
@@ -193,56 +137,30 @@ const Music: React.FC = () => {
             {/* External links */}
             <Row className="px-3 pb-2">
               <Col lg={4}>
-                <Link
-                  style={linkStyles}
-                  to={{
-                    pathname: "https://www.facebook.com/ChildhoodIndustries/",
-                  }}
-                  target="_blank"
-                >
-                  <div className="music-link">facebook</div>
-                </Link>
+                <ExternalLink url="https://www.facebook.com/ChildhoodIndustries/">
+                  facebook
+                </ExternalLink>
               </Col>
 
               <Col lg={4}>
-                <Link
-                  style={linkStyles}
-                  to={{
-                    pathname:
-                      "https://childhoodindustries.bandcamp.com/album/051515-3",
-                  }}
-                  target="_blank"
-                >
-                  <div className="music-link">bandcamp</div>
-                </Link>
+                <ExternalLink url="https://childhoodindustries.bandcamp.com/album/051515-3">
+                  bandcamp
+                </ExternalLink>
               </Col>
 
               <Col lg={4}>
-                <Link
-                  style={linkStyles}
-                  to={{
-                    pathname: "https://www.mixcloud.com/ChildhoodIndustries/",
-                  }}
-                  target="_blank"
-                >
-                  <div className="music-link">mixcloud</div>
-                </Link>
+                <ExternalLink url="https://www.mixcloud.com/ChildhoodIndustries/">
+                  mixcloud
+                </ExternalLink>
               </Col>
             </Row>
 
             {/* Mixes */}
             <Row>
               <Col>
-                <div
-                  style={{
-                    ...{
-                      borderBottom: `${borderWidth} solid`,
-                    },
-                    ...subSectionHeaderStyles,
-                  }}
-                >
+                <SubSectionHeader borderWidth={borderWidth}>
                   radio
-                </div>
+                </SubSectionHeader>
               </Col>
             </Row>
 
@@ -327,16 +245,9 @@ const Music: React.FC = () => {
             {/* Events */}
             <Row>
               <Col>
-                <div
-                  style={{
-                    ...{
-                      borderBottom: `${borderWidth} solid`,
-                    },
-                    ...subSectionHeaderStyles,
-                  }}
-                >
+                <SubSectionHeader borderWidth={borderWidth}>
                   events
-                </div>
+                </SubSectionHeader>
               </Col>
             </Row>
 
@@ -384,16 +295,9 @@ const Music: React.FC = () => {
             {/* Label */}
             <Row>
               <Col>
-                <div
-                  style={{
-                    ...{
-                      borderBottom: `${borderWidth} solid`,
-                    },
-                    ...subSectionHeaderStyles,
-                  }}
-                >
+                <SubSectionHeader borderWidth={borderWidth}>
                   label
-                </div>
+                </SubSectionHeader>
               </Col>
             </Row>
 
