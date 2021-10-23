@@ -5,16 +5,10 @@ import farOrb from "./assets/art/boxbox-far.mp4";
 import pulseCubes from "./assets/art/cubic-3.mp4";
 import triFlow from "./assets/art/triangleundulate.mp4";
 import cubeCruise from "./assets/art/cubecruise-mp4.mp4";
+import { Video } from "./TextLayout";
 
 const Art: React.FC = () => {
   const borderWidth = "3px";
-
-  const textStyles = {
-    fontSize: 50,
-    fontWeight: 700,
-    transform: "scale(1,.5)",
-    textAlign: "left",
-  };
 
   return (
     <div className="pt-3 text-center">
@@ -32,9 +26,7 @@ const Art: React.FC = () => {
         }}
       >
         <Col>
-          <video className="p-3" controls loop width={800}>
-            <source src={organicLoop} type="video/mp4" />
-          </video>
+          <Video src={organicLoop} />
         </Col>
       </Row>
 
@@ -45,9 +37,7 @@ const Art: React.FC = () => {
         }}
       >
         <Col>
-          <video className="p-3" controls loop width={800}>
-            <source src={pulseCubes} type="video/mp4" />
-          </video>
+          <Video src={pulseCubes} />
         </Col>
       </Row>
 
@@ -58,9 +48,7 @@ const Art: React.FC = () => {
         }}
       >
         <Col>
-          <video className="p-3" controls loop width={800}>
-            <source src={farOrb} type="video/mp4" />
-          </video>
+          <Video src={farOrb} />
         </Col>
       </Row>
 
@@ -71,9 +59,7 @@ const Art: React.FC = () => {
         }}
       >
         <Col>
-          <video className="p-3" controls loop width={800}>
-            <source src={closeOrb} type="video/mp4" />
-          </video>
+          <Video src={closeOrb} />
         </Col>
       </Row>
 
@@ -84,9 +70,7 @@ const Art: React.FC = () => {
         }}
       >
         <Col>
-          <video className="p-3" controls loop width={800}>
-            <source src={triFlow} type="video/mp4" />
-          </video>
+          <Video src={triFlow} />
         </Col>
       </Row>
 
@@ -97,9 +81,7 @@ const Art: React.FC = () => {
         }}
       >
         <Col>
-          <video className="p-3" controls loop width={800}>
-            <source src={cubeCruise} type="video/mp4" />
-          </video>
+          <Video src={cubeCruise} />
         </Col>
       </Row>
     </div>
