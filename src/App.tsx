@@ -5,6 +5,7 @@ import { Container } from "react-bootstrap";
 import Tech from "./Tech";
 import Music from "./Music";
 import Art from "./Art";
+import Info from "./Info";
 import Header from "./Header";
 import Footer from "./Footer";
 
@@ -26,6 +27,10 @@ function App() {
 
             <Route path="/art">
               <Art />
+            </Route>
+
+            <Route path="/info">
+              <Info />
             </Route>
           </Switch>
 

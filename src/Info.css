@@ -1,0 +1,10 @@
+.profile-pic {
+  filter: grayscale(0%) brightness(100%) hue-rotate(-50deg) saturate(400%)
+    contrast(1);
+}
+
+/* .modified-image:hover {
+  transform: scale(2);
+  z-index: 999999999999 !important;
+  filter: contrast(1);
+} */

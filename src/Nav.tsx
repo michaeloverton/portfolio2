@@ -49,7 +49,7 @@ const Nav: React.FC<Props> = ({ home }) => {
 
       <Row>
         <Col>
-          <Link style={linkStyles} to="/about">
+          <Link style={linkStyles} to="/info">
             <div className="link">info +</div>
           </Link>
         </Col>
@@ -77,7 +77,7 @@ const Nav: React.FC<Props> = ({ home }) => {
         </Col>
 
         <Col>
-          <Link style={smallLinkStyles} to="/about">
+          <Link style={smallLinkStyles} to="/info">
             <div className="link">info</div>
           </Link>
         </Col>
