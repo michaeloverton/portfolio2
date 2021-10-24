@@ -76,7 +76,7 @@ const Music: React.FC = () => {
                   height="500"
                   scrolling="no"
                   allow="autoplay"
-                  src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1335515035%3Fsecret_token%3Ds-PkfNxyj2oXF&color=%2354525d&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&show_teaser=true"
+                  src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1335515035&color=%2354525d&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&show_teaser=true"
                 ></iframe>
               </Col>
             </Row>

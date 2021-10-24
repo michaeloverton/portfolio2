@@ -22,7 +22,7 @@ const Header: React.FC = () => {
   };
 
   const smallHeaderStyles = {
-    fontSize: 30,
+    fontSize: isMobile() ? 30 : 40,
     fontWeight: 600,
     transform: "scale(1, .5)",
     transformOrigin: "left",
@@ -62,7 +62,8 @@ const Header: React.FC = () => {
             // paddingLeft: "5%",
           }}
         >
-          {!isMobile() ? (
+          <div style={smallHeaderStyles}>Michael Overton Brown</div>
+          {/* {!isMobile() ? (
             <div style={smallHeaderStyles}>Michael Overton Brown</div>
           ) : (
             <div>
@@ -70,7 +71,7 @@ const Header: React.FC = () => {
               <div style={smallHeaderStyles}>Overton</div>
               <div style={smallHeaderStyles}>Brown</div>
             </div>
-          )}
+          )} */}
         </Col>
       </Row>
       <Row>
