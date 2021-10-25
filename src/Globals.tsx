@@ -4,6 +4,12 @@ export const textStyles = {
   transform: "scale(1,.5)",
 };
 
+export const pageDescriptionStyles = {
+  fontSize: 40,
+  fontWeight: 700,
+  transform: "scale(1,.5)",
+};
+
 export const linkStyles = {
   fontSize: 30,
   fontWeight: 600,

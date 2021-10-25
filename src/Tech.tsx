@@ -1,12 +1,18 @@
 import { Row, Col } from "react-bootstrap";
 import { ExternalLink, SubSectionHeader, SectionHeader } from "./TextLayout";
-import { textStyles } from "./Globals";
+import { textStyles, pageDescriptionStyles } from "./Globals";
 
 const Tech: React.FC = () => {
   const borderWidth = "3px";
 
   return (
     <div className="pt-3">
+      <Row className="pb-3">
+        <Col>
+          <div style={pageDescriptionStyles}>Tech is an escape.</div>
+        </Col>
+      </Row>
+
       <div
         style={{
           borderTop: `${borderWidth} solid`,

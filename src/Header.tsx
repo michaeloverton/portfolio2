@@ -53,7 +53,7 @@ const Header: React.FC = () => {
       </Row>
     </div>
   ) : (
-    <div className="mb-5">
+    <div>
       <Row>
         <Col
           style={{

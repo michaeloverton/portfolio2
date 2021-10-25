@@ -10,7 +10,7 @@ import show2 from "./assets/images/shows/lot2.png";
 import show3 from "./assets/images/shows/lot3.png";
 import show4 from "./assets/images/shows/lot4.png";
 import { ExternalLink, SubSectionHeader, SectionHeader } from "./TextLayout";
-import { textStyles } from "./Globals";
+import { textStyles, pageDescriptionStyles } from "./Globals";
 import "./Music.css";
 
 const Music: React.FC = () => {
@@ -19,6 +19,12 @@ const Music: React.FC = () => {
 
   return (
     <div className="pt-3">
+      <Row className="pb-3">
+        <Col>
+          <div style={pageDescriptionStyles}>I like music.</div>
+        </Col>
+      </Row>
+
       <div
         style={{
           borderTop: `${borderWidth} solid`,

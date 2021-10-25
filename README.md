@@ -1,4 +1,14 @@
-# Getting Started with Create React App
+# Portfolio
+
+## Notes
+
+Bootstrap styling. Bootstrap overrides via injecting styles from `Globals.tsx` like
+
+```
+<div style={stylesFromGlobals}></div>
+```
+
+# create-react-app boilerplate README
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
