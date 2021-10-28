@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
 import { Container } from "react-bootstrap";
-import Tech from "./Tech";
+import Games from "./Games";
 import Music from "./Music";
 import Art from "./Art";
 import Info from "./Info";
@@ -19,8 +19,8 @@ function App() {
             <Header />
 
             <Switch>
-              <Route path="/tech">
-                <Tech />
+              <Route path="/games">
+                <Games />
               </Route>
 
               <Route path="/music">

@@ -28,8 +28,8 @@ const Nav: React.FC<Props> = ({ home }) => {
     <div className="p-5">
       <Row>
         <Col>
-          <Link style={linkStyles} to="/tech">
-            <div className="link">tech</div>
+          <Link style={linkStyles} to="/games">
+            <div className="link">games</div>
           </Link>
         </Col>
       </Row>
@@ -63,8 +63,8 @@ const Nav: React.FC<Props> = ({ home }) => {
       {!isMobile() ? (
         <Row>
           <Col>
-            <Link style={smallLinkStyles} to="/tech">
-              <div className="link">tech</div>
+            <Link style={smallLinkStyles} to="/games">
+              <div className="link">games</div>
             </Link>
           </Col>
 
@@ -90,8 +90,8 @@ const Nav: React.FC<Props> = ({ home }) => {
         <div>
           <Row>
             <Col>
-              <Link style={smallLinkStyles} to="/tech">
-                <div className="link">tech</div>
+              <Link style={smallLinkStyles} to="/games">
+                <div className="link">games</div>
               </Link>
             </Col>
 

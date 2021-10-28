@@ -19,9 +19,12 @@ const Music: React.FC = () => {
 
   return (
     <div className="pt-3">
-      <Row className="pb-3">
+      <Row className="pb-3 px-2">
         <Col>
-          <div style={pageDescriptionStyles}>I like music.</div>
+          <div className="px-4" style={pageDescriptionStyles}>
+            Music's emotional power despite lacking any visual form fascinates
+            me.
+          </div>
         </Col>
       </Row>
 
@@ -41,7 +44,9 @@ const Music: React.FC = () => {
         <Row>
           <Col lg={3}>
             <div style={textStyles}>
-              Witness is Michael's currently cryofrozen DJ moniker.
+              Witness was my primary music production/DJ alias, under which I
+              produced multiple small EPs and served as a resident DJ at the
+              Childhood Industries events.
             </div>
           </Col>
 
@@ -134,8 +139,10 @@ const Music: React.FC = () => {
         <Row>
           <Col lg={3}>
             <div style={textStyles}>
-              Childhood Industries was a label, event series, and radio show on
-              The Lot Radio in Brooklyn, NY.
+              Childhood Industries was a music project started with a friend,
+              encompassing an event series (150-300 people per event), music
+              label, and radio show (on The Lot Radio) focusing on underground
+              techno in Brooklyn, NY.
             </div>
           </Col>
 

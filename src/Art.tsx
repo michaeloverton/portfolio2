@@ -13,10 +13,11 @@ const Art: React.FC = () => {
 
   return (
     <div className="pt-3">
-      <Row className="pb-3">
+      <Row className="pb-3 px-2">
         <Col>
-          <div style={pageDescriptionStyles}>
-            Reality is a prison. Nothing is everything.
+          <div className="px-4" style={pageDescriptionStyles}>
+            I'm interested in all forms of technology, and games are the perfect
+            nexus.
           </div>
         </Col>
       </Row>
