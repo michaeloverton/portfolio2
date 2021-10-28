@@ -21,7 +21,7 @@ const Games: React.FC = () => {
           borderTop: `${borderWidth} solid`,
           borderRight: `${borderWidth} solid`,
         }}
-        className="px-3 pb-5"
+        className="px-5 pb-5"
       >
         <Row>
           <Col>
@@ -110,7 +110,7 @@ const Games: React.FC = () => {
           borderLeft: `${borderWidth} solid`,
           borderBottom: `${borderWidth} solid`,
         }}
-        className="px-3 pb-4 pt-3"
+        className="px-5 pb-4 pt-3"
       >
         <Row>
           <Col>
@@ -270,7 +270,7 @@ const Games: React.FC = () => {
           borderLeft: `${borderWidth} solid`,
           borderBottom: `${borderWidth} solid`,
         }}
-        className="px-3 pb-4 pt-3"
+        className="px-5 pb-4 pt-3"
       >
         <Row>
           <Col>

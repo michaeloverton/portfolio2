@@ -33,7 +33,7 @@ const Music: React.FC = () => {
           borderTop: `${borderWidth} solid`,
           borderLeft: `${borderWidth} solid`,
         }}
-        className="px-3 pb-5"
+        className="px-5 pb-5"
       >
         <Row>
           <Col>

@@ -19,7 +19,7 @@ const Info: React.FC = () => {
           borderLeft: `${borderWidth} solid`,
           borderBottom: `${borderWidth} solid`,
         }}
-        className="px-3 pb-5"
+        className="px-5 pb-5"
       >
         <Row>
           <Col>
@@ -60,7 +60,7 @@ const Info: React.FC = () => {
           borderRight: `${borderWidth} solid`,
           borderBottom: `${borderWidth} solid`,
         }}
-        className="px-3 pb-5"
+        className="px-5 pb-5"
       >
         <Row>
           <Col lg={6}>
@@ -96,7 +96,7 @@ const Info: React.FC = () => {
           borderLeft: `${borderWidth} solid`,
           borderBottom: `${borderWidth} solid`,
         }}
-        className="px-3 pb-5"
+        className="px-5 pb-5"
       >
         <Row>
           <Col lg={6}>
