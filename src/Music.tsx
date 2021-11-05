@@ -9,8 +9,14 @@ import show1 from "./assets/images/shows/lot1.jpeg";
 import show2 from "./assets/images/shows/lot2.png";
 import show3 from "./assets/images/shows/lot3.png";
 import show4 from "./assets/images/shows/lot4.png";
-import { ExternalLink, SubSectionHeader, SectionHeader } from "./TextLayout";
-import { textStyles, pageDescriptionStyles } from "./Globals";
+import {
+  ExternalLink,
+  SubSectionHeader,
+  SectionHeader,
+  SectionContainer,
+  IntroText,
+} from "./TextLayout";
+import { textStyles } from "./Globals";
 import "./Music.css";
 
 const Music: React.FC = () => {
@@ -18,23 +24,14 @@ const Music: React.FC = () => {
   const borderWidth = "3px";
 
   return (
-    <div className="pt-3">
-      <Row className="pb-3 px-2">
-        <Col>
-          <div className="px-4" style={pageDescriptionStyles}>
-            Music's emotional power despite lacking any visual form fascinates
-            me.
-          </div>
-        </Col>
-      </Row>
+    <div>
+      <IntroText>
+        The union of technology and musical expression in underground techno,
+        ambient, and experimental music fascinates me, and I've immersed myself
+        in these styles for many years.
+      </IntroText>
 
-      <div
-        style={{
-          borderTop: `${borderWidth} solid`,
-          borderLeft: `${borderWidth} solid`,
-        }}
-        className="px-5 pb-5"
-      >
+      <SectionContainer borderWidth={borderWidth} top left>
         <Row>
           <Col>
             <SectionHeader borderWidth={borderWidth}>witness</SectionHeader>
@@ -44,9 +41,9 @@ const Music: React.FC = () => {
         <Row>
           <Col lg={3}>
             <div style={textStyles}>
-              Witness was my primary music production/DJ alias, under which I
-              produced multiple small EPs and served as a resident DJ at the
-              Childhood Industries events.
+              Witness is my primary music production and DJ alias, under which I
+              have produced small ambient and techno EPs and served as a
+              resident DJ for multiple event series.
             </div>
           </Col>
 
@@ -60,13 +57,51 @@ const Music: React.FC = () => {
               </Col>
 
               <Col lg={4}>
-                <ExternalLink url="https://soundcloud.com/witnesswitness">
+                <ExternalLink url="https://witnesswitness.bandcamp.com/releases">
                   bandcamp
                 </ExternalLink>
               </Col>
 
               <Col lg={4}>
                 <ExternalLink url="https://ra.co/dj/witness">ra</ExternalLink>
+              </Col>
+            </Row>
+
+            {/* Releases */}
+            <Row>
+              <Col>
+                <SubSectionHeader borderWidth={borderWidth}>
+                  releases
+                </SubSectionHeader>
+              </Col>
+            </Row>
+
+            <Row className="mb-3">
+              <Col>
+                <iframe
+                  title="sr-388"
+                  width="100%"
+                  height="241px"
+                  src="https://bandcamp.com/EmbeddedPlayer/album=717796054/size=large/bgcol=ffffff/linkcol=2ebd35/artwork=small/transparent=true/"
+                  seamless
+                >
+                  <a href="https://witnesswitness.bandcamp.com/album/sr-388">
+                    SR-388 by Witness
+                  </a>
+                </iframe>
+              </Col>
+            </Row>
+
+            <Row>
+              <Col>
+                <iframe
+                  title="music for air conditioners"
+                  width="100%"
+                  height="450"
+                  scrolling="no"
+                  allow="autoplay"
+                  src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1342022017&color=%2354525d&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&show_teaser=true"
+                ></iframe>
               </Col>
             </Row>
 
@@ -91,43 +126,14 @@ const Music: React.FC = () => {
                 ></iframe>
               </Col>
             </Row>
-
-            {/* Releases */}
-            <Row>
-              <Col>
-                <SubSectionHeader borderWidth={borderWidth}>
-                  releases
-                </SubSectionHeader>
-              </Col>
-            </Row>
-
-            <Row>
-              <Col>
-                <iframe
-                  title="witness-release"
-                  width="100%"
-                  height="400"
-                  scrolling="no"
-                  allow="autoplay"
-                  src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/284337507%3Fsecret_token%3Ds-cfFiV&color=%2354525d&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&show_teaser=true"
-                ></iframe>
-              </Col>
-            </Row>
           </Col>
         </Row>
 
         {/* SPACER */}
         <div className="spacer"></div>
-      </div>
+      </SectionContainer>
 
-      <div
-        style={{
-          borderTop: `${borderWidth} solid`,
-          borderRight: `${borderWidth} solid`,
-          borderBottom: `${borderWidth} solid`,
-        }}
-        className="px-3 pb-4 pt-3"
-      >
+      <SectionContainer borderWidth={borderWidth} top right bottom>
         <Row>
           <Col>
             <SectionHeader borderWidth={borderWidth}>
@@ -141,7 +147,7 @@ const Music: React.FC = () => {
             <div style={textStyles}>
               Childhood Industries was a music project started with a friend,
               encompassing an event series (150-300 people per event), music
-              label, and radio show (on The Lot Radio) focusing on underground
+              label, and radio show (on The Lot Radio), focusing on underground
               techno in Brooklyn, NY.
             </div>
           </Col>
@@ -328,7 +334,7 @@ const Music: React.FC = () => {
 
         {/* SPACER */}
         <div className="spacer"></div>
-      </div>
+      </SectionContainer>
     </div>
   );
 };

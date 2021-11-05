@@ -5,22 +5,17 @@ import farOrb from "./assets/art/boxbox-far.mp4";
 import pulseCubes from "./assets/art/cubic-3.mp4";
 import triFlow from "./assets/art/triangleundulate.mp4";
 import cubeCruise from "./assets/art/cubecruise-mp4.mp4";
-import { Video } from "./TextLayout";
-import { pageDescriptionStyles } from "./Globals";
+import { Video, IntroText } from "./TextLayout";
 
 const Art: React.FC = () => {
   const borderWidth = "3px";
 
   return (
-    <div className="pt-3">
-      <Row className="pb-3 px-2">
-        <Col>
-          <div className="px-4" style={pageDescriptionStyles}>
-            I'm interested in all forms of technology, and games are the perfect
-            nexus.
-          </div>
-        </Col>
-      </Row>
+    <div>
+      <IntroText>
+        I love creating surreal worlds and spaces in Blender and Unity. It's
+        important to take a break from reality sometimes.
+      </IntroText>
 
       <div className="text-center">
         <Row

@@ -5,7 +5,7 @@ export const textStyles = {
 };
 
 export const pageDescriptionStyles = {
-  fontSize: 40,
+  fontSize: 35,
   fontWeight: 700,
   transform: "scale(1,.5)",
 };

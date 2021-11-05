@@ -2,25 +2,16 @@ import { Row, Col, Image } from "react-bootstrap";
 import eva1 from "./assets/images/about/eva1.png";
 import profile from "./assets/images/about/profilepic.jpeg";
 import cv from "./assets/cv.pdf";
-import { ExternalLink, SubSectionHeader } from "./TextLayout";
+import { ExternalLink, SubSectionHeader, SectionContainer } from "./TextLayout";
 import { textStyles } from "./Globals";
-import { useIsMobile } from "./MobileProvider";
 import "./Info.css";
 
 const Info: React.FC = () => {
   const borderWidth = "3px";
-  const { isMobile } = useIsMobile();
 
   return (
     <div className="mt-4 pt-3">
-      <div
-        style={{
-          borderTop: `${borderWidth} solid`,
-          borderLeft: `${borderWidth} solid`,
-          borderBottom: `${borderWidth} solid`,
-        }}
-        className="px-5 pb-5"
-      >
+      <SectionContainer borderWidth={borderWidth} top left bottom>
         <Row>
           <Col>
             <div className="py-3 text-center">
@@ -53,15 +44,12 @@ const Info: React.FC = () => {
             </Row>
           </Col>
         </Row>
-      </div>
 
-      <div
-        style={{
-          borderRight: `${borderWidth} solid`,
-          borderBottom: `${borderWidth} solid`,
-        }}
-        className="px-5 pb-5"
-      >
+        {/* SPACER */}
+        <div className="spacer"></div>
+      </SectionContainer>
+
+      <SectionContainer borderWidth={borderWidth} right bottom>
         <Row>
           <Col lg={6}>
             <SubSectionHeader borderWidth={borderWidth}>
@@ -89,15 +77,9 @@ const Info: React.FC = () => {
 
         {/* SPACER */}
         <div className="spacer"></div>
-      </div>
+      </SectionContainer>
 
-      <div
-        style={{
-          borderLeft: `${borderWidth} solid`,
-          borderBottom: `${borderWidth} solid`,
-        }}
-        className="px-5 pb-5"
-      >
+      {/* <SectionContainer borderWidth={borderWidth} left bottom>
         <Row>
           <Col lg={6}>
             <SubSectionHeader borderWidth={borderWidth}>
@@ -129,9 +111,8 @@ const Info: React.FC = () => {
           </Col>
         </Row>
 
-        {/* SPACER */}
         <div className="spacer"></div>
-      </div>
+      </SectionContainer> */}
     </div>
   );
 };

@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
+import { Row, Col } from "react-bootstrap";
 import {
   linkStyles,
   sectionHeaderStyles,
   subSectionHeaderStyles,
+  pageDescriptionStyles,
 } from "./Globals";
 
 type LinkProps = {
@@ -63,6 +65,18 @@ export const SectionHeader: React.FC<SubHeaderProps> = ({
   );
 };
 
+export const IntroText: React.FC = ({ children }) => {
+  return (
+    <Row className="px-2">
+      <Col>
+        <div className="px-4" style={pageDescriptionStyles}>
+          {children}
+        </div>
+      </Col>
+    </Row>
+  );
+};
+
 type VideoProps = {
   src: string;
 };
@@ -72,5 +86,37 @@ export const Video: React.FC<VideoProps> = ({ src }) => {
     <video className="pt-4 pb-4" controls loop width={"90%"}>
       <source src={`${src}#t=0.001`} type="video/mp4" />
     </video>
+  );
+};
+
+type SectionProps = {
+  borderWidth: string;
+  right?: boolean;
+  left?: boolean;
+  top?: boolean;
+  bottom?: boolean;
+};
+
+export const SectionContainer: React.FC<SectionProps> = ({
+  borderWidth,
+  right,
+  left,
+  top,
+  bottom,
+  children,
+}) => {
+  return (
+    <div
+      style={{
+        borderTop: top ? `${borderWidth} solid` : ``,
+        borderRight: right ? `${borderWidth} solid` : ``,
+        borderLeft: left ? `${borderWidth} solid` : ``,
+        borderBottom: bottom ? `${borderWidth} solid` : ``,
+      }}
+      className="px-5 pb-5"
+      // className="px-5 pb-4 pt-3" // this was used in some of the non-top sections.
+    >
+      {children}
+    </div>
   );
 };

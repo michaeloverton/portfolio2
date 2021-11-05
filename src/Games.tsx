@@ -1,28 +1,25 @@
 import { Row, Col } from "react-bootstrap";
-import { ExternalLink, SubSectionHeader, SectionHeader } from "./TextLayout";
-import { textStyles, pageDescriptionStyles } from "./Globals";
+import {
+  ExternalLink,
+  SubSectionHeader,
+  SectionHeader,
+  SectionContainer,
+  IntroText,
+} from "./TextLayout";
+import { textStyles } from "./Globals";
 
 const Games: React.FC = () => {
   const borderWidth = "3px";
 
   return (
-    <div className="pt-3">
-      <Row className="pb-3 px-2">
-        <Col>
-          <div className="px-4" style={pageDescriptionStyles}>
-            I'm interested in all forms of technology, and games are the perfect
-            nexus.
-          </div>
-        </Col>
-      </Row>
+    <div>
+      <IntroText>
+        To me, games are an unmatched art form, a form containing all others.
+        The way they adapt and grow with new technology makes them uniquely
+        suited to be the medium of the future.
+      </IntroText>
 
-      <div
-        style={{
-          borderTop: `${borderWidth} solid`,
-          borderRight: `${borderWidth} solid`,
-        }}
-        className="px-5 pb-5"
-      >
+      <SectionContainer borderWidth={borderWidth} top right>
         <Row>
           <Col>
             <SectionHeader borderWidth={borderWidth}>
@@ -102,16 +99,9 @@ const Games: React.FC = () => {
 
         {/* SPACER */}
         <div className="spacer"></div>
-      </div>
+      </SectionContainer>
 
-      <div
-        style={{
-          borderTop: `${borderWidth} solid`,
-          borderLeft: `${borderWidth} solid`,
-          borderBottom: `${borderWidth} solid`,
-        }}
-        className="px-5 pb-4 pt-3"
-      >
+      <SectionContainer borderWidth={borderWidth} top left bottom>
         <Row>
           <Col>
             <SectionHeader borderWidth={borderWidth}>phreaker</SectionHeader>
@@ -192,15 +182,9 @@ const Games: React.FC = () => {
 
         {/* SPACER */}
         <div className="spacer"></div>
-      </div>
+      </SectionContainer>
 
-      <div
-        style={{
-          borderRight: `${borderWidth} solid`,
-          borderBottom: `${borderWidth} solid`,
-        }}
-        className="px-3 pb-4 pt-3"
-      >
+      <SectionContainer borderWidth={borderWidth} right bottom>
         <Row>
           <Col>
             <SectionHeader borderWidth={borderWidth}>clock out</SectionHeader>
@@ -263,15 +247,9 @@ const Games: React.FC = () => {
 
         {/* SPACER */}
         <div className="spacer"></div>
-      </div>
+      </SectionContainer>
 
-      <div
-        style={{
-          borderLeft: `${borderWidth} solid`,
-          borderBottom: `${borderWidth} solid`,
-        }}
-        className="px-5 pb-4 pt-3"
-      >
+      <SectionContainer borderWidth={borderWidth} left bottom>
         <Row>
           <Col>
             <SectionHeader borderWidth={borderWidth}>
@@ -335,7 +313,7 @@ const Games: React.FC = () => {
 
         {/* SPACER */}
         <div className="spacer"></div>
-      </div>
+      </SectionContainer>
     </div>
   );
 };

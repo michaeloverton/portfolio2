@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
-import { Container } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import Games from "./Games";
 import Music from "./Music";
 import Art from "./Art";
@@ -16,27 +16,31 @@ function App() {
       <MobileProvider>
         <div className="App">
           <Container>
-            <Header />
+            <Row>
+              <Col lg={10} sm={12} className="mx-auto">
+                <Header />
 
-            <Switch>
-              <Route path="/games">
-                <Games />
-              </Route>
+                <Switch>
+                  <Route path="/games">
+                    <Games />
+                  </Route>
 
-              <Route path="/music">
-                <Music />
-              </Route>
+                  <Route path="/music">
+                    <Music />
+                  </Route>
 
-              <Route path="/art">
-                <Art />
-              </Route>
+                  <Route path="/art">
+                    <Art />
+                  </Route>
 
-              <Route path="/info">
-                <Info />
-              </Route>
-            </Switch>
+                  <Route path="/info">
+                    <Info />
+                  </Route>
+                </Switch>
 
-            <Footer />
+                <Footer />
+              </Col>
+            </Row>
           </Container>
         </div>
       </MobileProvider>
