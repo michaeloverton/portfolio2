@@ -83,7 +83,7 @@ type VideoProps = {
 
 export const Video: React.FC<VideoProps> = ({ src }) => {
   return (
-    <video className="pt-4 pb-4" controls loop width={"90%"}>
+    <video className="pt-5 pb-3" controls loop width={"90%"}>
       <source src={`${src}#t=0.001`} type="video/mp4" />
     </video>
   );

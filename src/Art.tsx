@@ -5,7 +5,7 @@ import farOrb from "./assets/art/boxbox-far.mp4";
 import pulseCubes from "./assets/art/cubic-3.mp4";
 import triFlow from "./assets/art/triangleundulate.mp4";
 import cubeCruise from "./assets/art/cubecruise-mp4.mp4";
-import { Video, IntroText } from "./TextLayout";
+import { Video, IntroText, SectionContainer } from "./TextLayout";
 
 const Art: React.FC = () => {
   const borderWidth = "3px";
@@ -18,72 +18,29 @@ const Art: React.FC = () => {
       </IntroText>
 
       <div className="text-center">
-        <Row
-          style={{
-            borderTop: `${borderWidth} solid`,
-            borderRight: `${borderWidth} solid`,
-            borderBottom: `${borderWidth} solid`,
-          }}
-        >
-          <Col>
-            <Video src={organicLoop} />
-          </Col>
-        </Row>
+        <SectionContainer borderWidth={borderWidth} top right bottom>
+          <Video src={organicLoop} />
+        </SectionContainer>
 
-        <Row
-          style={{
-            borderLeft: `${borderWidth} solid`,
-            borderBottom: `${borderWidth} solid`,
-          }}
-        >
-          <Col>
-            <Video src={pulseCubes} />
-          </Col>
-        </Row>
+        <SectionContainer borderWidth={borderWidth} left bottom>
+          <Video src={pulseCubes} />
+        </SectionContainer>
 
-        <Row
-          style={{
-            borderRight: `${borderWidth} solid`,
-            borderBottom: `${borderWidth} solid`,
-          }}
-        >
-          <Col>
-            <Video src={farOrb} />
-          </Col>
-        </Row>
+        <SectionContainer borderWidth={borderWidth} right bottom>
+          <Video src={farOrb} />
+        </SectionContainer>
 
-        <Row
-          style={{
-            borderLeft: `${borderWidth} solid`,
-            borderBottom: `${borderWidth} solid`,
-          }}
-        >
-          <Col>
-            <Video src={closeOrb} />
-          </Col>
-        </Row>
+        <SectionContainer borderWidth={borderWidth} left bottom>
+          <Video src={closeOrb} />
+        </SectionContainer>
 
-        <Row
-          style={{
-            borderRight: `${borderWidth} solid`,
-            borderBottom: `${borderWidth} solid`,
-          }}
-        >
-          <Col>
-            <Video src={triFlow} />
-          </Col>
-        </Row>
+        <SectionContainer borderWidth={borderWidth} right bottom>
+          <Video src={triFlow} />
+        </SectionContainer>
 
-        <Row
-          style={{
-            borderLeft: `${borderWidth} solid`,
-            borderBottom: `${borderWidth} solid`,
-          }}
-        >
-          <Col>
-            <Video src={cubeCruise} />
-          </Col>
-        </Row>
+        <SectionContainer borderWidth={borderWidth} left bottom>
+          <Video src={cubeCruise} />
+        </SectionContainer>
       </div>
     </div>
   );
