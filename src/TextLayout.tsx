@@ -5,6 +5,7 @@ import {
   sectionHeaderStyles,
   subSectionHeaderStyles,
   pageDescriptionStyles,
+  textStyles,
 } from "./Globals";
 
 type LinkProps = {
@@ -72,6 +73,16 @@ export const IntroText: React.FC = ({ children }) => {
         <div className="px-4" style={pageDescriptionStyles}>
           {children}
         </div>
+      </Col>
+    </Row>
+  );
+};
+
+export const SectionInfo: React.FC = ({ children }) => {
+  return (
+    <Row>
+      <Col className="px-4">
+        <div style={textStyles}>{children}</div>
       </Col>
     </Row>
   );

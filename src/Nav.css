@@ -1,6 +1,6 @@
 .link {
   transform: scale(1, 0.5);
-  padding-left: 20%;
+  /* padding-left: 20%; */
 }
 
 .link:hover {
@@ -9,7 +9,7 @@
 }
 
 .small-link {
-  transform: scale(1.5, 0.5);
+  transform: scale(1, 0.5);
   padding-left: 40%;
 }
 

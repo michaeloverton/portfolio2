@@ -1,7 +1,7 @@
 import { Row, Col, Image } from "react-bootstrap";
 import eva1 from "./assets/images/about/eva1.png";
 import profile from "./assets/images/about/profilepic.jpeg";
-import cv from "./assets/cv.pdf";
+import cv from "./assets/resume-2021.pdf";
 import { ExternalLink, SubSectionHeader, SectionContainer } from "./TextLayout";
 import { textStyles } from "./Globals";
 import "./Info.css";

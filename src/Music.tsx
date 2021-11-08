@@ -26,9 +26,7 @@ const Music: React.FC = () => {
   return (
     <div>
       <IntroText>
-        The union of technology and musical expression in underground techno,
-        ambient, and experimental music fascinates me, and I've immersed myself
-        in these styles for many years.
+        Music unifies creative expression and technological exploration.
       </IntroText>
 
       <SectionContainer borderWidth={borderWidth} top left>
@@ -49,7 +47,7 @@ const Music: React.FC = () => {
 
           <Col>
             {/* External links */}
-            <Row className="px-3 pb-2">
+            <Row className="px-2 pb-2">
               <Col xl={4} lg={12}>
                 <ExternalLink url="https://soundcloud.com/witnesswitness">
                   soundcloud
@@ -166,7 +164,7 @@ const Music: React.FC = () => {
 
           <Col>
             {/* External links */}
-            <Row className="px-3 pb-2">
+            <Row className="px-2 pb-2">
               <Col xl={4} lg={12}>
                 <ExternalLink url="https://www.facebook.com/ChildhoodIndustries/">
                   facebook

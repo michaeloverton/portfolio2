@@ -12,8 +12,8 @@ const Art: React.FC = () => {
   return (
     <div>
       <IntroText>
-        I love creating surreal worlds and spaces in Blender and Unity. It's
-        important to take a break from reality sometimes.
+        Creating surreal 3D worlds, unrestrained by reality, is extremely
+        liberating.
       </IntroText>
 
       <div className="text-center">
