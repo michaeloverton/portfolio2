@@ -39,7 +39,7 @@ const Music: React.FC = () => {
         </Row>
 
         <Row>
-          <Col lg={3}>
+          <Col xl={3} lg={12}>
             <div style={textStyles}>
               Witness is my primary music production and DJ alias, under which I
               have produced small ambient and techno EPs and served as a
@@ -50,19 +50,19 @@ const Music: React.FC = () => {
           <Col>
             {/* External links */}
             <Row className="px-3 pb-2">
-              <Col lg={4}>
+              <Col xl={4} lg={12}>
                 <ExternalLink url="https://soundcloud.com/witnesswitness">
                   soundcloud
                 </ExternalLink>
               </Col>
 
-              <Col lg={4}>
+              <Col xl={4} lg={12}>
                 <ExternalLink url="https://witnesswitness.bandcamp.com/releases">
                   bandcamp
                 </ExternalLink>
               </Col>
 
-              <Col lg={4}>
+              <Col xl={4} lg={12}>
                 <ExternalLink url="https://ra.co/dj/witness">ra</ExternalLink>
               </Col>
             </Row>
@@ -89,6 +89,18 @@ const Music: React.FC = () => {
                     SR-388 by Witness
                   </a>
                 </iframe>
+              </Col>
+            </Row>
+
+            <Row className="mb-3">
+              <Col>
+                <iframe
+                  width="100%"
+                  height="315"
+                  src="https://www.youtube.com/embed/kcbzfgksK1o"
+                  title="YouTube video player"
+                  allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                ></iframe>
               </Col>
             </Row>
 
@@ -143,7 +155,7 @@ const Music: React.FC = () => {
         </Row>
 
         <Row>
-          <Col lg={3}>
+          <Col xl={3} lg={12}>
             <div style={textStyles}>
               Childhood Industries was a music project started with a friend,
               encompassing an event series (150-300 people per event), music
@@ -155,19 +167,19 @@ const Music: React.FC = () => {
           <Col>
             {/* External links */}
             <Row className="px-3 pb-2">
-              <Col lg={4}>
+              <Col xl={4} lg={12}>
                 <ExternalLink url="https://www.facebook.com/ChildhoodIndustries/">
                   facebook
                 </ExternalLink>
               </Col>
 
-              <Col lg={4}>
+              <Col xl={4} lg={12}>
                 <ExternalLink url="https://childhoodindustries.bandcamp.com/album/051515-3">
                   bandcamp
                 </ExternalLink>
               </Col>
 
-              <Col lg={4}>
+              <Col xl={4} lg={12}>
                 <ExternalLink url="https://www.mixcloud.com/ChildhoodIndustries/">
                   mixcloud
                 </ExternalLink>

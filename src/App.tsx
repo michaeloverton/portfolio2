@@ -17,7 +17,7 @@ function App() {
         <div className="App">
           <Container>
             <Row>
-              <Col lg={10} sm={12} className="mx-auto">
+              <Col xl={10} lg={11} md={12} sm={12} className="mx-auto">
                 <Header />
 
                 <Switch>

@@ -1,4 +1,3 @@
-import { Row, Col } from "react-bootstrap";
 import organicLoop from "./assets/art/loop-centerlight.mp4";
 import closeOrb from "./assets/art/boxbox-close.mp4";
 import farOrb from "./assets/art/boxbox-far.mp4";

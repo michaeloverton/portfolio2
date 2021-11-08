@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Row, Col } from "react-bootstrap";
+import { Row, Col, Image } from "react-bootstrap";
 import {
   linkStyles,
   sectionHeaderStyles,
@@ -83,9 +83,30 @@ type VideoProps = {
 
 export const Video: React.FC<VideoProps> = ({ src }) => {
   return (
-    <video className="pt-5 pb-3" controls loop width={"90%"}>
+    <video className="pt-5 pb-3" controls loop width={"100%"}>
       <source src={`${src}#t=0.001`} type="video/mp4" />
     </video>
+  );
+};
+
+type GameImageProps = {
+  src: string;
+};
+
+export const GameImage: React.FC<GameImageProps> = ({ src }) => {
+  return (
+    <Row className="mb-3">
+      <Col>
+        <Link
+          to={{
+            pathname: src,
+          }}
+          target="_blank"
+        >
+          <Image src={src} width="100%" />
+        </Link>
+      </Col>
+    </Row>
   );
 };
 
