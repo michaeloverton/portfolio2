@@ -8,6 +8,7 @@ import {
   textStyles,
 } from "./Globals";
 import { useIsMobile } from "./MobileProvider";
+import "./TextLayout.css";
 
 type LinkProps = {
   url: string;
@@ -90,8 +91,10 @@ export const IntroText: React.FC = ({ children }) => {
 };
 
 export const SectionInfo: React.FC = ({ children }) => {
+  const { isMobile } = useIsMobile();
+
   return (
-    <Row>
+    <Row className={isMobile() ? "mobile-info" : ""}>
       <Col className="px-4">
         <div style={textStyles}>{children}</div>
       </Col>
