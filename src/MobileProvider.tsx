@@ -4,10 +4,12 @@ const MOBILE_WIDTH = 400; // This is the bootstrap 'lg' breakpoint.
 
 type MobileContextType = {
   isMobile: () => boolean;
+  width: () => number;
 };
 
 const MobileContext = createContext<MobileContextType>({
   isMobile: () => false,
+  width: () => window.innerWidth,
 });
 
 export const MobileProvider: React.FC = ({ children }) => {
@@ -24,7 +26,7 @@ export const MobileProvider: React.FC = ({ children }) => {
     };
   }, []);
 
-  const mobile = { isMobile: () => width <= MOBILE_WIDTH };
+  const mobile = { isMobile: () => width <= MOBILE_WIDTH, width: () => width };
 
   return (
     <MobileContext.Provider value={mobile}>{children}</MobileContext.Provider>

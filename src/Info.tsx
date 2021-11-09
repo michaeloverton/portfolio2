@@ -1,13 +1,21 @@
 import { Row, Col, Image } from "react-bootstrap";
-import eva1 from "./assets/images/about/eva1.png";
+import eva from "./assets/images/about/eva1.png";
+import evaSmall from "./assets/images/about/eva1-small.png";
 import profile from "./assets/images/about/profilepic.jpeg";
 import cv from "./assets/resume-2021.pdf";
-import { ExternalLink, SubSectionHeader, SectionContainer } from "./TextLayout";
+import {
+  ExternalLink,
+  SubSectionHeader,
+  SectionContainer,
+  SectionInfo,
+} from "./TextLayout";
 import { textStyles } from "./Globals";
 import "./Info.css";
+import { useIsMobile } from "./MobileProvider";
 
 const Info: React.FC = () => {
   const borderWidth = "3px";
+  const { width } = useIsMobile();
 
   return (
     <div className="mt-4 pt-3">
@@ -15,16 +23,12 @@ const Info: React.FC = () => {
         <Row>
           <Col>
             <div className="py-3 text-center">
-              <Image src={eva1} width="100%" />
+              <Image src={width() < 900 ? evaSmall : eva} width="100%" />
             </div>
           </Col>
         </Row>
 
-        <Row className="mb-3">
-          <Col lg={5}>
-            <Image className="profile-pic" src={profile} width="100%" />
-          </Col>
-
+        <Row>
           <Col>
             <Row className="px-3 pb-2">
               <Col>
@@ -37,11 +41,20 @@ const Info: React.FC = () => {
                 </ExternalLink>
               </Col>
             </Row>
-            <Row>
-              <Col>
-                <div style={textStyles}>I'm a technologist.</div>
-              </Col>
-            </Row>
+          </Col>
+        </Row>
+
+        <SectionInfo>
+          I'm a technologist with a broad set of skills including programming,
+          music, and 3D modeling. If a technology can be used to create, I want
+          to create with it. I want to collaborate with fellow experimenters to
+          challenge existing technologies and combine disparate forms of media
+          in new ways.
+        </SectionInfo>
+
+        <Row className="mb-3">
+          <Col lg={5}>
+            <Image className="profile-pic" src={profile} width="100%" />
           </Col>
         </Row>
 
@@ -78,41 +91,6 @@ const Info: React.FC = () => {
         {/* SPACER */}
         <div className="spacer"></div>
       </SectionContainer>
-
-      {/* <SectionContainer borderWidth={borderWidth} left bottom>
-        <Row>
-          <Col lg={6}>
-            <SubSectionHeader borderWidth={borderWidth}>
-              the ocean
-            </SubSectionHeader>
-          </Col>
-        </Row>
-
-        <Row>
-          <Col>
-            <div style={textStyles}>
-              I can't reasonably make a website and not include my fascination
-              with surfing and diving. The ocean is an endless source of
-              inspiration for me.
-            </div>
-          </Col>
-        </Row>
-
-        <Row>
-          <Col>
-            <iframe
-              width="90%"
-              height={isMobile() ? "200px" : "500px"}
-              src="https://www.youtube.com/embed/DJcHI-Ec5Ko"
-              title="YouTube video player"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            ></iframe>
-          </Col>
-        </Row>
-
-        <div className="spacer"></div>
-      </SectionContainer> */}
     </div>
   );
 };

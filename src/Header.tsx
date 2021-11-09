@@ -23,7 +23,7 @@ const Header: React.FC = () => {
 
   const smallHeaderStyles = {
     fontSize: isMobile() ? 30 : 40,
-    fontWeight: 600,
+    fontWeight: 900,
     transform: "scale(1, .5)",
     transformOrigin: "left",
   };

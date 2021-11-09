@@ -36,9 +36,10 @@ const Games: React.FC = () => {
         </Row>
 
         <SectionInfo>
-          Infinite Silence 2 is a three level interactive music piece. Each
-          level in the large interconnected space represents a piece of music,
-          with player traversal triggering changes in the music.
+          Infinite Silence is an experimental piece of non-linear, interactive
+          music. There are three interconnected spaces, each representing a
+          piece of music, and player traversal causes musical changes. This is
+          an experiment in player-driven music.
         </SectionInfo>
 
         <Row className="px-2 mb-4">
@@ -97,11 +98,11 @@ const Games: React.FC = () => {
         </Row>
 
         <SectionInfo>
-          Phreaker is a virtual reality grappling hook mini-game set in a
-          large-scale cyberpunk pseudo-city. The focus of the project is the
-          development of the grappling hook movement system and level design
-          experimentation, while also developing associated sub-systems: enemy
-          weakpoints, health, etc.
+          Phreaker is a virtual reality grappling hook game set in a large-scale
+          cyberpunk space. More levels are in development, along with gigantic
+          enemies, alternate traversal methods, and a "combat" system. The goal
+          is to ultimately target the Oculus Quest 2, along with all other wired
+          VR platforms.
         </SectionInfo>
 
         <Row className="px-2 mb-4">
