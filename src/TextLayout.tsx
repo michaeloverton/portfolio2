@@ -7,6 +7,7 @@ import {
   pageDescriptionStyles,
   textStyles,
 } from "./Globals";
+import { useIsMobile } from "./MobileProvider";
 
 type LinkProps = {
   url: string;
@@ -48,21 +49,31 @@ export const SubSectionHeader: React.FC<SubHeaderProps> = ({
   );
 };
 
-export const SectionHeader: React.FC<SubHeaderProps> = ({
+type SectionHeaderProps = {
+  borderWidth: string;
+  rowClass?: string;
+};
+
+export const SectionHeader: React.FC<SectionHeaderProps> = ({
   children,
+  rowClass,
   borderWidth,
 }) => {
   return (
-    <div
-      style={{
-        ...{
-          borderBottom: `${borderWidth} solid`,
-        },
-        ...sectionHeaderStyles,
-      }}
-    >
-      {children}
-    </div>
+    <Row className={rowClass ? rowClass : ""}>
+      <Col>
+        <div
+          style={{
+            ...{
+              borderBottom: `${borderWidth} solid`,
+            },
+            ...sectionHeaderStyles,
+          }}
+        >
+          {children}
+        </div>
+      </Col>
+    </Row>
   );
 };
 
@@ -137,6 +148,8 @@ export const SectionContainer: React.FC<SectionProps> = ({
   bottom,
   children,
 }) => {
+  const { isMobile } = useIsMobile();
+
   return (
     <div
       style={{
@@ -145,7 +158,7 @@ export const SectionContainer: React.FC<SectionProps> = ({
         borderLeft: left ? `${borderWidth} solid` : ``,
         borderBottom: bottom ? `${borderWidth} solid` : ``,
       }}
-      className="px-5 pb-5"
+      className={isMobile() ? "px-2 pb-2" : "px-5 pb-5"}
       // className="px-5 pb-4 pt-3" // this was used in some of the non-top sections.
     >
       {children}

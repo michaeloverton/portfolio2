@@ -1,6 +1,5 @@
 import { Row, Col, Image } from "react-bootstrap";
 import eva from "./assets/images/about/eva1.png";
-import evaSmall from "./assets/images/about/eva1-small.png";
 import profile from "./assets/images/about/profilepic.jpeg";
 import cv from "./assets/resume-2021.pdf";
 import {
@@ -15,15 +14,15 @@ import { useIsMobile } from "./MobileProvider";
 
 const Info: React.FC = () => {
   const borderWidth = "3px";
-  const { width } = useIsMobile();
+  const { isMobile } = useIsMobile();
 
   return (
     <div className="mt-4 pt-3">
       <SectionContainer borderWidth={borderWidth} top left bottom>
         <Row>
           <Col>
-            <div className="py-3 text-center">
-              <Image src={width() < 900 ? evaSmall : eva} width="100%" />
+            <div className="py-3 text-center banner">
+              <Image src={eva} height={isMobile() ? "250px" : "350px"} />
             </div>
           </Col>
         </Row>
@@ -53,7 +52,7 @@ const Info: React.FC = () => {
         </SectionInfo>
 
         <Row className="mb-3">
-          <Col lg={5}>
+          <Col>
             <Image className="profile-pic" src={profile} width="100%" />
           </Col>
         </Row>

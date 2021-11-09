@@ -18,10 +18,14 @@ import {
   SectionInfo,
 } from "./TextLayout";
 import "./Music.css";
+import { useIsMobile } from "./MobileProvider";
 
 const Music: React.FC = () => {
   const imageWidth = "200px";
+  const bigImageWidth = "250px";
   const borderWidth = "3px";
+  const { width } = useIsMobile();
+  const mediumBreakPoint = 768; // Bootstrap md breakpoint pixel width.
 
   return (
     <div>
@@ -30,11 +34,7 @@ const Music: React.FC = () => {
       </IntroText>
 
       <SectionContainer borderWidth={borderWidth} top left>
-        <Row>
-          <Col>
-            <SectionHeader borderWidth={borderWidth}>witness</SectionHeader>
-          </Col>
-        </Row>
+        <SectionHeader borderWidth={borderWidth}>witness</SectionHeader>
 
         <SectionInfo>
           Witness is my primary music production and DJ alias, under which I
@@ -136,13 +136,9 @@ const Music: React.FC = () => {
       </SectionContainer>
 
       <SectionContainer borderWidth={borderWidth} top right bottom>
-        <Row>
-          <Col>
-            <SectionHeader borderWidth={borderWidth}>
-              childhood industries
-            </SectionHeader>
-          </Col>
-        </Row>
+        <SectionHeader borderWidth={borderWidth}>
+          childhood industries
+        </SectionHeader>
 
         <SectionInfo>
           Childhood Industries was a music project started with a friend,
@@ -225,19 +221,32 @@ const Music: React.FC = () => {
 
         <Row className="py-2">
           <Col>
-            <Image className="modified-image" src={show1} height={imageWidth} />
+            <Image
+              className="modified-image"
+              src={show1}
+              height={width() < mediumBreakPoint ? bigImageWidth : imageWidth}
+            />
           </Col>
           <Col>
-            <Image className="modified-image" src={show2} height={imageWidth} />
+            <Image
+              className="modified-image"
+              src={show2}
+              height={width() < mediumBreakPoint ? bigImageWidth : imageWidth}
+            />
           </Col>
           <Col>
-            <Image className="modified-image" src={show3} height={imageWidth} />
+            <Image
+              className="modified-image"
+              src={show3}
+              height={width() < mediumBreakPoint ? bigImageWidth : imageWidth}
+            />
           </Col>
-        </Row>
-
-        <Row className="py-2">
           <Col>
-            <Image className="modified-image" src={show4} height={imageWidth} />
+            <Image
+              className="modified-image"
+              src={show4}
+              height={width() < mediumBreakPoint ? bigImageWidth : imageWidth}
+            />
           </Col>
         </Row>
 
@@ -255,38 +264,35 @@ const Music: React.FC = () => {
             <Image
               className="modified-image"
               src={event1}
-              height={imageWidth}
+              height={width() < mediumBreakPoint ? bigImageWidth : imageWidth}
             />
           </Col>
           <Col>
             <Image
               className="modified-image"
               src={event2}
-              height={imageWidth}
+              height={width() < mediumBreakPoint ? bigImageWidth : imageWidth}
             />
           </Col>
           <Col>
             <Image
               className="modified-image"
               src={event3}
-              height={imageWidth}
+              height={width() < mediumBreakPoint ? bigImageWidth : imageWidth}
             />
           </Col>
-        </Row>
-
-        <Row className="py-2">
           <Col>
             <Image
               className="modified-image"
               src={event4}
-              height={imageWidth}
+              height={width() < mediumBreakPoint ? bigImageWidth : imageWidth}
             />
           </Col>
           <Col>
             <Image
               className="modified-image"
               src={event5}
-              height={imageWidth}
+              height={width() < mediumBreakPoint ? bigImageWidth : imageWidth}
             />
           </Col>
         </Row>

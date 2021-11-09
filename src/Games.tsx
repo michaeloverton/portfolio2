@@ -27,13 +27,9 @@ const Games: React.FC = () => {
       </IntroText>
 
       <SectionContainer borderWidth={borderWidth} top right>
-        <Row>
-          <Col>
-            <SectionHeader borderWidth={borderWidth}>
-              infinite silence
-            </SectionHeader>
-          </Col>
-        </Row>
+        <SectionHeader borderWidth={borderWidth}>
+          infinite silence
+        </SectionHeader>
 
         <SectionInfo>
           Infinite Silence is an experimental piece of non-linear, interactive
@@ -72,11 +68,7 @@ const Games: React.FC = () => {
           </Col>
         </Row>
 
-        <Row className="mb-4">
-          <Col>
-            <SectionHeader borderWidth={borderWidth} />
-          </Col>
-        </Row>
+        <SectionHeader rowClass="mb-4" borderWidth={borderWidth} />
 
         <GameImage src={isTitle} />
 
@@ -91,11 +83,7 @@ const Games: React.FC = () => {
       </SectionContainer>
 
       <SectionContainer borderWidth={borderWidth} top left bottom>
-        <Row>
-          <Col>
-            <SectionHeader borderWidth={borderWidth}>phreaker</SectionHeader>
-          </Col>
-        </Row>
+        <SectionHeader borderWidth={borderWidth}>phreaker</SectionHeader>
 
         <SectionInfo>
           Phreaker is a virtual reality grappling hook game set in a large-scale
@@ -127,11 +115,7 @@ const Games: React.FC = () => {
           </Col>
         </Row>
 
-        <Row className="mb-4">
-          <Col>
-            <SectionHeader borderWidth={borderWidth} />
-          </Col>
-        </Row>
+        <SectionHeader rowClass="mb-4" borderWidth={borderWidth} />
 
         <Row className="mb-3">
           <Col>
@@ -158,11 +142,7 @@ const Games: React.FC = () => {
       </SectionContainer>
 
       <SectionContainer borderWidth={borderWidth} right bottom>
-        <Row>
-          <Col>
-            <SectionHeader borderWidth={borderWidth}>clock out</SectionHeader>
-          </Col>
-        </Row>
+        <SectionHeader borderWidth={borderWidth}>clock out</SectionHeader>
 
         <SectionInfo>
           Clock Out is an office that the player cannot escape. As the player
@@ -200,11 +180,7 @@ const Games: React.FC = () => {
           </Col>
         </Row>
 
-        <Row className="mb-4">
-          <Col>
-            <SectionHeader borderWidth={borderWidth} />
-          </Col>
-        </Row>
+        <SectionHeader rowClass="mb-4" borderWidth={borderWidth} />
 
         <GameImage src={phTitle} />
 
