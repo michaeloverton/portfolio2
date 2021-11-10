@@ -8,13 +8,13 @@ import {
   SectionContainer,
   SectionInfo,
 } from "./TextLayout";
-import { textStyles } from "./Globals";
+import { textStyles, largeBreakPoint } from "./Globals";
 import "./Info.css";
 import { useIsMobile } from "./MobileProvider";
 
 const Info: React.FC = () => {
   const borderWidth = "3px";
-  const { isMobile } = useIsMobile();
+  const { width, isMobile } = useIsMobile();
 
   return (
     <div className="mt-4 pt-3">
@@ -27,7 +27,7 @@ const Info: React.FC = () => {
           </Col>
         </Row>
 
-        <Row>
+        {/* <Row>
           <Col>
             <Row className="px-3 pb-2">
               <Col>
@@ -41,19 +41,46 @@ const Info: React.FC = () => {
               </Col>
             </Row>
           </Col>
-        </Row>
+        </Row> */}
 
-        <SectionInfo>
+        {/* <SectionInfo>
           I'm a technologist with a broad set of skills including programming,
           music, and 3D modeling. If a technology can be used to create, I want
           to create with it. I want to collaborate with fellow experimenters to
           challenge existing technologies and combine disparate forms of media
           in new ways.
-        </SectionInfo>
+        </SectionInfo> */}
 
         <Row className="mb-3">
-          <Col>
-            <Image className="profile-pic" src={profile} width="100%" />
+          {width() < largeBreakPoint ? null : (
+            <Col md={12} lg={5} className="my-auto">
+              <Image className="profile-pic" src={profile} width="100%" />
+            </Col>
+          )}
+          <Col className={isMobile() ? "mx-3" : ""}>
+            <Row>
+              <Col>
+                <Row className="px-3 pb-2">
+                  <Col>
+                    <ExternalLink url={cv}>cv</ExternalLink>
+                  </Col>
+
+                  <Col>
+                    <ExternalLink url="https://github.com/michaeloverton">
+                      github
+                    </ExternalLink>
+                  </Col>
+                </Row>
+              </Col>
+            </Row>
+
+            <div className={isMobile() ? "bio-mobile" : ""} style={textStyles}>
+              I'm a technologist with a broad set of skills including
+              programming, music, and 3D modeling. If a technology can be used
+              to create, I want to create with it. I want to collaborate with
+              fellow experimenters to challenge existing technologies and
+              combine disparate forms of media in new ways.
+            </div>
           </Col>
         </Row>
 

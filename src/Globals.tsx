@@ -1,3 +1,6 @@
+export const mediumBreakPoint = 768; // Bootstrap md breakpoint pixel width.
+export const largeBreakPoint = 992; // Bootstrap lg breakpoint pixel width.
+
 export const textStyles = {
   fontSize: 30,
   fontWeight: 700,

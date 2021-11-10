@@ -45,7 +45,7 @@ const Nav: React.FC<Props> = ({ home }) => {
       <Row>
         <Col>
           <Link style={linkStyles} to="/art">
-            <div className="link">3d</div>
+            <div className="link">3D</div>
           </Link>
         </Col>
       </Row>
@@ -76,7 +76,7 @@ const Nav: React.FC<Props> = ({ home }) => {
 
           <Col>
             <Link style={smallLinkStyles} to="/art">
-              <div className="link">3d</div>
+              <div className="link">3D</div>
             </Link>
           </Col>
 
@@ -105,7 +105,7 @@ const Nav: React.FC<Props> = ({ home }) => {
           <Row>
             <Col>
               <Link style={smallLinkStyles} to="/art">
-                <div className="link">3d</div>
+                <div className="link">3D</div>
               </Link>
             </Col>
 

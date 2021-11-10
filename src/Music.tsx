@@ -19,13 +19,13 @@ import {
 } from "./TextLayout";
 import "./Music.css";
 import { useIsMobile } from "./MobileProvider";
+import { mediumBreakPoint } from "./Globals";
 
 const Music: React.FC = () => {
   const imageWidth = "200px";
   const bigImageWidth = "250px";
   const borderWidth = "3px";
-  const { width } = useIsMobile();
-  const mediumBreakPoint = 768; // Bootstrap md breakpoint pixel width.
+  const { width, isMobile } = useIsMobile();
 
   return (
     <div>
@@ -90,10 +90,23 @@ const Music: React.FC = () => {
           <Col>
             <iframe
               width="100%"
-              height="450"
+              height={isMobile() ? "250" : "450"}
               src="https://www.youtube.com/embed/kcbzfgksK1o"
               title="YouTube video player"
               allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            ></iframe>
+          </Col>
+        </Row>
+
+        <Row className="mb-3">
+          <Col>
+            <iframe
+              width="100%"
+              title="soundman theme"
+              height="166"
+              scrolling="no"
+              allow="autoplay"
+              src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1157137171&color=%2354525d&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&show_teaser=true"
             ></iframe>
           </Col>
         </Row>
@@ -103,7 +116,7 @@ const Music: React.FC = () => {
             <iframe
               title="music for air conditioners"
               width="100%"
-              height="450"
+              height={isMobile() ? "300" : "450"}
               scrolling="no"
               allow="autoplay"
               src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1342022017&color=%2354525d&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&show_teaser=true"
@@ -123,7 +136,7 @@ const Music: React.FC = () => {
             <iframe
               title="witness-mix"
               width="100%"
-              height="500"
+              height={isMobile() ? "300" : "500"}
               scrolling="no"
               allow="autoplay"
               src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1335515035&color=%2354525d&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&show_teaser=true"
