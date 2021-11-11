@@ -39,7 +39,8 @@ const Games: React.FC = () => {
           Infinite Silence is an experimental piece of non-linear, interactive
           music, with an abstract narrative. There are three interconnected
           spaces, each representing a piece of music, and player traversal
-          causes musical changes. This is an experiment in player-driven music.
+          causes musical changes: the player determines the structure of the
+          music. This is an experiment in player-driven music.
         </SectionInfo>
 
         <Row className="px-2 mb-4">
@@ -103,10 +104,10 @@ const Games: React.FC = () => {
 
         <SectionInfo>
           Phreaker is a virtual reality grappling hook game set in a large-scale
-          cyberpunk space. More levels are in development, along with gigantic
-          enemies, alternate traversal methods, and a "combat" system. The goal
-          is to ultimately target the Oculus Quest 2, along with all other wired
-          VR platforms.
+          cyberpunk space. More levels are in development, featuring gigantic
+          “enemies”, alternate traversal methods, and a "combat" system. The
+          goal is to ultimately target the Oculus Quest 2 wirelessly, along with
+          all other wired VR platforms.
         </SectionInfo>
 
         <Row className="px-2 mb-4">
@@ -161,11 +162,12 @@ const Games: React.FC = () => {
         <SectionHeader borderWidth={borderWidth}>clock out</SectionHeader>
 
         <SectionInfo>
-          Clock Out is an office that the player cannot escape. Is this
-          capitalism? As the player traverses rooms of the office, more rooms
-          are randomly generated ahead of and behind the player, trapping them.
-          The game is a proof-of-concept for a sort of procedural generation
-          algorithm.
+          Clock Out is an art piece in the form of an office that the player
+          cannot escape. Is this capitalism? As the player traverses rooms of
+          the office, more rooms are randomly generated ahead of and behind the
+          player, trapping them, and as the player descends further, the rooms
+          become stranger. The “game” is a proof-of-concept for a sort of
+          procedural generation algorithm.
         </SectionInfo>
 
         <Row className="px-2 mb-4">

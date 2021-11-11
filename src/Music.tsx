@@ -191,10 +191,10 @@ const Music: React.FC = () => {
         </SectionHeader>
 
         <SectionInfo>
-          Childhood Industries was a music project started with a friend,
-          encompassing an event series (150-300 people per event), music label,
-          and radio show on The Lot Radio. It focused on underground techno in
-          Brooklyn, NY.
+          Childhood Industries was a music project started with a friend and
+          fellow DJ, Carl Jannerfeldt, encompassing an event series (150-300
+          people per event), music label, and radio show on The Lot Radio. It
+          focused on underground techno in Brooklyn, NY.
         </SectionInfo>
 
         {/* External links */}
