@@ -19,16 +19,14 @@ import {
   SectionContainer,
   IntroText,
   SectionInfo,
+  MusicImage,
 } from "./TextLayout";
 import "./Music.css";
 import { useIsMobile } from "./MobileProvider";
-import { mediumBreakPoint } from "./Globals";
 
 const Music: React.FC = () => {
-  const imageWidth = "200px";
-  const bigImageWidth = "250px";
   const borderWidth = "3px";
-  const { width, isMobile } = useIsMobile();
+  const { isMobile } = useIsMobile();
 
   return (
     <div>
@@ -273,32 +271,19 @@ const Music: React.FC = () => {
 
         <Row className="py-2">
           <Col>
-            <Image
-              className="modified-image"
-              src={show1}
-              height={width() < mediumBreakPoint ? bigImageWidth : imageWidth}
-            />
+            <MusicImage src={show1} />
           </Col>
+
           <Col>
-            <Image
-              className="modified-image"
-              src={show2}
-              height={width() < mediumBreakPoint ? bigImageWidth : imageWidth}
-            />
+            <MusicImage src={show2} />
           </Col>
+
           <Col>
-            <Image
-              className="modified-image"
-              src={show3}
-              height={width() < mediumBreakPoint ? bigImageWidth : imageWidth}
-            />
+            <MusicImage src={show3} />
           </Col>
+
           <Col>
-            <Image
-              className="modified-image"
-              src={show4}
-              height={width() < mediumBreakPoint ? bigImageWidth : imageWidth}
-            />
+            <MusicImage src={show4} />
           </Col>
         </Row>
 
@@ -313,39 +298,23 @@ const Music: React.FC = () => {
 
         <Row className="py-2">
           <Col>
-            <Image
-              className="modified-image"
-              src={event1}
-              height={width() < mediumBreakPoint ? bigImageWidth : imageWidth}
-            />
+            <MusicImage src={event1} />
           </Col>
+
           <Col>
-            <Image
-              className="modified-image"
-              src={event2}
-              height={width() < mediumBreakPoint ? bigImageWidth : imageWidth}
-            />
+            <MusicImage src={event2} />
           </Col>
+
           <Col>
-            <Image
-              className="modified-image"
-              src={event3}
-              height={width() < mediumBreakPoint ? bigImageWidth : imageWidth}
-            />
+            <MusicImage src={event3} />
           </Col>
+
           <Col>
-            <Image
-              className="modified-image"
-              src={event4}
-              height={width() < mediumBreakPoint ? bigImageWidth : imageWidth}
-            />
+            <MusicImage src={event4} />
           </Col>
+
           <Col>
-            <Image
-              className="modified-image"
-              src={event5}
-              height={width() < mediumBreakPoint ? bigImageWidth : imageWidth}
-            />
+            <MusicImage src={event5} />
           </Col>
         </Row>
 
@@ -356,9 +325,9 @@ const Music: React.FC = () => {
           </Col>
         </Row>
 
-        <Row>
+        <Row className="py-2">
           <Col>
-            <Image className="modified-image" src={tape} height={imageWidth} />
+            <MusicImage src={tape} />
           </Col>
         </Row>
 

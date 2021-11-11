@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Row, Col, Image } from "react-bootstrap";
 import {
+  mediumBreakPoint,
   linkStyles,
   sectionHeaderStyles,
   subSectionHeaderStyles,
@@ -9,6 +10,7 @@ import {
 } from "./Globals";
 import { useIsMobile } from "./MobileProvider";
 import "./TextLayout.css";
+import "./Music.css";
 
 type LinkProps = {
   url: string;
@@ -129,6 +131,35 @@ export const GameImage: React.FC<GameImageProps> = ({ src }) => {
           target="_blank"
         >
           <Image src={src} width="100%" />
+        </Link>
+      </Col>
+    </Row>
+  );
+};
+
+type MusicImageProps = {
+  src: string;
+};
+
+export const MusicImage: React.FC<MusicImageProps> = ({ src }) => {
+  const { width } = useIsMobile();
+  const imageWidth = "200px";
+  const bigImageWidth = "250px";
+
+  return (
+    <Row className="mb-3">
+      <Col>
+        <Link
+          to={{
+            pathname: src,
+          }}
+          target="_blank"
+        >
+          <Image
+            className="modified-image"
+            src={src}
+            height={width() < mediumBreakPoint ? bigImageWidth : imageWidth}
+          />
         </Link>
       </Col>
     </Row>
