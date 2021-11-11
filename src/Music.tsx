@@ -1,4 +1,5 @@
 import { Row, Col, Image } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import event1 from "./assets/images/events/qu.jpg";
 import event2 from "./assets/images/events/stingray.jpg";
 import event3 from "./assets/images/events/milton.jpg";
@@ -9,6 +10,8 @@ import show1 from "./assets/images/shows/lot1.jpeg";
 import show2 from "./assets/images/shows/lot2.png";
 import show3 from "./assets/images/shows/lot3.png";
 import show4 from "./assets/images/shows/lot4.png";
+import srCover from "./assets/art/sr388-cover.png";
+import iceCover from "./assets/art/ice-cover.png";
 import {
   ExternalLink,
   SubSectionHeader,
@@ -70,7 +73,17 @@ const Music: React.FC = () => {
           </Col>
         </Row>
 
-        <Row className="mb-3">
+        <Row className="mb-5">
+          <Col lg={5}>
+            <Link
+              to={{
+                pathname: srCover,
+              }}
+              target="_blank"
+            >
+              <Image src={srCover} width="100%" />
+            </Link>
+          </Col>
           <Col>
             <iframe
               title="sr-388"
@@ -86,7 +99,7 @@ const Music: React.FC = () => {
           </Col>
         </Row>
 
-        <Row className="mb-3">
+        <Row className="mb-5">
           <Col>
             <iframe
               width="100%"
@@ -98,7 +111,33 @@ const Music: React.FC = () => {
           </Col>
         </Row>
 
-        <Row className="mb-3">
+        <Row className="mb-5">
+          <Col lg={5}>
+            <Link
+              to={{
+                pathname: iceCover,
+              }}
+              target="_blank"
+            >
+              <Image src={iceCover} width="100%" />
+            </Link>
+          </Col>
+          <Col>
+            <iframe
+              title="ice"
+              width="100%"
+              height="241px"
+              src="https://bandcamp.com/EmbeddedPlayer/album=4019230084/size=large/bgcol=ffffff/linkcol=2ebd35/artwork=small/transparent=true/"
+              seamless
+            >
+              <a href="https://witnesswitness.bandcamp.com/album/ice">
+                Ice by Witness
+              </a>
+            </iframe>
+          </Col>
+        </Row>
+
+        <Row className="mb-5">
           <Col>
             <iframe
               width="100%"
@@ -156,7 +195,7 @@ const Music: React.FC = () => {
         <SectionInfo>
           Childhood Industries was a music project started with a friend,
           encompassing an event series (150-300 people per event), music label,
-          and radio show (on The Lot Radio), focusing on underground techno in
+          and radio show on The Lot Radio. It focused on underground techno in
           Brooklyn, NY.
         </SectionInfo>
 

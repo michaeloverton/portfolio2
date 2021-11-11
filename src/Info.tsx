@@ -2,12 +2,7 @@ import { Row, Col, Image } from "react-bootstrap";
 import eva from "./assets/images/about/eva1.png";
 import profile from "./assets/images/about/profilepic.jpeg";
 import cv from "./assets/resume-2021.pdf";
-import {
-  ExternalLink,
-  SubSectionHeader,
-  SectionContainer,
-  SectionInfo,
-} from "./TextLayout";
+import { ExternalLink, SubSectionHeader, SectionContainer } from "./TextLayout";
 import { textStyles, largeBreakPoint } from "./Globals";
 import "./Info.css";
 import { useIsMobile } from "./MobileProvider";
@@ -26,30 +21,6 @@ const Info: React.FC = () => {
             </div>
           </Col>
         </Row>
-
-        {/* <Row>
-          <Col>
-            <Row className="px-3 pb-2">
-              <Col>
-                <ExternalLink url={cv}>cv</ExternalLink>
-              </Col>
-
-              <Col>
-                <ExternalLink url="https://github.com/michaeloverton">
-                  github
-                </ExternalLink>
-              </Col>
-            </Row>
-          </Col>
-        </Row> */}
-
-        {/* <SectionInfo>
-          I'm a technologist with a broad set of skills including programming,
-          music, and 3D modeling. If a technology can be used to create, I want
-          to create with it. I want to collaborate with fellow experimenters to
-          challenge existing technologies and combine disparate forms of media
-          in new ways.
-        </SectionInfo> */}
 
         <Row className="mb-3">
           {width() < largeBreakPoint ? null : (
