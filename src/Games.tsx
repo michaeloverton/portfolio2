@@ -76,7 +76,7 @@ const Games: React.FC = () => {
             <iframe
               width="100%"
               height="450"
-              src="https://www.youtube.com/embed/E6oWN7xVrCM"
+              src="https://www.youtube.com/embed/cQt9zGCgR20"
               title="YouTube video player"
               allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             ></iframe>
