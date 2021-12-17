@@ -5,7 +5,7 @@ export const textStyles = {
   fontSize: 20,
   fontFamily: "Impact",
   letterSpacing: "1px",
-  // color: "#00FF9A",
+  color: "#37FF24",
 };
 
 export const pageDescriptionStyles = {
@@ -16,7 +16,7 @@ export const pageDescriptionStyles = {
 export const linkStyles = {
   fontSize: 30,
   textDecoration: "none",
-  color: "#15ff00", // this color must match App.css
+  // color: "#15ff00", // this color must match App.css
 };
 
 export const sectionHeaderStyles = {

@@ -63,7 +63,7 @@ const Games: React.FC = () => {
         </Row>
 
         {/* External links */}
-        <Row className="px-2 pb-2">
+        <Row className="px-2 pb-4">
           <Col lg={6}>
             <ExternalLink url="https://phasein.itch.io/phreaker">
               download
@@ -135,7 +135,7 @@ const Games: React.FC = () => {
         </Row>
 
         {/* External links */}
-        <Row className="px-2 pb-2">
+        <Row className="px-2 pb-4">
           <Col lg={6}>
             <ExternalLink url="https://phasein.itch.io/infinite-silence">
               download
@@ -202,7 +202,7 @@ const Games: React.FC = () => {
         </Row>
 
         {/* External links */}
-        <Row className="px-2 pb-2">
+        <Row className="px-2 pb-4">
           <Col lg={6}>
             <ExternalLink url="https://phasein.itch.io/clock-out">
               download

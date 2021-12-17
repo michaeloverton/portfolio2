@@ -1,3 +1,7 @@
+.external-link {
+  color: #deffdb;
+}
+
 .external-link:hover {
   background-color: yellow;
   color: black;

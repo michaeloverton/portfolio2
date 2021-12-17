@@ -38,12 +38,12 @@ const Music: React.FC = () => {
 
         <SectionInfo>
           Witness is my primary music production and DJ alias, under which I
-          have produced small ambient and techno EPs and served as a resident DJ
+          have produced small techno and ambient EPs and served as a resident DJ
           for multiple event series.
         </SectionInfo>
 
         {/* External links */}
-        <Row className="px-2 pb-2">
+        <Row className="px-2 pb-4">
           <Col xl={4} lg={12}>
             <ExternalLink url="https://soundcloud.com/witnesswitness">
               soundcloud
@@ -196,7 +196,7 @@ const Music: React.FC = () => {
         </SectionInfo>
 
         {/* External links */}
-        <Row className="px-2 pb-2">
+        <Row className="px-2 pb-4">
           <Col xl={4} lg={12}>
             <ExternalLink url="https://www.facebook.com/ChildhoodIndustries/">
               facebook

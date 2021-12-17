@@ -3,6 +3,7 @@ import { Row, Col } from "react-bootstrap";
 const Footer: React.FC = () => {
   const footerStyles = {
     fontSize: 15,
+    color: "#deffdb",
   };
 
   return (
