@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import organicLoop from "./assets/art/loop-centerlight.mp4";
 import closeOrb from "./assets/art/boxbox-close.mp4";
 import farOrb from "./assets/art/boxbox-far.mp4";
@@ -8,6 +9,11 @@ import { Video, SectionContainer } from "./TextLayout";
 
 const Art: React.FC = () => {
   const borderWidth = "3px";
+
+  // Scroll to top of page on component load.
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div>

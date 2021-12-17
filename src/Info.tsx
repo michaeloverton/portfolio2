@@ -1,6 +1,6 @@
+import { useEffect } from "react";
 import { Row, Col, Image } from "react-bootstrap";
 import eva from "./assets/images/about/eva1.png";
-import profile from "./assets/images/about/profilepic.jpeg";
 import cv from "./assets/resume-dec-2021.pdf";
 import { ExternalLink, SectionContainer, Spacer, Emphasis } from "./TextLayout";
 import { textStyles } from "./Globals";
@@ -10,6 +10,11 @@ import { useIsMobile } from "./MobileProvider";
 const Info: React.FC = () => {
   const borderWidth = "3px";
   const { isMobile } = useIsMobile();
+
+  // Scroll to top of page on component load.
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div className="mt-4 pt-3">
@@ -51,28 +56,35 @@ const Info: React.FC = () => {
               definitions are similar, giving the impression that a game is a
               competition. I believe that many people understand “video games”
               according to this definition. There are winners and losers,
-              victory and failure. You can “win”. However, to understand modern
-              video games in this way, and to call them all “games” is to
-              tragically diminish the potential of an entire medium. In Animal
-              Crossing: New Horizons, you express yourself by cultivating an
-              island. In Fortnite, you can watch a fully digital concert. In
-              VRChat, you simply socialize with others in a digital space. These
-              are not “games” in the traditional sense. They are closer to
-              “digital experiences”, and they’re incredibly exciting to me
-              because they are beginning to show the potential of the medium.
-              And we’ve only scratched the surface.
+              victory and failure. You can “win”. However,{" "}
+              <Emphasis>
+                to understand modern video games in this way, and to call them
+                all “games” is to tragically diminish the potential of an entire
+                medium.
+              </Emphasis>{" "}
+              In Animal Crossing: New Horizons, you express yourself by
+              cultivating an island. In Fortnite, you can watch a fully digital
+              concert. In VRChat, you simply socialize with others in a digital
+              space. These are not “games” in the traditional sense. They are
+              closer to “digital experiences”, and they’re incredibly exciting
+              to me because they are beginning to show the potential of the
+              medium. And we’ve only scratched the surface.
             </div>
 
             <div className="my-3" style={textStyles}>
               In a world so increasingly technological and digitized, I believe
-              that the need and appetite for digital spaces and experiences will
-              only grow and that the gap between “mainstream culture” and
-              “gaming culture” will diminish. I’m interested in creating more
-              inclusive and experimental independent games and experiences,
-              without hardcore gameplay loops or stress. I’m especially
-              interested in the intersection of games and music: I want to
-              create spaces for the expression of creativity in a middle ground
-              between human and computer. I want players to ask,{" "}
+              that{" "}
+              <Emphasis>
+                the need and appetite for digital spaces and experiences will
+                only grow and that the gap between “mainstream culture” and
+                “gaming culture” will diminish.
+              </Emphasis>{" "}
+              I’m interested in creating more inclusive and experimental
+              independent games and experiences, without hardcore gameplay loops
+              or stress. I’m especially interested in the intersection of games
+              and music: I want to create spaces for the expression of
+              creativity in a middle ground between human and computer. I want
+              players to ask,{" "}
               <Emphasis>“Did I create this or did the computer?”</Emphasis>{" "}
               Beyond independent game development, I also want to put game
               engines to use in a broader set of contexts, helping others
@@ -80,8 +92,9 @@ const Info: React.FC = () => {
             </div>
 
             <div className="my-3" style={textStyles}>
-              Ultimately, collaboration is my primary objective. I want to
-              create games or experiences with fellow artists, educators,
+              Ultimately,{" "}
+              <Emphasis>collaboration is my primary objective</Emphasis>. I want
+              to create games or experiences with fellow artists, educators,
               technologists and experimenters: the more diverse the field of
               collaborators, the better. I believe that my broad skill set will
               allow me to be an effective teammate at any point in the creative

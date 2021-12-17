@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Row, Col, Image } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import event1 from "./assets/images/events/qu.jpg";
@@ -28,6 +29,11 @@ const Music: React.FC = () => {
   const borderWidth = "3px";
   const { isMobile } = useIsMobile();
 
+  // Scroll to top of page on component load.
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div>
       {/* <IntroText>
@@ -39,7 +45,7 @@ const Music: React.FC = () => {
 
         <SectionInfo>
           Witness is my primary{" "}
-          <Emphasis>music production and DJ alias</Emphasis>, under which I have
+          <Emphasis>music production and DJ alias,</Emphasis> under which I have
           produced small techno and ambient EPs and served as a resident DJ for
           multiple event series.
         </SectionInfo>
@@ -195,9 +201,9 @@ const Music: React.FC = () => {
           fellow DJ, Carl Jannerfeldt, encompassing an{" "}
           <Emphasis>
             event series (150-300 people per event), music label, and radio show
-            on The Lot Radio
-          </Emphasis>
-          . It focused on underground techno in Brooklyn, NY.
+            on The Lot Radio.
+          </Emphasis>{" "}
+          It focused on underground techno in Brooklyn, NY.
         </SectionInfo>
 
         {/* External links */}

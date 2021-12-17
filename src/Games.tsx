@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Row, Col } from "react-bootstrap";
 import is2 from "./assets/images/games/infinite-silence/is2.png";
 import is11 from "./assets/images/games/infinite-silence/is11.png";
@@ -23,9 +24,15 @@ import {
   SectionInfo,
   Emphasis,
 } from "./TextLayout";
+import React from "react";
 
 const Games: React.FC = () => {
   const borderWidth = "3px";
+
+  // Scroll to top of page on component load.
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div>
@@ -182,12 +189,13 @@ const Games: React.FC = () => {
 
         <SectionInfo>
           Clock Out is an art piece in the form of{" "}
-          <Emphasis>an office that the player cannot escape</Emphasis>. Is this
-          capitalism? As the player traverses rooms of the office, more rooms
-          are randomly generated ahead of and behind the player, trapping them,
-          and as the player descends further, the rooms become stranger. The
-          “game” is a proof-of-concept for a sort of procedural generation
-          algorithm.
+          <Emphasis>
+            an office that the player cannot escape. Is this capitalism?
+          </Emphasis>{" "}
+          As the player traverses rooms of the office, more rooms are randomly
+          generated ahead of and behind the player, trapping them, and as the
+          player descends further, the rooms become stranger. The “game” is a
+          proof-of-concept for a sort of procedural generation algorithm.
         </SectionInfo>
 
         <Row className="px-2 mb-4">
