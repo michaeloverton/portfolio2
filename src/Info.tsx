@@ -2,7 +2,7 @@ import { Row, Col, Image } from "react-bootstrap";
 import eva from "./assets/images/about/eva1.png";
 import profile from "./assets/images/about/profilepic.jpeg";
 import cv from "./assets/resume-2021.pdf";
-import { ExternalLink, SubSectionHeader, SectionContainer } from "./TextLayout";
+import { ExternalLink, SectionContainer, Spacer } from "./TextLayout";
 import { textStyles, largeBreakPoint } from "./Globals";
 import "./Info.css";
 import { useIsMobile } from "./MobileProvider";
@@ -45,7 +45,7 @@ const Info: React.FC = () => {
               </Col>
             </Row>
 
-            <div className={isMobile() ? "bio-mobile" : ""} style={textStyles}>
+            <div style={textStyles}>
               I'm a technologist with a broad set of skills including
               programming, music, and 3D modeling. If a technology can be used
               to create, I want to create with it. I want to collaborate with
@@ -55,11 +55,10 @@ const Info: React.FC = () => {
           </Col>
         </Row>
 
-        {/* SPACER */}
-        <div className="spacer"></div>
+        <Spacer />
       </SectionContainer>
 
-      <SectionContainer borderWidth={borderWidth} right bottom>
+      {/* <SectionContainer borderWidth={borderWidth} right bottom>
         <Row>
           <Col lg={6}>
             <SubSectionHeader borderWidth={borderWidth}>
@@ -85,9 +84,8 @@ const Info: React.FC = () => {
           </Col>
         </Row>
 
-        {/* SPACER */}
-        <div className="spacer"></div>
-      </SectionContainer>
+        <Spacer />
+      </SectionContainer> */}
     </div>
   );
 };

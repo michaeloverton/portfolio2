@@ -3,9 +3,6 @@ import is2 from "./assets/images/games/infinite-silence/is2.png";
 import is11 from "./assets/images/games/infinite-silence/is11.png";
 import is6 from "./assets/images/games/infinite-silence/is6.png";
 import isTitle from "./assets/images/games/infinite-silence/big-title.png";
-// import ph3 from "./assets/images/games/phreaker/ph3.png";
-// import ph6 from "./assets/images/games/phreaker/ph6.png";
-// import ph7 from "./assets/images/games/phreaker/ph7.png";
 import ph2 from "./assets/images/games/phreaker/phreaker2.png";
 import ph3 from "./assets/images/games/phreaker/phreaker3.png";
 import ph7 from "./assets/images/games/phreaker/ph7.png";
@@ -21,7 +18,7 @@ import {
   ExternalLink,
   SectionHeader,
   SectionContainer,
-  IntroText,
+  Spacer,
   GameImage,
   SectionInfo,
 } from "./TextLayout";
@@ -31,20 +28,25 @@ const Games: React.FC = () => {
 
   return (
     <div>
-      <IntroText>
+      {/* <IntroText>
         Games adapt and grow with new technology, making them uniquely suited to
         be the medium of the future.
-      </IntroText>
+      </IntroText> */}
 
       <SectionContainer borderWidth={borderWidth} top right>
         <SectionHeader borderWidth={borderWidth}>phreaker</SectionHeader>
 
         <SectionInfo>
-          Phreaker is a virtual reality grappling hook game set in a large-scale
-          cyberpunk space. More levels are in development, featuring gigantic
-          “enemies”, alternate traversal methods, and a "combat" system. The
-          goal is to ultimately target the Oculus Quest 2 wirelessly, along with
-          all other wired VR platforms.
+          Phreaker is a virtual reality cyberpunk grappling hook game in early
+          development. Both of the player’s hands are equipped with grappling
+          hooks, and the player can connect to any surface in order to traverse
+          large environments. “Large” is not an exaggeration: the environments
+          can be upwards of ten kilometers tall and wide. This size is not a
+          problem, as the grappling hooks allow the player to travel extremely
+          quickly, at times more than 900 meters per second, depending on the
+          skill of the player. There are currently two levels and a tutorial.
+          The current levels are prototypes, experiments to understand
+          architecture and aesthetics that are fun to traverse.
         </SectionInfo>
 
         <Row className="px-2 mb-4">
@@ -97,8 +99,7 @@ const Games: React.FC = () => {
 
         <GameImage src={ph5} />
 
-        {/* SPACER */}
-        <div className="spacer"></div>
+        <Spacer />
       </SectionContainer>
 
       <SectionContainer borderWidth={borderWidth} top left bottom>
@@ -107,11 +108,15 @@ const Games: React.FC = () => {
         </SectionHeader>
 
         <SectionInfo>
-          Infinite Silence is an experimental piece of non-linear, interactive
-          music, with an abstract narrative. There are three interconnected
-          spaces, each representing a piece of music, and player traversal
-          causes musical changes: the player determines the structure of the
-          music. This is an experiment in player-driven music.
+          Infinite Silence is an experiment in non-linear, player-driven music.
+          The “game” consists of three interconnected spaces stacked vertically,
+          with each space representing a piece of music. Player traversal of the
+          spaces causes musical changes: approaching certain objects makes
+          arpeggios fade in, or a decrease in player height changes the cutoff
+          frequency of a low-pass filter, among other interactions. The player
+          determines the structure and, to some extent, the content of the
+          music. The spaces are thematically linked, and as the player descends,
+          an abstract narrative begins to form.
         </SectionInfo>
 
         <Row className="px-2 mb-4">
@@ -166,8 +171,7 @@ const Games: React.FC = () => {
           </Col>
         </Row>
 
-        {/* SPACER */}
-        <div className="spacer"></div>
+        <Spacer />
       </SectionContainer>
 
       <SectionContainer borderWidth={borderWidth} right bottom>
@@ -234,8 +238,7 @@ const Games: React.FC = () => {
           </Col>
         </Row>
 
-        {/* SPACER */}
-        <div className="spacer"></div>
+        <Spacer />
       </SectionContainer>
     </div>
   );

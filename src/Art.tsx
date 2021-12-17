@@ -4,17 +4,17 @@ import farOrb from "./assets/art/boxbox-far.mp4";
 import pulseCubes from "./assets/art/cubic-3.mp4";
 import triFlow from "./assets/art/triangleundulate.mp4";
 import cubeCruise from "./assets/art/cubecruise-mp4.mp4";
-import { Video, IntroText, SectionContainer } from "./TextLayout";
+import { Video, SectionContainer } from "./TextLayout";
 
 const Art: React.FC = () => {
   const borderWidth = "3px";
 
   return (
     <div>
-      <IntroText>
+      {/* <IntroText>
         Creating surreal 3D worlds, unrestrained by reality, is extremely
         liberating.
-      </IntroText>
+      </IntroText> */}
 
       <div className="text-center">
         <SectionContainer borderWidth={borderWidth} top right bottom>

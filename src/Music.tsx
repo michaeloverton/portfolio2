@@ -17,11 +17,10 @@ import {
   SubSectionHeader,
   SectionHeader,
   SectionContainer,
-  IntroText,
   SectionInfo,
   MusicImage,
+  Spacer,
 } from "./TextLayout";
-import "./Music.css";
 import { useIsMobile } from "./MobileProvider";
 
 const Music: React.FC = () => {
@@ -30,9 +29,9 @@ const Music: React.FC = () => {
 
   return (
     <div>
-      <IntroText>
+      {/* <IntroText>
         Music unifies creative expression and technological exploration.
-      </IntroText>
+      </IntroText> */}
 
       <SectionContainer borderWidth={borderWidth} top left>
         <SectionHeader borderWidth={borderWidth}>witness</SectionHeader>
@@ -63,7 +62,7 @@ const Music: React.FC = () => {
         </Row>
 
         {/* Releases */}
-        <Row>
+        <Row className="mb-4">
           <Col>
             <SubSectionHeader borderWidth={borderWidth}>
               releases
@@ -162,7 +161,7 @@ const Music: React.FC = () => {
         </Row>
 
         {/* Mixes */}
-        <Row className="mt-3">
+        <Row className="mt-3 mb-4">
           <Col>
             <SubSectionHeader borderWidth={borderWidth}>mixes</SubSectionHeader>
           </Col>
@@ -181,8 +180,7 @@ const Music: React.FC = () => {
           </Col>
         </Row>
 
-        {/* SPACER */}
-        <div className="spacer"></div>
+        <Spacer />
       </SectionContainer>
 
       <SectionContainer borderWidth={borderWidth} top right bottom>
@@ -219,7 +217,7 @@ const Music: React.FC = () => {
         </Row>
 
         {/* Mixes */}
-        <Row>
+        <Row className="mb-4">
           <Col>
             <SubSectionHeader borderWidth={borderWidth}>radio</SubSectionHeader>
           </Col>
@@ -269,6 +267,12 @@ const Music: React.FC = () => {
           </Col>
         </Row>
 
+        <Row className="mb-4">
+          <Col>
+            <SubSectionHeader borderWidth={borderWidth}></SubSectionHeader>
+          </Col>
+        </Row>
+
         <Row className="py-2">
           <Col>
             <MusicImage src={show1} />
@@ -288,7 +292,7 @@ const Music: React.FC = () => {
         </Row>
 
         {/* Events */}
-        <Row className="mt-3">
+        <Row className="mt-3 mb-4">
           <Col>
             <SubSectionHeader borderWidth={borderWidth}>
               events
@@ -319,7 +323,7 @@ const Music: React.FC = () => {
         </Row>
 
         {/* Label */}
-        <Row className="mt-3">
+        <Row className="mt-3 mb-4">
           <Col>
             <SubSectionHeader borderWidth={borderWidth}>label</SubSectionHeader>
           </Col>
@@ -331,8 +335,7 @@ const Music: React.FC = () => {
           </Col>
         </Row>
 
-        {/* SPACER */}
-        <div className="spacer"></div>
+        <Spacer />
       </SectionContainer>
     </div>
   );

@@ -10,7 +10,6 @@ import {
 } from "./Globals";
 import { useIsMobile } from "./MobileProvider";
 import "./TextLayout.css";
-import "./Music.css";
 
 type LinkProps = {
   url: string;
@@ -25,7 +24,7 @@ export const ExternalLink: React.FC<LinkProps> = ({ url, children }) => {
       }}
       target="_blank"
     >
-      <div className="music-link">{children}</div>
+      <div className="external-link">{children}</div>
     </Link>
   );
 };
@@ -84,7 +83,7 @@ export const IntroText: React.FC = ({ children }) => {
   return (
     <Row className="px-2">
       <Col>
-        <div className="px-4" style={pageDescriptionStyles}>
+        <div className="px-4 py-4" style={pageDescriptionStyles}>
           {children}
         </div>
       </Col>
@@ -92,12 +91,14 @@ export const IntroText: React.FC = ({ children }) => {
   );
 };
 
-export const SectionInfo: React.FC = ({ children }) => {
-  const { isMobile } = useIsMobile();
+export const Spacer: React.FC = () => {
+  return <div className="spacer"></div>;
+};
 
+export const SectionInfo: React.FC = ({ children }) => {
   return (
-    <Row className={isMobile() ? "mobile-info" : ""}>
-      <Col className="px-4">
+    <Row>
+      <Col className="px-4 py-5">
         <div style={textStyles}>{children}</div>
       </Col>
     </Row>
@@ -156,7 +157,6 @@ export const MusicImage: React.FC<MusicImageProps> = ({ src }) => {
           target="_blank"
         >
           <Image
-            className="modified-image"
             src={src}
             height={width() < mediumBreakPoint ? bigImageWidth : imageWidth}
           />

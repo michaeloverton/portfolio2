@@ -1,4 +1,19 @@
-.mobile-info {
-  margin-top: -25% !important;
-  margin-bottom: -20%;
+.external-link:hover {
+  background-color: yellow;
+  color: black;
+}
+
+.spacer {
+  height: 100px;
+}
+
+.modified-image {
+  filter: grayscale(100%) brightness(40%) sepia(100%) hue-rotate(-50deg)
+    saturate(400%) contrast(0.8);
+}
+
+.modified-image:hover {
+  transform: scale(2);
+  z-index: 999999999999 !important;
+  filter: contrast(1);
 }
