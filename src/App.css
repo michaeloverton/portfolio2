@@ -2,7 +2,7 @@
   text-align: left;
   background-color: #0f1117;
   min-height: 100vh;
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-family: "Anton", Impact, sans-serif;
   color: #15ff00;
   border-color: #00ff4c !important;
 }
@@ -17,3 +17,5 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+
+/* GOOD FONTS: https://design.tutsplus.com/articles/17-fonts-similar-to-impact-and-impact-font-history--cms-36628 */

@@ -20,6 +20,7 @@ import {
   SectionInfo,
   MusicImage,
   Spacer,
+  Emphasis,
 } from "./TextLayout";
 import { useIsMobile } from "./MobileProvider";
 
@@ -37,9 +38,10 @@ const Music: React.FC = () => {
         <SectionHeader borderWidth={borderWidth}>witness</SectionHeader>
 
         <SectionInfo>
-          Witness is my primary music production and DJ alias, under which I
-          have produced small techno and ambient EPs and served as a resident DJ
-          for multiple event series.
+          Witness is my primary{" "}
+          <Emphasis>music production and DJ alias</Emphasis>, under which I have
+          produced small techno and ambient EPs and served as a resident DJ for
+          multiple event series.
         </SectionInfo>
 
         {/* External links */}
@@ -190,9 +192,12 @@ const Music: React.FC = () => {
 
         <SectionInfo>
           Childhood Industries was a music project started with a friend and
-          fellow DJ, Carl Jannerfeldt, encompassing an event series (150-300
-          people per event), music label, and radio show on The Lot Radio. It
-          focused on underground techno in Brooklyn, NY.
+          fellow DJ, Carl Jannerfeldt, encompassing an{" "}
+          <Emphasis>
+            event series (150-300 people per event), music label, and radio show
+            on The Lot Radio
+          </Emphasis>
+          . It focused on underground techno in Brooklyn, NY.
         </SectionInfo>
 
         {/* External links */}

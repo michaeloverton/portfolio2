@@ -21,6 +21,7 @@ import {
   Spacer,
   GameImage,
   SectionInfo,
+  Emphasis,
 } from "./TextLayout";
 
 const Games: React.FC = () => {
@@ -37,15 +38,16 @@ const Games: React.FC = () => {
         <SectionHeader borderWidth={borderWidth}>phreaker</SectionHeader>
 
         <SectionInfo>
-          Phreaker is a virtual reality cyberpunk grappling hook game in early
-          development. Both of the player’s hands are equipped with grappling
-          hooks, and the player can connect to any surface in order to traverse
-          large environments. “Large” is not an exaggeration: the environments
-          can be upwards of ten kilometers tall and wide. This size is not a
-          problem, as the grappling hooks allow the player to travel extremely
-          quickly, at times more than 900 meters per second, depending on the
-          skill of the player. There are currently two levels and a tutorial.
-          The current levels are prototypes, experiments to understand
+          Phreaker is a{" "}
+          <Emphasis>virtual reality cyberpunk grappling hook game</Emphasis> in
+          early development. Both of the player’s hands are equipped with
+          grappling hooks, and the player can connect to any surface in order to
+          traverse large environments. “Large” is not an exaggeration: the
+          environments can be upwards of ten kilometers tall and wide. This size
+          is not a problem, as the grappling hooks allow the player to travel
+          extremely quickly, at times more than 900 meters per second, depending
+          on the skill of the player. There are currently two levels and a
+          tutorial. The current levels are prototypes, experiments to understand
           architecture and aesthetics that are fun to traverse.
         </SectionInfo>
 
@@ -108,7 +110,8 @@ const Games: React.FC = () => {
         </SectionHeader>
 
         <SectionInfo>
-          Infinite Silence is an experiment in non-linear, player-driven music.
+          Infinite Silence is an{" "}
+          <Emphasis>experiment in non-linear, player-driven music</Emphasis>.
           The “game” consists of three interconnected spaces stacked vertically,
           with each space representing a piece of music. Player traversal of the
           spaces causes musical changes: approaching certain objects makes
@@ -178,12 +181,13 @@ const Games: React.FC = () => {
         <SectionHeader borderWidth={borderWidth}>clock out</SectionHeader>
 
         <SectionInfo>
-          Clock Out is an art piece in the form of an office that the player
-          cannot escape. Is this capitalism? As the player traverses rooms of
-          the office, more rooms are randomly generated ahead of and behind the
-          player, trapping them, and as the player descends further, the rooms
-          become stranger. The “game” is a proof-of-concept for a sort of
-          procedural generation algorithm.
+          Clock Out is an art piece in the form of{" "}
+          <Emphasis>an office that the player cannot escape</Emphasis>. Is this
+          capitalism? As the player traverses rooms of the office, more rooms
+          are randomly generated ahead of and behind the player, trapping them,
+          and as the player descends further, the rooms become stranger. The
+          “game” is a proof-of-concept for a sort of procedural generation
+          algorithm.
         </SectionInfo>
 
         <Row className="px-2 mb-4">

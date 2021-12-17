@@ -2,9 +2,8 @@ export const mediumBreakPoint = 768; // Bootstrap md breakpoint pixel width.
 export const largeBreakPoint = 992; // Bootstrap lg breakpoint pixel width.
 
 export const textStyles = {
-  fontSize: 20,
-  fontFamily: "Impact",
-  letterSpacing: "1px",
+  fontSize: 21,
+  // letterSpacing: "1px",
   color: "#37FF24",
 };
 
@@ -15,17 +14,21 @@ export const pageDescriptionStyles = {
 
 export const linkStyles = {
   fontSize: 30,
+  fontWeight: 600,
   textDecoration: "none",
-  // color: "#15ff00", // this color must match App.css
 };
 
 export const sectionHeaderStyles = {
   fontSize: 65,
-  fontFamily: "Impact",
 };
 
 export const subSectionHeaderStyles = {
   fontSize: 45,
+};
+
+export const emphStyles = {
+  // letterSpacing: "1px",
+  color: "#deffdb",
 };
 
 // NOTE: USE https://coolors.co/15ff00 for color schemes.

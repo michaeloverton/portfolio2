@@ -2,7 +2,7 @@ import { Row, Col, Image } from "react-bootstrap";
 import eva from "./assets/images/about/eva1.png";
 import profile from "./assets/images/about/profilepic.jpeg";
 import cv from "./assets/resume-dec-2021.pdf";
-import { ExternalLink, SectionContainer, Spacer } from "./TextLayout";
+import { ExternalLink, SectionContainer, Spacer, Emphasis } from "./TextLayout";
 import { textStyles } from "./Globals";
 import "./Info.css";
 import { useIsMobile } from "./MobileProvider";
@@ -72,10 +72,11 @@ const Info: React.FC = () => {
               without hardcore gameplay loops or stress. I’m especially
               interested in the intersection of games and music: I want to
               create spaces for the expression of creativity in a middle ground
-              between human and computer. I want players to ask, “Did I create
-              this or did the computer?” Beyond independent game development, I
-              also want to put game engines to use in a broader set of contexts,
-              helping others realize their digital spaces.
+              between human and computer. I want players to ask,{" "}
+              <Emphasis>“Did I create this or did the computer?”</Emphasis>{" "}
+              Beyond independent game development, I also want to put game
+              engines to use in a broader set of contexts, helping others
+              realize their digital spaces.
             </div>
 
             <div className="my-3" style={textStyles}>
@@ -87,9 +88,12 @@ const Info: React.FC = () => {
               pipeline.
             </div>
 
-            <div className="my-3" style={textStyles}>
-              -Michael
-            </div>
+            <Row
+              className="my-3"
+              style={{ fontSize: 40, fontWeight: 800, color: "#deffdb" }}
+            >
+              <Col>-Michael</Col>
+            </Row>
           </Col>
         </Row>
 

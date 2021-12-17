@@ -7,6 +7,7 @@ import {
   subSectionHeaderStyles,
   pageDescriptionStyles,
   textStyles,
+  emphStyles,
 } from "./Globals";
 import { useIsMobile } from "./MobileProvider";
 import "./TextLayout.css";
@@ -93,6 +94,10 @@ export const IntroText: React.FC = ({ children }) => {
 
 export const Spacer: React.FC = () => {
   return <div className="spacer"></div>;
+};
+
+export const Emphasis: React.FC = ({ children }) => {
+  return <span style={emphStyles}>{children}</span>;
 };
 
 export const SectionInfo: React.FC = ({ children }) => {
