@@ -25,9 +25,11 @@ import {
   Emphasis,
 } from "./TextLayout";
 import React from "react";
+import { useIsMobile } from "./MobileProvider";
 
 const Games: React.FC = () => {
   const borderWidth = "3px";
+  const { isMobile } = useIsMobile();
 
   // Scroll to top of page on component load.
   useEffect(() => {
@@ -51,11 +53,14 @@ const Games: React.FC = () => {
           grappling hooks, and the player can connect to any surface in order to
           traverse large environments. “Large” is not an exaggeration: the
           environments can be upwards of ten kilometers tall and wide. This size
-          is not a problem, as the grappling hooks allow the player to travel
-          extremely quickly, at times more than 900 meters per second, depending
-          on the skill of the player. There are currently two levels and a
-          tutorial. The current levels are prototypes, experiments to understand
-          architecture and aesthetics that are fun to traverse.
+          is not a problem, as the{" "}
+          <Emphasis>
+            grappling hooks allow the player to travel extremely quickly, at
+            times more than 900 meters per second,
+          </Emphasis>{" "}
+          depending on the skill of the player. There are currently two levels
+          and a tutorial. The current levels are prototypes, experiments to
+          understand architecture and aesthetics that are fun to traverse.
         </SectionInfo>
 
         <Row className="px-2 mb-4">
@@ -86,9 +91,21 @@ const Games: React.FC = () => {
           <Col>
             <iframe
               width="100%"
-              height="450"
+              height={isMobile() ? "250" : "450"}
               src="https://www.youtube.com/embed/cQt9zGCgR20"
-              title="YouTube video player"
+              title="Phreaker Trailer"
+              allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            ></iframe>
+          </Col>
+        </Row>
+
+        <Row className="mb-3">
+          <Col>
+            <iframe
+              width="100%"
+              height={isMobile() ? "250" : "450"}
+              src="https://www.youtube.com/embed/zc0xHHwv_q0"
+              title="Phreaker Extended Gameplay"
               allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             ></iframe>
           </Col>
@@ -120,13 +137,15 @@ const Games: React.FC = () => {
           Infinite Silence is an{" "}
           <Emphasis>experiment in non-linear, player-driven music</Emphasis>.
           The “game” consists of three interconnected spaces stacked vertically,
-          with each space representing a piece of music. Player traversal of the
-          spaces causes musical changes: approaching certain objects makes
-          arpeggios fade in, or a decrease in player height changes the cutoff
-          frequency of a low-pass filter, among other interactions. The player
-          determines the structure and, to some extent, the content of the
-          music. The spaces are thematically linked, and as the player descends,
-          an abstract narrative begins to form.
+          with each space representing a piece of music.{" "}
+          <Emphasis>
+            Player traversal of the spaces causes musical changes:
+          </Emphasis>{" "}
+          approaching certain objects makes arpeggios fade in, or a decrease in
+          player height changes the cutoff frequency of a low-pass filter, among
+          other interactions. The player determines the structure and, to some
+          extent, the content of the music. The spaces are thematically linked,
+          and as the player descends, an abstract narrative begins to form.
         </SectionInfo>
 
         <Row className="px-2 mb-4">
@@ -173,9 +192,9 @@ const Games: React.FC = () => {
           <Col>
             <iframe
               width="100%"
-              height="450"
+              height={isMobile() ? "250" : "450"}
               src="https://www.youtube.com/embed/1f68IGGgu38"
-              title="YouTube video player"
+              title="Infinite Silence Gameplay"
               allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             ></iframe>
           </Col>
@@ -194,8 +213,11 @@ const Games: React.FC = () => {
           </Emphasis>{" "}
           As the player traverses rooms of the office, more rooms are randomly
           generated ahead of and behind the player, trapping them, and as the
-          player descends further, the rooms become stranger. The “game” is a
-          proof-of-concept for a sort of procedural generation algorithm.
+          player descends further, the rooms become stranger.{" "}
+          <Emphasis>
+            The “game” is a proof-of-concept for a sort of procedural generation
+            algorithm.
+          </Emphasis>
         </SectionInfo>
 
         <Row className="px-2 mb-4">
@@ -242,9 +264,9 @@ const Games: React.FC = () => {
           <Col>
             <iframe
               width="100%"
-              height="450"
+              height={isMobile() ? "250" : "450"}
               src="https://www.youtube.com/embed/8f6KJlP-cYo"
-              title="YouTube video player"
+              title="Clock Out Gameplay"
               allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             ></iframe>
           </Col>
