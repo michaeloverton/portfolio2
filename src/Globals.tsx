@@ -20,6 +20,7 @@ export const linkStyles = {
 
 export const sectionHeaderStyles = {
   fontSize: 65,
+  fontWeight: 600,
 };
 
 export const subSectionHeaderStyles = {

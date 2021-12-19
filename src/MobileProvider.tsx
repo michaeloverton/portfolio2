@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
 
-const MOBILE_WIDTH = 400; // This is the bootstrap 'lg' breakpoint.
+const MOBILE_WIDTH = 800; // This is the bootstrap 'lg' breakpoint.
 
 type MobileContextType = {
   isMobile: () => boolean;

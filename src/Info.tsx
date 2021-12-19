@@ -8,7 +8,6 @@ import "./Info.css";
 import { useIsMobile } from "./MobileProvider";
 
 const Info: React.FC = () => {
-  const borderWidth = "3px";
   const { isMobile } = useIsMobile();
 
   // Scroll to top of page on component load.
@@ -17,8 +16,8 @@ const Info: React.FC = () => {
   }, []);
 
   return (
-    <div className="mt-4 pt-3">
-      <SectionContainer borderWidth={borderWidth} top left bottom>
+    <div>
+      <SectionContainer top left bottom>
         <Row>
           <Col>
             <div className="py-3 text-center banner">
@@ -59,8 +58,8 @@ const Info: React.FC = () => {
               victory and failure. You can “win”. However,{" "}
               <Emphasis>
                 to understand modern video games in this way, and to call them
-                all “games” is to tragically diminish the potential of an entire
-                medium.
+                all “games”, is to tragically diminish the potential of an
+                entire medium.
               </Emphasis>{" "}
               In Animal Crossing: New Horizons, you express yourself by
               cultivating an island. In Fortnite, you can watch a fully digital
@@ -93,7 +92,7 @@ const Info: React.FC = () => {
 
             <div className="my-3" style={textStyles}>
               Ultimately,{" "}
-              <Emphasis>collaboration is my primary objective</Emphasis>. I want
+              <Emphasis>collaboration is my primary objective.</Emphasis> I want
               to create games or experiences with fellow artists, educators,
               technologists and experimenters: the more diverse the field of
               collaborators, the better. I believe that my broad skill set will

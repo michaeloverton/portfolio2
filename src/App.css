@@ -4,7 +4,7 @@
   min-height: 100vh;
   font-family: "Anton", Impact, sans-serif;
   color: #15ff00;
-  border-color: #00ff4c !important;
+  /* border-color: #00ff4c !important; */
 }
 
 .App-header {

@@ -8,8 +8,6 @@ import cubeCruise from "./assets/art/cubecruise-mp4.mp4";
 import { Video, SectionContainer } from "./TextLayout";
 
 const Art: React.FC = () => {
-  const borderWidth = "3px";
-
   // Scroll to top of page on component load.
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -23,27 +21,27 @@ const Art: React.FC = () => {
       </IntroText> */}
 
       <div className="text-center">
-        <SectionContainer borderWidth={borderWidth} top right bottom>
+        <SectionContainer top right bottom>
           <Video src={organicLoop} />
         </SectionContainer>
 
-        <SectionContainer borderWidth={borderWidth} left bottom>
+        <SectionContainer left bottom>
           <Video src={pulseCubes} />
         </SectionContainer>
 
-        <SectionContainer borderWidth={borderWidth} right bottom>
+        <SectionContainer right bottom>
           <Video src={farOrb} />
         </SectionContainer>
 
-        <SectionContainer borderWidth={borderWidth} left bottom>
+        <SectionContainer left bottom>
           <Video src={closeOrb} />
         </SectionContainer>
 
-        <SectionContainer borderWidth={borderWidth} right bottom>
+        <SectionContainer right bottom>
           <Video src={triFlow} />
         </SectionContainer>
 
-        <SectionContainer borderWidth={borderWidth} left bottom>
+        <SectionContainer left bottom>
           <Video src={cubeCruise} />
         </SectionContainer>
       </div>

@@ -31,29 +31,31 @@ export const ExternalLink: React.FC<LinkProps> = ({ url, children }) => {
 };
 
 type SubHeaderProps = {
-  borderWidth: string;
+  borderWidth?: string;
 };
 
 export const SubSectionHeader: React.FC<SubHeaderProps> = ({
   children,
   borderWidth,
 }) => {
+  const defaultBorder = "4px";
+
   return (
     <div
       style={{
         ...{
-          borderBottom: `${borderWidth} solid`,
+          borderBottom: `${borderWidth ? borderWidth : defaultBorder} solid`,
         },
         ...subSectionHeaderStyles,
       }}
     >
-      {children}
+      <MouseHighlight>{children}</MouseHighlight>
     </div>
   );
 };
 
 type SectionHeaderProps = {
-  borderWidth: string;
+  borderWidth?: string;
   rowClass?: string;
 };
 
@@ -62,18 +64,22 @@ export const SectionHeader: React.FC<SectionHeaderProps> = ({
   rowClass,
   borderWidth,
 }) => {
+  const defaultBorder = "4px";
+
   return (
     <Row className={rowClass ? rowClass : ""}>
       <Col>
         <div
           style={{
             ...{
-              borderBottom: `${borderWidth} solid`,
+              borderBottom: `${
+                borderWidth ? borderWidth : defaultBorder
+              } solid`,
             },
             ...sectionHeaderStyles,
           }}
         >
-          {children}
+          <MouseHighlight>{children}</MouseHighlight>
         </div>
       </Col>
     </Row>
@@ -172,7 +178,7 @@ export const MusicImage: React.FC<MusicImageProps> = ({ src }) => {
 };
 
 type SectionProps = {
-  borderWidth: string;
+  borderWidth?: string;
   right?: boolean;
   left?: boolean;
   top?: boolean;
@@ -188,14 +194,23 @@ export const SectionContainer: React.FC<SectionProps> = ({
   children,
 }) => {
   const { isMobile } = useIsMobile();
+  const defaultBorder = "7px";
 
   return (
     <div
       style={{
-        borderTop: top ? `${borderWidth} solid` : ``,
-        borderRight: right ? `${borderWidth} solid` : ``,
-        borderLeft: left ? `${borderWidth} solid` : ``,
-        borderBottom: bottom ? `${borderWidth} solid` : ``,
+        borderTop: top
+          ? `${borderWidth ? borderWidth : defaultBorder} solid`
+          : ``,
+        borderRight: right
+          ? `${borderWidth ? borderWidth : defaultBorder} solid`
+          : ``,
+        borderLeft: left
+          ? `${borderWidth ? borderWidth : defaultBorder} solid`
+          : ``,
+        borderBottom: bottom
+          ? `${borderWidth ? borderWidth : defaultBorder} solid`
+          : ``,
       }}
       className={isMobile() ? "px-2 pb-2" : "px-5 pb-5"}
       // className="px-5 pb-4 pt-3" // this was used in some of the non-top sections.
@@ -203,4 +218,8 @@ export const SectionContainer: React.FC<SectionProps> = ({
       {children}
     </div>
   );
+};
+
+export const MouseHighlight: React.FC = ({ children }) => {
+  return <span className="mouse-highlight">{children}</span>;
 };

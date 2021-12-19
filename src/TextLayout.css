@@ -3,8 +3,8 @@
 }
 
 .external-link:hover {
-  background-color: yellow;
-  color: black;
+  background-color: #f0ff00;
+  color: #0f1117;
 }
 
 .spacer {
@@ -20,4 +20,14 @@
   transform: scale(2);
   z-index: 999999999999 !important;
   filter: contrast(1);
+}
+
+.mouse-highlight {
+  cursor: default;
+}
+
+.mouse-highlight:hover {
+  /* color: #f0ff00; */
+  color: #00ffc5;
+  cursor: default;
 }

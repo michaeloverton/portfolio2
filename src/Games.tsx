@@ -28,7 +28,6 @@ import React from "react";
 import { useIsMobile } from "./MobileProvider";
 
 const Games: React.FC = () => {
-  const borderWidth = "3px";
   const { isMobile } = useIsMobile();
 
   // Scroll to top of page on component load.
@@ -43,8 +42,8 @@ const Games: React.FC = () => {
         be the medium of the future.
       </IntroText> */}
 
-      <SectionContainer borderWidth={borderWidth} top right>
-        <SectionHeader borderWidth={borderWidth}>phreaker</SectionHeader>
+      <SectionContainer top right>
+        <SectionHeader>phreaker</SectionHeader>
 
         <SectionInfo>
           Phreaker is a{" "}
@@ -85,7 +84,7 @@ const Games: React.FC = () => {
           </Col>
         </Row>
 
-        <SectionHeader rowClass="mb-4" borderWidth={borderWidth} />
+        <SectionHeader rowClass="mb-4" />
 
         <Row className="mb-3">
           <Col>
@@ -128,14 +127,12 @@ const Games: React.FC = () => {
         <Spacer />
       </SectionContainer>
 
-      <SectionContainer borderWidth={borderWidth} top left bottom>
-        <SectionHeader borderWidth={borderWidth}>
-          infinite silence
-        </SectionHeader>
+      <SectionContainer top left bottom>
+        <SectionHeader>infinite silence</SectionHeader>
 
         <SectionInfo>
           Infinite Silence is an{" "}
-          <Emphasis>experiment in non-linear, player-driven music</Emphasis>.
+          <Emphasis>experiment in non-linear, player-driven music.</Emphasis>{" "}
           The “game” consists of three interconnected spaces stacked vertically,
           with each space representing a piece of music.{" "}
           <Emphasis>
@@ -178,7 +175,7 @@ const Games: React.FC = () => {
           </Col>
         </Row>
 
-        <SectionHeader rowClass="mb-4" borderWidth={borderWidth} />
+        <SectionHeader rowClass="mb-4" />
 
         <GameImage src={isTitle} />
 
@@ -203,8 +200,8 @@ const Games: React.FC = () => {
         <Spacer />
       </SectionContainer>
 
-      <SectionContainer borderWidth={borderWidth} right bottom>
-        <SectionHeader borderWidth={borderWidth}>clock out</SectionHeader>
+      <SectionContainer right bottom>
+        <SectionHeader>clock out</SectionHeader>
 
         <SectionInfo>
           Clock Out is an art piece in the form of{" "}
@@ -250,7 +247,7 @@ const Games: React.FC = () => {
           </Col>
         </Row>
 
-        <SectionHeader rowClass="mb-4" borderWidth={borderWidth} />
+        <SectionHeader rowClass="mb-4" />
 
         <GameImage src={ohTitle} />
 
