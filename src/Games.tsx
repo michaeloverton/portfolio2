@@ -132,17 +132,22 @@ const Games: React.FC = () => {
 
         <SectionInfo>
           Infinite Silence is an{" "}
-          <Emphasis>experiment in non-linear, player-driven music.</Emphasis>{" "}
+          <Emphasis>experiment in non-linear, player-driven music.</Emphasis>
           The “game” consists of three interconnected spaces stacked vertically,
-          with each space representing a piece of music.{" "}
+          with each space representing a piece of music. The player’s
+          interaction with foreboding structures causes musical changes,
+          allowing the player to determine the structure and, to some extent,
+          the content of the music. The musical systems in the game are designed
+          to pique the player’s curiosity, but that curiosity ultimately leads
+          to their demise. As the player descends,{" "}
           <Emphasis>
-            Player traversal of the spaces causes musical changes:
+            an implied narrative forms around judgement and surveillance by
+            unknowable forces, mirroring our own experiences of judgement and
+            surveillance on social media platforms by algorithms and anonymous
+            people.
           </Emphasis>{" "}
-          approaching certain objects makes arpeggios fade in, or a decrease in
-          player height changes the cutoff frequency of a low-pass filter, among
-          other interactions. The player determines the structure and, to some
-          extent, the content of the music. The spaces are thematically linked,
-          and as the player descends, an abstract narrative begins to form.
+          The game is an expression of my preoccupation with the increasingly
+          unknowable forces dominating our modern technological world.
         </SectionInfo>
 
         <Row className="px-2 mb-4">
@@ -204,17 +209,19 @@ const Games: React.FC = () => {
         <SectionHeader>clock out</SectionHeader>
 
         <SectionInfo>
-          Clock Out is an art piece in the form of{" "}
+          Clock Out is an{" "}
           <Emphasis>
-            an office that the player cannot escape. Is this capitalism?
+            impossible, infinite office space that the player cannot escape.
           </Emphasis>{" "}
-          As the player traverses rooms of the office, more rooms are randomly
-          generated ahead of and behind the player, trapping them, and as the
-          player descends further, the rooms become stranger.{" "}
+          As the player traverses the office, more rooms randomly generate ahead
+          of and behind the player, trapping them. The only way to escape is to
+          remove yourself from the system by not playing the game. In Clock Out,{" "}
           <Emphasis>
-            The “game” is a proof-of-concept for a sort of procedural generation
-            algorithm.
-          </Emphasis>
+            capitalism is a Möbius strip: the goal is unattainable and progress
+            is an illusion.
+          </Emphasis>{" "}
+          The “game” is a proof-of-concept for a sort of procedural generation
+          algorithm.
         </SectionInfo>
 
         <Row className="px-2 mb-4">
