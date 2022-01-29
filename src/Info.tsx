@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { Row, Col, Image } from "react-bootstrap";
-import profile from "./assets/images/about/profile-cropped2.jpeg";
-import cv from "./assets/resume-dec-2021.pdf";
+import profile from "./assets/about/profile-cropped2.jpeg";
+import cv from "./assets/about/resume-dec-2021.pdf";
 import {
   ExternalLink,
   SectionContainer,

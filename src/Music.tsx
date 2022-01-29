@@ -1,18 +1,18 @@
 import { useEffect } from "react";
 import { Row, Col, Image } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import event1 from "./assets/images/events/qu.jpg";
-import event2 from "./assets/images/events/stingray.jpg";
-import event3 from "./assets/images/events/milton.jpg";
-import event4 from "./assets/images/events/parker.jpg";
-import event5 from "./assets/images/events/shx.jpg";
-import tape from "./assets/images/tape.jpeg";
-import show1 from "./assets/images/shows/lot1.jpeg";
-import show2 from "./assets/images/shows/lot2.png";
-import show3 from "./assets/images/shows/lot3.png";
-import show4 from "./assets/images/shows/lot4.png";
-import srCover from "./assets/art/sr388-cover.png";
-import iceCover from "./assets/art/ice-cover.png";
+import event1 from "./assets/music/events/qu.jpg";
+import event2 from "./assets/music/events/stingray.jpg";
+import event3 from "./assets/music/events/milton.jpg";
+import event4 from "./assets/music/events/parker.jpg";
+import event5 from "./assets/music/events/shx.jpg";
+import tape from "./assets/music/tape.jpeg";
+import show1 from "./assets/music/shows/lot1.jpeg";
+import show2 from "./assets/music/shows/lot2.png";
+import show3 from "./assets/music/shows/lot3.png";
+import show4 from "./assets/music/shows/lot4.png";
+import srCover from "./assets/music/releases/sr388-cover.png";
+import iceCover from "./assets/music/releases/ice-cover.png";
 import {
   ExternalLink,
   SubSectionHeader,
