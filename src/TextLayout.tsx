@@ -177,6 +177,19 @@ export const MusicImage: React.FC<MusicImageProps> = ({ src }) => {
   );
 };
 
+export const SimpleLinkImage: React.FC<MusicImageProps> = ({ src }) => {
+  return (
+    <Link
+      to={{
+        pathname: src,
+      }}
+      target="_blank"
+    >
+      <Image src={src} width="100%" />
+    </Link>
+  );
+};
+
 type SectionProps = {
   borderWidth?: string;
   right?: boolean;

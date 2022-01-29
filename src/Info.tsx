@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { Row, Col, Image } from "react-bootstrap";
-import profile from "./assets/images/about/profile-cropped2.jpeg";
-import cv from "./assets/resume-dec-2021.pdf";
+import profile from "./assets/about/profile-cropped2.jpeg";
+import cv from "./assets/about/resume-dec-2021.pdf";
 import {
   ExternalLink,
   SectionContainer,
@@ -9,7 +9,7 @@ import {
   Emphasis,
   MouseHighlight,
 } from "./TextLayout";
-import { textStyles } from "./Globals";
+import { textStyles, linkStyles } from "./Globals";
 import "./Info.css";
 import { useIsMobile } from "./MobileProvider";
 
@@ -116,40 +116,19 @@ const Info: React.FC = () => {
                 <MouseHighlight>Michael</MouseHighlight>
               </Col>
             </Row>
+
+            {/* <Row>
+              <Col>
+                <ExternalLink url={"mailto:m.overtonbrown@gmail.com"}>
+                  <div style={{ fontSize: 50 }}>EMAIL ME</div>
+                </ExternalLink>
+              </Col>
+            </Row> */}
           </Col>
         </Row>
 
         <Spacer />
       </SectionContainer>
-
-      {/* <SectionContainer borderWidth={borderWidth} right bottom>
-        <Row>
-          <Col lg={6}>
-            <SubSectionHeader borderWidth={borderWidth}>
-              this site
-            </SubSectionHeader>
-          </Col>
-        </Row>
-
-        <Row className="px-3 pb-2">
-          <Col lg={3}>
-            <ExternalLink url="https://github.com/michaeloverton/portfolio2">
-              github
-            </ExternalLink>
-          </Col>
-        </Row>
-
-        <Row>
-          <Col>
-            <div style={textStyles}>
-              I wrote and designed this site using React with modified Bootstrap
-              styling.
-            </div>
-          </Col>
-        </Row>
-
-        <Spacer />
-      </SectionContainer> */}
     </div>
   );
 };

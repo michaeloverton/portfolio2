@@ -1,20 +1,20 @@
 import { useEffect } from "react";
 import { Row, Col } from "react-bootstrap";
-import is2 from "./assets/images/games/infinite-silence/is2.png";
-import is11 from "./assets/images/games/infinite-silence/is11.png";
-import is6 from "./assets/images/games/infinite-silence/is6.png";
-import isTitle from "./assets/images/games/infinite-silence/big-title.png";
-import ph2 from "./assets/images/games/phreaker/phreaker2.png";
-import ph3 from "./assets/images/games/phreaker/phreaker3.png";
-import ph7 from "./assets/images/games/phreaker/ph7.png";
-import ph8 from "./assets/images/games/phreaker/phreaker8.png";
-import phreaker7 from "./assets/images/games/phreaker/phreaker7.png";
-import ph5 from "./assets/images/games/phreaker/phreaker5.png";
-import phTitle from "./assets/images/games/phreaker/phTitle.png";
-import oh1 from "./assets/images/games/clock-out/oh1.png";
-import oh7 from "./assets/images/games/clock-out/oh7.png";
-import oh8 from "./assets/images/games/clock-out/oh8.png";
-import ohTitle from "./assets/images/games/clock-out/ohTitle.png";
+import is2 from "./assets/games/infinite-silence/is2.png";
+import is11 from "./assets/games/infinite-silence/is11.png";
+import is6 from "./assets/games/infinite-silence/is6.png";
+import isTitle from "./assets/games/infinite-silence/big-title.png";
+import ph2 from "./assets/games/phreaker/phreaker2.png";
+import ph3 from "./assets/games/phreaker/phreaker3.png";
+import ph7 from "./assets/games/phreaker/ph7.png";
+import ph8 from "./assets/games/phreaker/phreaker8.png";
+import phreaker7 from "./assets/games/phreaker/phreaker7.png";
+import ph5 from "./assets/games/phreaker/phreaker5.png";
+import phTitle from "./assets/games/phreaker/phTitle.png";
+import oh1 from "./assets/games/clock-out/oh1.png";
+import oh7 from "./assets/games/clock-out/oh7.png";
+import oh8 from "./assets/games/clock-out/oh8.png";
+import ohTitle from "./assets/games/clock-out/ohTitle.png";
 import {
   ExternalLink,
   SectionHeader,

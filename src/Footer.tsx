@@ -12,7 +12,7 @@ const Footer: React.FC = () => {
         <Col>email: m.overtonbrown at gmail.com</Col>
       </Row>
       <Row>
-        <Col>© michael brown 2021</Col>
+        <Col>© michael brown {new Date().getFullYear()}</Col>
       </Row>
     </div>
   );
