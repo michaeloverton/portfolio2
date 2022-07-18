@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
 import { Row, Col, Image } from "react-bootstrap";
 import {
   mediumBreakPoint,
@@ -128,6 +129,14 @@ export const Video: React.FC<VideoProps> = ({ src }) => {
   );
 };
 
+export const VideoNoSpace: React.FC<VideoProps> = ({ src }) => {
+  return (
+    <video controls loop width={"100%"}>
+      <source src={`${src}#t=0.001`} type="video/mp4" />
+    </video>
+  );
+};
+
 type GameImageProps = {
   src: string;
 };
@@ -235,4 +244,26 @@ export const SectionContainer: React.FC<SectionProps> = ({
 
 export const MouseHighlight: React.FC = ({ children }) => {
   return <span className="mouse-highlight">{children}</span>;
+};
+
+type CharacterRepeaterProps = {
+  char: string;
+  maxChars: number;
+};
+
+export const CharacterRepeater: React.FC<CharacterRepeaterProps> = ({
+  char,
+  maxChars,
+}) => {
+  const [chars, setChars] = useState<string>("");
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      chars.length >= maxChars ? setChars("") : setChars(chars + char);
+    }, 200);
+
+    return () => clearInterval(interval);
+  }, [chars, char, maxChars]);
+
+  return <span>{chars}</span>;
 };
