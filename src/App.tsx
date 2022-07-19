@@ -4,13 +4,15 @@ import "./App.css";
 import { Container, Row, Col } from "react-bootstrap";
 import Games from "./Games";
 import Music from "./Music";
-import Art from "./Art";
+// import Art from "./Art";
+import Art from "./3d";
 import Info from "./Info";
 import Home from "./Home";
 import Home2 from "./Home2";
 import Home3 from "./Home3";
 import Home4 from "./Home4";
 import Home5 from "./Home5";
+import About from "./About";
 import Header from "./Header";
 import Footer from "./Footer";
 import { MobileProvider } from "./MobileProvider";
@@ -24,7 +26,7 @@ function App() {
             {/* <Container>
             <Row>
               <Col xl={10} lg={11} md={12} sm={12} className="mx-auto"> */}
-            {/* <Header /> */}
+            <Header />
 
             <Switch>
               <Route path="/games">
@@ -39,8 +41,8 @@ function App() {
                 <Art />
               </Route>
 
-              <Route path="/info">
-                <Info />
+              <Route path="/about">
+                <About />
               </Route>
 
               <Route path="/home">
@@ -62,9 +64,17 @@ function App() {
               <Route path="/home5">
                 <Home5 />
               </Route>
+
+              <Route path="/3d">
+                <Art />
+              </Route>
+
+              <Route path="/">
+                <Home5 />
+              </Route>
             </Switch>
 
-            {/* <Footer /> */}
+            <Footer />
             {/* </Col>
             </Row>
           </Container> */}

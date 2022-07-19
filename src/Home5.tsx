@@ -1,5 +1,10 @@
-import { useEffect, useState } from "react";
-import { Row, Col, Image } from "react-bootstrap";
+import { useEffect } from "react";
+import { Row, Col } from "react-bootstrap";
+import { ImageRow, GameBlock } from "./Layout";
+import React from "react";
+import { useIsMobile } from "./MobileProvider";
+import "./home.css";
+
 // Game assets
 import is2 from "./assets/games/infinite-silence/is2.png";
 import is11 from "./assets/games/infinite-silence/is11.png";
@@ -13,53 +18,9 @@ import ph5 from "./assets/games/phreaker/phreaker5.png";
 import phTitle from "./assets/games/phreaker/phTitle.png";
 import oh1 from "./assets/games/clock-out/oh1.png";
 import oh7 from "./assets/games/clock-out/oh7.png";
-import oh8 from "./assets/games/clock-out/oh8.png";
-import oh6 from "./assets/games/clock-out/oh6.png";
-
-// 3D assets
-import proc1 from "./assets/art/images/procedure1.png";
-import organicLoop from "./assets/art/videos/loop-centerlight.mp4";
-import closeOrb from "./assets/art/videos/boxbox-close.mp4";
-import farOrb from "./assets/art/videos/boxbox-far.mp4";
-import pulseCubes from "./assets/art/videos/cubic-3.mp4";
-import triFlow from "./assets/art/videos/triangleundulate.mp4";
-import cubeCruise from "./assets/art/videos/cubecruise-mp4.mp4";
-import sphereCutOne from "./assets/art/videos/cyberRelic1.mp4";
-import sphereCutRender1 from "./assets/art/images/cyberRelic1-1.jpg";
-import sphereCutRender2 from "./assets/art/images/cyberRelic1-2.jpg";
-import sphereCutTwo from "./assets/art/videos/cyberRelic2.mp4";
-import sphereCutRender11 from "./assets/art/images/cyberRelic2-1.png";
-import sphereCutRender22 from "./assets/art/images/cyberRelic2-2.png";
-import orb1 from "./assets/art/images/orb1.jpg";
-import orb2 from "./assets/art/images/orb2.png";
-import organic1 from "./assets/art/images/organic1.jpg";
-import organic2 from "./assets/art/images/organic2.jpg";
-import organic3 from "./assets/art/images/organic3.jpg";
-
-// Misc
-import { VideoNoSpace, SimpleLinkImage, CharacterRepeater } from "./TextLayout";
-import {
-  ExternalLink,
-  SectionHeader,
-  SectionContainer,
-  Spacer,
-  GameImage,
-  SectionInfo,
-  Emphasis,
-} from "./TextLayout";
-
-import { ImageRow } from "./Layout";
-
-import HyphenField from "./HyphenField";
-import BlinkingCursor from "./BlinkingCursor";
-import React from "react";
-import { useIsMobile } from "./MobileProvider";
-import "./home.css";
 
 const Home2: React.FC = () => {
   const { isMobile } = useIsMobile();
-  const [displayPhreakerInfo, setDisplayPhreakerInfo] =
-    useState<boolean>(false);
 
   // Scroll to top of page on component load.
   useEffect(() => {
@@ -68,376 +29,79 @@ const Home2: React.FC = () => {
 
   return (
     <div>
-      {/* Dummy row to prevent whitespace from being at top */}
-      <Row></Row>
-
-      <Row className="mt-2">
-        <Col
-          style={{
-            fontSize: 85,
-            textAlign: "left",
-          }}
-        >
-          <span style={{ textDecoration: "line-through", color: "#15ff00" }}>
-            <span style={{ color: "white" }}>MICHAEL OVERTON BROWN</span>
-          </span>
-          {/* <span> </span>
-          <span style={{ textDecoration: "line-through" }}>OVERTON</span>
-          <span> </span>
-          <span style={{ textDecoration: "line-through" }}>BROWN</span> */}
-          {/* <span
-            className="mx-4"
-            style={{
-              fontSize: 20,
-              textAlign: "right",
-            }}
-          >
-            WORK MUSIC 3D ABOUT
-          </span> */}
-          {/* <span className="header-cursor"></span> */}
-        </Col>
-      </Row>
-      <Row
-        className="mb-4"
-        style={{
-          fontSize: 35,
-        }}
+      <GameBlock
+        name="INFINITE SILENCE"
+        description="Infinite Silence is an experiment in non-linear, player-driven
+              music consisting of three interconnected spaces stacked
+              vertically, with each space representing a piece of music."
+        roles="Art, Music, Everything"
+        link="https://phasein.itch.io/infinite-silence"
       >
-        <Col>
-          <span>
-            <span
-              style={{
-                textDecoration: "line-through",
-              }}
-            >
-              WORK
-            </span>{" "}
-            MUSIC 3D ABOUT /////////////////////
-          </span>
-        </Col>
+        <ImageRow images={[is2, is11]} />
 
-        {/* <Col className="text-end">
-          <span>/////////////////</span>
-        </Col> */}
-      </Row>
-
-      {/* INFINITE SILENCE */}
-      <div className="mb-4">
-        <Row
-          className="mb-4"
-          style={{
-            borderTop: `4px solid`,
-          }}
-        ></Row>
+        <ImageRow images={[is6, isTitle]} />
 
         <Row>
-          <Col lg={1} className="text-right">
-            <div className="rotate-title">INFINITE SILENCE</div>
-          </Col>
-          <Col>
-            <ImageRow images={[is2, is11]} />
-
-            <ImageRow images={[is6, isTitle]} />
-
-            <Row>
-              <Col style={{ margin: 0, padding: 0 }}>
-                <iframe
-                  width="100%"
-                  height="500"
-                  src="https://www.youtube.com/embed/1f68IGGgu38"
-                  title="Infinite Silence Gameplay"
-                  allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                ></iframe>
-              </Col>
-            </Row>
-
-            <Row className="mt-3 mb-2" style={{ fontSize: 20 }}>
-              <Col md={8}>
-                Infinite Silence is an experiment in non-linear, player-driven
-                music consisting of three interconnected spaces stacked
-                vertically, with each space representing a piece of music.
-              </Col>
-              <Col
-                style={{
-                  fontSize: 30,
-                }}
-              >
-                DOWNLOAD ON ITCH.IO
-              </Col>
-            </Row>
-
-            <Row className="mt-2 mb-3" style={{ fontSize: 30 }}>
-              <Col>Roles: Art, Music, Everything</Col>
-            </Row>
-
-            {/* <Row>
-              <Col style={{ margin: 0, padding: 0 }}>
-                <iframe
-                  width="100%"
-                  height="500"
-                  src="https://www.youtube.com/embed/1f68IGGgu38"
-                  title="Infinite Silence Gameplay"
-                  allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                ></iframe>
-              </Col>
-            </Row> */}
-          </Col>
-        </Row>
-
-        <Row
-          className="mb-4"
-          style={{
-            borderTop: `4px solid`,
-          }}
-        ></Row>
-
-        <Row className="mb-5 mt-3">/////////</Row>
-
-        {/* <Row className="m-4" style={{ fontSize: 20 }}>
-          Infinite silence was some shit
-        </Row> */}
-
-        {/* <Row>
           <Col style={{ margin: 0, padding: 0 }}>
             <iframe
               width="100%"
-              height="500"
+              height={isMobile() ? 250 : 500}
               src="https://www.youtube.com/embed/1f68IGGgu38"
               title="Infinite Silence Gameplay"
               allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             ></iframe>
           </Col>
-        </Row> */}
-
-        <Row>
-          <Col style={{ margin: 0, padding: 0 }}>
-            <Image src={ph2} width="100%" />
-          </Col>
-          <Col style={{ margin: 0, padding: 0 }}>
-            <Image src={ph8} width="100%" />
-          </Col>
         </Row>
+      </GameBlock>
+
+      <GameBlock
+        name="PHREAKER"
+        description="Phreaker is a virtual reality cyberpunk grappling hook game targeting the Meta Quest 2.
+        It is currently available as a PCVR demo."
+        roles="Art, Music, Everything"
+        link="https://phasein.itch.io/phreaker"
+      >
+        <ImageRow images={[ph2, ph8]} />
+
+        <ImageRow images={[ph3, ph5]} />
+
+        <ImageRow images={[ph7, phTitle]} />
 
         <Row>
-          <Col style={{ margin: 0, padding: 0 }}>
-            <Image src={ph3} width="100%" />
-          </Col>
-          <Col style={{ margin: 0, padding: 0 }}>
-            <Image src={phTitle} width="100%" />
-          </Col>
-          <Col style={{ margin: 0, padding: 0 }}>
-            <Image src={ph5} width="100%" />
-          </Col>
-        </Row>
-
-        <Row>
-          <Col style={{ margin: 0, padding: 0 }}>
-            <Image src={ph7} width="100%" />
-          </Col>
           <Col style={{ margin: 0, padding: 0 }}>
             <iframe
               width="100%"
-              height="100%"
+              height={isMobile() ? 300 : 500}
               src="https://www.youtube.com/embed/cQt9zGCgR20"
               title="Phreaker Trailer"
               allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             ></iframe>
           </Col>
         </Row>
+      </GameBlock>
+
+      <GameBlock
+        name="CLOCK OUT"
+        description="Clock Out is an impossible, infinite office space that the player cannot escape. 
+        Capitalism is a Möbius strip: the goal is unattainable and progress is an illusion. It is a PC experience and is
+        available as a demo."
+        roles="Art, Music, Everything"
+        link="https://phasein.itch.io/clock-out"
+      >
+        <ImageRow images={[oh1, oh7]} />
 
         <Row>
-          <Col style={{ margin: 0, padding: 0 }}>
-            <Image src={oh1} width="100%" />
-          </Col>
-          <Col style={{ margin: 0, padding: 0 }}>
-            <Image src={oh7} width="100%" />
-          </Col>
-        </Row>
-      </div>
-
-      <Row style={{ fontSize: 20 }} className="mb-5">
-        <Col>
-          .................................
-          <BlinkingCursor />
-        </Col>
-      </Row>
-
-      {/* PHREAKER */}
-      <div className="mb-4">
-        <Row>
-          <Col lg={1} className="text-right">
-            <div className="rotate-title">PHREAKER</div>
-          </Col>
-          <Col lg={2} className="mx-3">
-            <Row style={{ fontSize: 17 }} className="mb-2">
-              Infinite Silence is an experiment in non-linear, player-driven
-              music. The “game” consists of three interconnected spaces stacked
-              vertically, with each space representing a piece of music. The
-              player’s
-            </Row>
-            <Row style={{ fontSize: 25 }}>ITCH.IO</Row>
-          </Col>
-          <Col>
-            <Row>
-              <Image src={ph2} width="100%" />
-            </Row>
-          </Col>
-        </Row>
-
-        <Row>
-          <Col style={{ margin: 0, padding: 0 }}>
-            <Image src={ph3} width="100%" />
-          </Col>
-          <Col style={{ margin: 0, padding: 0 }}>
-            <Image src={ph8} width="100%" />
-          </Col>
-        </Row>
-
-        <Row>
-          <Col style={{ margin: 0, padding: 0 }}>
-            <Image src={ph7} width="100%" />
-          </Col>
-          <Col style={{ margin: 0, padding: 0 }}>
-            <Image src={phTitle} width="100%" />
-          </Col>
-        </Row>
-
-        <Row>
-          <Col style={{ margin: 0, padding: 0 }}>
-            <Image src={ph5} width="100%" />
-          </Col>
           <Col style={{ margin: 0, padding: 0 }}>
             <iframe
-              width="100%"
-              height="100%"
-              src="https://www.youtube.com/embed/cQt9zGCgR20"
-              title="Phreaker Trailer"
-              allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            ></iframe>
-          </Col>
-        </Row>
-      </div>
-
-      <Row style={{ fontSize: 20 }} className="mb-5">
-        <Col>
-          .................................
-          <BlinkingCursor />
-        </Col>
-      </Row>
-
-      {/* CLOCK OUT */}
-      <div className="mb-4">
-        <Row>
-          <Col lg={1} className="text-right">
-            <div className="rotate-title">CLOCK OUT</div>
-          </Col>
-          <Col lg={2} className="mx-3">
-            <Row style={{ fontSize: 17 }} className="mb-2">
-              Infinite Silence is an experiment in non-linear, player-driven
-              music. The “game” consists of three interconnected spaces stacked
-              vertically, with each space representing a piece of music. The
-              player’s
-            </Row>
-            <Row style={{ fontSize: 25 }}>ITCH.IO</Row>
-          </Col>
-          <Col>
-            <Row>
-              <Image src={oh1} width="100%" />
-            </Row>
-          </Col>
-        </Row>
-
-        <Row>
-          <Col style={{ margin: 0, padding: 0 }}>
-            <Image src={oh7} width="100%" />
-          </Col>
-          <Col style={{ margin: 0, padding: 0 }}>
-            <Image src={oh8} width="100%" />
-          </Col>
-        </Row>
-
-        <Row>
-          <Col style={{ margin: 0, padding: 0 }}>
-            <Image src={oh6} width="100%" />
-          </Col>
-          <Col style={{ margin: 0, padding: 0 }}>
-            <iframe
-              height="100%`"
-              width="100%"
+              width="100%`"
+              height={isMobile() ? 300 : 500}
               src="https://www.youtube.com/embed/8f6KJlP-cYo"
               title="Clock Out Gameplay"
               allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             ></iframe>
           </Col>
         </Row>
-      </div>
-
-      <Row style={{ fontSize: 20 }} className="mb-5">
-        <Col>
-          .................................
-          <BlinkingCursor />
-        </Col>
-      </Row>
-
-      {/* CLOCK OUT */}
-      <div className="mb-4">
-        <Row>
-          <Col lg={1} className="text-right">
-            <div className="rotate-title">MISC</div>
-          </Col>
-          <Col lg={2} className="mx-3">
-            <Row style={{ fontSize: 17 }} className="mb-2">
-              Infinite Silence is an experiment in non-linear, player-driven
-              music. The “game” consists of three interconnected spaces stacked
-              vertically, with each space representing a piece of music. The
-              player’s
-            </Row>
-            <Row style={{ fontSize: 25 }}>ITCH.IO</Row>
-          </Col>
-          <Col>
-            <Row>
-              <Image src={proc1} width="100%" />
-            </Row>
-          </Col>
-        </Row>
-
-        <Row>
-          <Col style={{ margin: 0, padding: 0 }}>
-            <Image src={sphereCutRender1} width="100%" />
-          </Col>
-          <Col style={{ margin: 0, padding: 0 }}>
-            <Image src={sphereCutRender2} width="100%" />
-          </Col>
-        </Row>
-
-        <Row>
-          <Col style={{ margin: 0, padding: 0 }}>
-            <Image src={sphereCutRender11} width="100%" />
-          </Col>
-          <Col style={{ margin: 0, padding: 0 }}>
-            <Image src={sphereCutRender22} width="100%" />
-          </Col>
-          <Col style={{ margin: 0, padding: 0 }}>
-            <VideoNoSpace src={sphereCutTwo} />
-          </Col>
-        </Row>
-
-        <Row>
-          <Col lg={8} style={{ margin: 0, padding: 0 }}>
-            <Image src={organic3} width="100%" />
-          </Col>
-          <Col style={{ margin: 0, padding: 0 }}>
-            <Image src={organic1} width="100%" />
-          </Col>
-        </Row>
-      </div>
-
-      <Row style={{ fontSize: 20 }} className="mb-5">
-        <Col>
-          .................................
-          <BlinkingCursor />
-        </Col>
-      </Row>
+      </GameBlock>
 
       {/* DUMMY ROW TO PREVENT BOTTOM WHITESPACE */}
       <Row></Row>
