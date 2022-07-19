@@ -1,23 +1,26 @@
 import { Row, Col, Image } from "react-bootstrap";
+import { Link as RouterLink } from "react-router-dom";
 import { useIsMobile } from "./MobileProvider";
 import "./layout.css";
 
 type ImageRowProps = {
   images: string[];
+  spacing?: boolean;
 };
 
-export const ImageRow: React.FC<ImageRowProps> = ({ images }) => {
+export const ImageRow: React.FC<ImageRowProps> = ({ images, spacing }) => {
   const { isMobile } = useIsMobile();
+  const noSpacing = { margin: 0, padding: 0 };
 
   return (
     <Row>
       {images.map((src) =>
         !isMobile() ? (
-          <Col style={{ margin: 0, padding: 0 }}>
+          <Col key={src} style={spacing ? {} : noSpacing}>
             <Image src={src} width="100%" />
           </Col>
         ) : (
-          <Row style={{ margin: 0, padding: 0 }}>
+          <Row key={src} style={spacing ? {} : noSpacing}>
             <Image src={src} width="100%" />
           </Row>
         )
@@ -32,8 +35,6 @@ type VideoProps = {
 };
 
 export const Video: React.FC<VideoProps> = ({ src, startTime }) => {
-  const { isMobile } = useIsMobile();
-
   return (
     <Row>
       <Col style={{ margin: 0, padding: 0 }}>
@@ -50,7 +51,7 @@ export const Video: React.FC<VideoProps> = ({ src, startTime }) => {
 
 type GameBlockProps = {
   name: string;
-  description: string;
+  description: React.ReactNode;
   roles: string;
   link?: string;
 };
@@ -68,8 +69,8 @@ export const GameBlock: React.FC<GameBlockProps> = ({
     <div>
       {isMobile() ? (
         <Row>
-          <Col className="mt-2" style={{ fontSize: 32 }}>
-            {name}
+          <Col className="mt-2 mb-1" style={{ fontSize: 25 }}>
+            <span style={{ background: "red" }}>{name}</span>
           </Col>
         </Row>
       ) : null}
@@ -87,13 +88,15 @@ export const GameBlock: React.FC<GameBlockProps> = ({
           <Row className="mt-3 mb-2" style={{ fontSize: 20 }}>
             <Col md={8}>{description}</Col>
             <Col>
-              <Link fontSize={30} url={link}>
-                DOWNLOAD ON ITCH.IO
-              </Link>
+              {link ? (
+                <Link fontSize={30} url={link}>
+                  DOWNLOAD ON ITCH.IO
+                </Link>
+              ) : null}
             </Col>
           </Row>
 
-          <Row className="mt-2 mb-4" style={{ fontSize: 30 }}>
+          <Row className="mt-2 mb-4" style={{ fontSize: 25 }}>
             <Col>Roles: {roles}</Col>
           </Row>
         </Col>
@@ -108,26 +111,42 @@ export const GameBlock: React.FC<GameBlockProps> = ({
 };
 
 type LinkProps = {
-  url?: string;
-  fontSize: number;
+  url: string;
+  fontSize?: number;
+  external?: boolean;
 };
 
-export const Link: React.FC<LinkProps> = ({ children, url, fontSize }) => {
-  const { isMobile } = useIsMobile();
+export const Link: React.FC<LinkProps> = ({
+  children,
+  url,
+  fontSize,
+  external,
+}) => {
+  const styles: React.CSSProperties = { background: "red" };
+  if (fontSize) {
+    styles.fontSize = fontSize;
+  }
 
   return (
-    <span
+    // <a
+    //   className="external-link"
+    //   style={styles}
+    //   href={url}
+    //   target={external ? "_blank" : ""}
+    // >
+    //   {children}
+    // </a>
+
+    <RouterLink
       className="external-link"
-      style={{ fontSize: fontSize, background: "red" }}
+      to={{
+        pathname: url,
+      }}
+      target={external ? "_blank" : ""}
+      style={styles}
     >
-      <a
-        className="external-link"
-        style={{ fontSize: fontSize, background: "red" }}
-        href={url}
-      >
-        {children}
-      </a>
-    </span>
+      {children}
+    </RouterLink>
   );
 };
 
@@ -143,4 +162,14 @@ export const BioText: React.FC = ({ children }) => {
 
 export const Highlight: React.FC = ({ children }) => {
   return <span style={{ background: "red" }}>{children}</span>;
+};
+
+type MusicImageProps = {
+  src: string;
+};
+
+export const MusicImage: React.FC<MusicImageProps> = ({ src }) => {
+  const { isMobile } = useIsMobile();
+
+  return <Image width={isMobile() ? "250px" : "200px"} src={src} />;
 };

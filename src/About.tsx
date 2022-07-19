@@ -10,8 +10,8 @@ import {
   Emphasis,
   MouseHighlight,
 } from "./TextLayout";
-import { BioText, Highlight } from "./Layout";
-import { textStyles, linkStyles } from "./Globals";
+import { BioText, Highlight, Link } from "./Layout";
+import resume from "./assets/about/resume-2022.pdf";
 import "./about.css";
 
 const About: React.FC = () => {
@@ -31,6 +31,67 @@ const About: React.FC = () => {
           </div>
         </Col>
       </Row>
+
+      {!isMobile() ? (
+        <Row className="text-left px-5 mt-3 mb-4" style={{ fontSize: 30 }}>
+          <Col>
+            <Link url={resume} external>
+              RESUME
+            </Link>
+
+            <span className="px-1" />
+
+            <Link url="https://github.com/michaeloverton" external>
+              GITHUB
+            </Link>
+
+            <span className="px-1" />
+
+            <Link url="https://www.instagram.com/michaelovertonbrown" external>
+              INSTAGRAM
+            </Link>
+
+            <span className="px-1" />
+
+            <Link url="https://phasein.itch.io" external>
+              ITCH.IO
+            </Link>
+          </Col>
+        </Row>
+      ) : (
+        <div style={{ fontSize: 25 }}>
+          <Row className="text-left mt-3 mb-2">
+            <Col>
+              <Link url={resume} external>
+                RESUME
+              </Link>
+
+              <span className="px-1" />
+
+              <Link url="https://github.com/michaeloverton" external>
+                GITHUB
+              </Link>
+            </Col>
+          </Row>
+
+          <Row className="text-left mt-1 mb-3">
+            <Col>
+              <Link
+                url="https://www.instagram.com/michaelovertonbrown"
+                external
+              >
+                INSTAGRAM
+              </Link>
+
+              <span className="px-1" />
+
+              <Link url="https://phasein.itch.io" external>
+                ITCH.IO
+              </Link>
+            </Col>
+          </Row>
+        </div>
+      )}
 
       <BioText>
         One definition of “game” is “any activity undertaken or regarded as a
@@ -82,7 +143,7 @@ const About: React.FC = () => {
       </BioText>
 
       <Row
-        className={!isMobile() ? "mt-5 mb-4" : "mb-2"}
+        className={!isMobile() ? "mt-5 mb-4" : "mt-5 mb-2"}
         style={{ borderTop: `4px solid` }}
       ></Row>
 

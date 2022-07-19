@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { Row, Col } from "react-bootstrap";
-import { ImageRow, GameBlock } from "./Layout";
+import { ImageRow, GameBlock, Link, Highlight } from "./Layout";
 import React from "react";
 import { useIsMobile } from "./MobileProvider";
 import "./home.css";
@@ -31,10 +31,15 @@ const Home2: React.FC = () => {
     <div>
       <GameBlock
         name="INFINITE SILENCE"
-        description="Infinite Silence is an experiment in non-linear, player-driven
-              music consisting of three interconnected spaces stacked
-              vertically, with each space representing a piece of music."
-        roles="Art, Music, Everything"
+        description={
+          <>
+            Infinite Silence is an interactive EP and experiment in{" "}
+            <Highlight>non-linear, player-driven music</Highlight> consisting of
+            three interconnected spaces stacked vertically, with each space
+            representing a track of the EP.
+          </>
+        }
+        roles="Art, Design, Music, Code"
         link="https://phasein.itch.io/infinite-silence"
       >
         <ImageRow images={[is2, is11]} />
@@ -55,10 +60,47 @@ const Home2: React.FC = () => {
       </GameBlock>
 
       <GameBlock
+        name="LIGHT MOVES"
+        description={
+          <>
+            Light Moves is a virtual reality art experience created in
+            collaboration with visual artist{" "}
+            <Link url="http://www.nataljakent.com/" external>
+              Natalja Kent
+            </Link>{" "}
+            for the Meta Quest 2. It was showing at{" "}
+            <Link url="https://www.forelandcatskill.com/" external>
+              Foreland Art Campus
+            </Link>{" "}
+            in July 2022.
+          </>
+        }
+        roles="Design, Code"
+      >
+        <Row>
+          <Col style={{ margin: 0, padding: 0 }}>
+            <iframe
+              width="100%"
+              height={isMobile() ? 250 : 500}
+              src="https://www.youtube.com/embed/Xa6xdAm_3NE"
+              title="Light Moves"
+              allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            ></iframe>
+          </Col>
+        </Row>
+      </GameBlock>
+
+      <GameBlock
         name="PHREAKER"
-        description="Phreaker is a virtual reality cyberpunk grappling hook game targeting the Meta Quest 2.
-        It is currently available as a PCVR demo."
-        roles="Art, Music, Everything"
+        description={
+          <>
+            Phreaker is a{" "}
+            <Highlight>virtual reality cyberpunk grappling hook game</Highlight>{" "}
+            targeting the Meta Quest 2. It is currently available as a PCVR
+            demo.
+          </>
+        }
+        roles="Art, Design, Code"
         link="https://phasein.itch.io/phreaker"
       >
         <ImageRow images={[ph2, ph8]} />
@@ -82,10 +124,18 @@ const Home2: React.FC = () => {
 
       <GameBlock
         name="CLOCK OUT"
-        description="Clock Out is an impossible, infinite office space that the player cannot escape. 
-        Capitalism is a Möbius strip: the goal is unattainable and progress is an illusion. It is a PC experience and is
-        available as a demo."
-        roles="Art, Music, Everything"
+        description={
+          <>
+            Clock Out is an{" "}
+            <Highlight>
+              impossible, infinite office space that the player cannot escape.
+              Capitalism is a Möbius strip
+            </Highlight>
+            : the goal is unattainable and progress is an illusion. It is a PC
+            experience and is available as a demo.
+          </>
+        }
+        roles="Art, Design, Code"
         link="https://phasein.itch.io/clock-out"
       >
         <ImageRow images={[oh1, oh7]} />

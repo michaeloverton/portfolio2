@@ -6,6 +6,7 @@ import { Link } from "./Layout";
 
 const Header: React.FC = () => {
   const { isMobile, width } = useIsMobile();
+  const location = useLocation();
 
   const scalingFontSize = (
     startWidth: number,
@@ -38,23 +39,43 @@ const Header: React.FC = () => {
         </Col>
       </Row>
 
-      <Row className={!isMobile() ? "mb-3" : "mb-2"}>
+      <Row style={{ fontSize: 35 }} className={!isMobile() ? "mb-3" : "mb-2"}>
         <Col>
           <span>
-            <Link fontSize={35} url="/">
-              <span className={isMobile() ? "" : "px-1"}>WORK</span>
+            <Link url="/">
+              <span
+                className={isMobile() ? "" : "px-1"}
+                style={location.pathname === "/" ? { color: "black" } : {}}
+              >
+                WORK
+              </span>
             </Link>
             <span className="px-1" />
-            <Link fontSize={35}>
-              <span className={isMobile() ? "" : "px-1"}>MUSIC</span>
+            <Link url="/music">
+              <span
+                className={isMobile() ? "" : "px-1"}
+                style={location.pathname === "/music" ? { color: "black" } : {}}
+              >
+                MUSIC
+              </span>
             </Link>
             <span className="px-1" />
-            <Link fontSize={35} url="/3d">
-              <span className={isMobile() ? "" : "px-1"}>3D</span>
+            <Link url="/3d">
+              <span
+                className={isMobile() ? "" : "px-1"}
+                style={location.pathname === "/3d" ? { color: "black" } : {}}
+              >
+                3D
+              </span>
             </Link>
             <span className="px-1" />
-            <Link fontSize={35} url="/about">
-              <span className={isMobile() ? "" : "px-1"}>ABOUT</span>
+            <Link url="/about">
+              <span
+                className={isMobile() ? "" : "px-1"}
+                style={location.pathname === "/about" ? { color: "black" } : {}}
+              >
+                ABOUT
+              </span>
             </Link>
             <span className="px-1" />
             {!isMobile() ? (

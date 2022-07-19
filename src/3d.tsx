@@ -1,20 +1,5 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { Row, Col, Image } from "react-bootstrap";
-// Game assets
-import is2 from "./assets/games/infinite-silence/is2.png";
-import is11 from "./assets/games/infinite-silence/is11.png";
-import is6 from "./assets/games/infinite-silence/is6.png";
-import isTitle from "./assets/games/infinite-silence/big-title.png";
-import ph2 from "./assets/games/phreaker/phreaker2.png";
-import ph3 from "./assets/games/phreaker/phreaker3.png";
-import ph7 from "./assets/games/phreaker/ph7.png";
-import ph8 from "./assets/games/phreaker/phreaker8.png";
-import ph5 from "./assets/games/phreaker/phreaker5.png";
-import phTitle from "./assets/games/phreaker/phTitle.png";
-import oh1 from "./assets/games/clock-out/oh1.png";
-import oh7 from "./assets/games/clock-out/oh7.png";
-import oh8 from "./assets/games/clock-out/oh8.png";
-import oh6 from "./assets/games/clock-out/oh6.png";
 
 // 3D assets
 import proc1 from "./assets/art/images/procedure1.png";
@@ -41,25 +26,9 @@ import waves1 from "./assets/art/images/waves1.png";
 import waves2 from "./assets/art/images/waves2.png";
 import waves3 from "./assets/art/images/waves3.png";
 
-// Misc
-import { VideoNoSpace, SimpleLinkImage, CharacterRepeater } from "./TextLayout";
-import {
-  ExternalLink,
-  SectionHeader,
-  SectionContainer,
-  Spacer,
-  GameImage,
-  SectionInfo,
-  Emphasis,
-} from "./TextLayout";
-
-import { ImageRow, GameBlock, Video } from "./Layout";
-
-import HyphenField from "./HyphenField";
-import BlinkingCursor from "./BlinkingCursor";
+import { ImageRow, Video } from "./Layout";
 import React from "react";
 import { useIsMobile } from "./MobileProvider";
-import "./home.css";
 
 const Art: React.FC = () => {
   const { isMobile } = useIsMobile();
@@ -71,9 +40,7 @@ const Art: React.FC = () => {
 
   return (
     <div>
-      {/* <Video src={cageFly} /> */}
-
-      <Row>
+      <Row className={isMobile() ? "mt-3" : ""}>
         <Col md={6} style={{ margin: 0, padding: 0 }}>
           <video controls loop width={"100%"}>
             <source src={`${cageFly}#t=3.8`} type="video/mp4" />
@@ -87,12 +54,12 @@ const Art: React.FC = () => {
       <ImageRow images={[waves1, waves2, waves3]} />
 
       <Row>
-        <Col style={{ margin: 0, padding: 0 }}>
+        <Col md={6} style={{ margin: 0, padding: 0 }}>
           <video controls loop width={"100%"}>
             <source src={`${sphereCutOne}#t=0.001`} type="video/mp4" />
           </video>
         </Col>
-        <Col style={{ margin: 0, padding: 0 }}>
+        <Col md={6} style={{ margin: 0, padding: 0 }}>
           <Image src={sphereCutRender1} width="100%" />
         </Col>
       </Row>
@@ -102,10 +69,10 @@ const Art: React.FC = () => {
       <ImageRow images={[organic3]} />
 
       <Row>
-        <Col style={{ margin: 0, padding: 0 }}>
+        <Col md={6} style={{ margin: 0, padding: 0 }}>
           <Image src={sphereCutRender22} width="100%" />
         </Col>
-        <Col style={{ margin: 0, padding: 0 }}>
+        <Col md={6} style={{ margin: 0, padding: 0 }}>
           <video controls loop width={"100%"}>
             <source src={`${sphereCutTwo}#t=0.001`} type="video/mp4" />
           </video>
@@ -119,7 +86,7 @@ const Art: React.FC = () => {
       <Video src={triFlow} />
 
       <Row
-        className={!isMobile() ? "mt-3 mb-4" : "mt-2 mb-2"}
+        className={!isMobile() ? "mt-3 mb-4" : "mt-4 mb-2"}
         style={{ borderTop: `4px solid` }}
       ></Row>
 
