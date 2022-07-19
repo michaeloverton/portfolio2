@@ -60,37 +60,6 @@ const Home2: React.FC = () => {
       </GameBlock>
 
       <GameBlock
-        name="LIGHT MOVES"
-        description={
-          <>
-            Light Moves is a virtual reality art experience created in
-            collaboration with visual artist{" "}
-            <Link url="http://www.nataljakent.com/" external>
-              Natalja Kent
-            </Link>{" "}
-            for the Meta Quest 2. It was showing at{" "}
-            <Link url="https://www.forelandcatskill.com/" external>
-              Foreland Art Campus
-            </Link>{" "}
-            in July 2022.
-          </>
-        }
-        roles="Design, Code"
-      >
-        <Row>
-          <Col style={{ margin: 0, padding: 0 }}>
-            <iframe
-              width="100%"
-              height={isMobile() ? 250 : 500}
-              src="https://www.youtube.com/embed/Xa6xdAm_3NE"
-              title="Light Moves"
-              allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            ></iframe>
-          </Col>
-        </Row>
-      </GameBlock>
-
-      <GameBlock
         name="PHREAKER"
         description={
           <>
@@ -116,6 +85,37 @@ const Home2: React.FC = () => {
               height={isMobile() ? 300 : 500}
               src="https://www.youtube.com/embed/cQt9zGCgR20"
               title="Phreaker Trailer"
+              allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            ></iframe>
+          </Col>
+        </Row>
+      </GameBlock>
+
+      <GameBlock
+        name="LIGHT MOVES"
+        description={
+          <>
+            Light Moves is a virtual reality art experience created in
+            collaboration with visual artist{" "}
+            <Link url="http://www.nataljakent.com/" external>
+              Natalja Kent
+            </Link>{" "}
+            for the Meta Quest 2. It was showing at{" "}
+            <Link url="https://www.forelandcatskill.com/" external>
+              Foreland Art Campus
+            </Link>{" "}
+            in July 2022.
+          </>
+        }
+        roles="Design, Code"
+      >
+        <Row>
+          <Col style={{ margin: 0, padding: 0 }}>
+            <iframe
+              width="100%"
+              height={isMobile() ? 250 : 500}
+              src="https://www.youtube.com/embed/Xa6xdAm_3NE"
+              title="Light Moves"
               allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             ></iframe>
           </Col>
