@@ -2,23 +2,15 @@ import { useEffect } from "react";
 import { Row, Col, Image } from "react-bootstrap";
 
 // 3D assets
-import proc1 from "./assets/art/images/procedure1.png";
 import organicLoop from "./assets/art/videos/loop-centerlight.mp4";
-import closeOrb from "./assets/art/videos/boxbox-close.mp4";
-import farOrb from "./assets/art/videos/boxbox-far.mp4";
 import pulseCubes from "./assets/art/videos/cubic-3.mp4";
 import triFlow from "./assets/art/videos/triangleundulate.mp4";
-import cubeCruise from "./assets/art/videos/cubecruise-mp4.mp4";
 import sphereCutOne from "./assets/art/videos/cyberRelic1.mp4";
 import sphereCutRender1 from "./assets/art/images/cyberRelic1-1.jpg";
-import sphereCutRender2 from "./assets/art/images/cyberRelic1-2.jpg";
 import sphereCutTwo from "./assets/art/videos/cyberRelic2.mp4";
-import sphereCutRender11 from "./assets/art/images/cyberRelic2-1.png";
 import sphereCutRender22 from "./assets/art/images/cyberRelic2-2.png";
 import orb1 from "./assets/art/images/orb1.jpg";
 import orb2 from "./assets/art/images/orb2.png";
-import organic1 from "./assets/art/images/organic1.jpg";
-import organic2 from "./assets/art/images/organic2.jpg";
 import organic3 from "./assets/art/images/organic3.jpg";
 import cageFly from "./assets/art/videos/cage-fly.mp4";
 import cage from "./assets/art/images/cage.png";

@@ -1,9 +1,8 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
-import { Container, Row, Col } from "react-bootstrap";
 import Art from "./3d";
-import Home5 from "./Home5";
+import Work from "./Home5";
 import About from "./About";
 import Music from "./Music2";
 import Header from "./Header";
@@ -32,7 +31,7 @@ function App() {
               </Route>
 
               <Route path="/">
-                <Home5 />
+                <Work />
               </Route>
             </Switch>
 

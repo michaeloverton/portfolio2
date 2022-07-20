@@ -3,13 +3,6 @@ import { Row, Col, Image } from "react-bootstrap";
 import React from "react";
 import { useIsMobile } from "./MobileProvider";
 import profile from "./assets/about/profile-cropped2.jpeg";
-import {
-  ExternalLink,
-  SectionContainer,
-  Spacer,
-  Emphasis,
-  MouseHighlight,
-} from "./TextLayout";
 import { BioText, Highlight, Link } from "./Layout";
 import resume from "./assets/about/resume-2022.pdf";
 import "./about.css";

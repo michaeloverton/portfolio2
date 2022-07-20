@@ -1,7 +1,6 @@
 import { Row, Col } from "react-bootstrap";
 import { useLocation } from "react-router-dom";
 import { useIsMobile } from "./MobileProvider";
-import { MouseHighlight } from "./TextLayout";
 import { Link } from "./Layout";
 
 const Header: React.FC = () => {
