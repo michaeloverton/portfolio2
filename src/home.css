@@ -1,0 +1,68 @@
+.rotate-title {
+  transform: rotate(-180deg);
+  writing-mode: vertical-lr;
+  /* font-size: 50px; */
+  font-size: 60px;
+}
+
+.image-blackened {
+  /* background: rgba(0, 0, 0, 0.6); */
+  opacity: 0.3;
+}
+
+.header-cursor {
+  position: relative;
+  display: inline-block;
+  /* font-family: Monaco, Arial, Helvetica, sans-serif;
+  line-height: 24px;
+  font-size: 24px; */
+  color: #15ff00;
+  /* min-width: 360px; */
+}
+
+.header-cursor::after {
+  content: "";
+  position: absolute;
+  top: -65px;
+  right: -35px;
+  /* Remove display: inline-block if not required to be on the same line as text etc */
+  display: inline-block;
+  background-color: #15ff00;
+  vertical-align: top;
+  width: 25px;
+  /* Set height to the line height of .text */
+  height: 70px;
+  /* 
+    Animation paramaters:
+    blink = animation-name, 
+    1s = animation-duration, 
+    step-end = animation-timing-function,
+    infinite = animation-iteration-count
+    */
+  -webkit-animation: blink 1s step-end infinite;
+  animation: blink 1s step-end infinite;
+}
+
+@-webkit-keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

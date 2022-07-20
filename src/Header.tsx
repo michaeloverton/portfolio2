@@ -1,100 +1,93 @@
 import { Row, Col } from "react-bootstrap";
-import Nav from "./Nav";
 import { useLocation } from "react-router-dom";
 import { useIsMobile } from "./MobileProvider";
-import { MouseHighlight } from "./TextLayout";
+import { Link } from "./Layout";
 
 const Header: React.FC = () => {
-  const borderWidth = "4px";
-  const homePageBorderWidth = "6px";
+  const { isMobile, width } = useIsMobile();
   const location = useLocation();
-  const onHomePage = location.pathname === "/";
-  const { isMobile } = useIsMobile();
 
-  const bigHeaderStyles = {
-    fontSize: isMobile() ? 90 : 100,
-    fontWeight: 900,
+  const scalingFontSize = (
+    startWidth: number,
+    baseSize: number,
+    endWidth?: number,
+    endSize?: number
+  ): number => {
+    if (width() > startWidth) {
+      return baseSize;
+    } else if (endWidth && endSize && width() < endWidth) {
+      return endSize;
+    }
+    return baseSize * (width() / startWidth);
   };
 
-  const bigSubHeaderStyles = {
-    fontSize: 40,
-    fontWeight: 600,
-  };
-
-  const smallHeaderStyles = {
-    fontSize: isMobile() ? 30 : 50,
-    fontWeight: 900,
-    transformOrigin: "left",
-  };
-
-  return onHomePage ? (
+  return (
     <div>
-      <Row>
+      <Row className="pt-2">
         <Col
-          lg={6}
           style={{
-            borderBottom: `${homePageBorderWidth} solid`,
-            borderRight: `${homePageBorderWidth} solid`,
+            fontSize: scalingFontSize(1020, 85),
+            textAlign: "left",
           }}
         >
-          <div style={bigHeaderStyles}>
-            <div>
-              <MouseHighlight>Michael</MouseHighlight>{" "}
-            </div>
-            <div>
-              <MouseHighlight>Overton</MouseHighlight>{" "}
-            </div>
-            <div>
-              <MouseHighlight>Brown</MouseHighlight>
-            </div>
-          </div>
-          <div style={bigSubHeaderStyles}>
-            <MouseHighlight>techno</MouseHighlight>
-            <MouseHighlight>-</MouseHighlight>
-            <MouseHighlight>human</MouseHighlight>
-          </div>
+          <span style={{ textDecoration: "line-through", color: "red" }}>
+            <span style={{ color: "white" }}>MICHAEL OVERTON BROWN</span>
+          </span>
         </Col>
+      </Row>
 
-        <Col
-          style={
-            isMobile()
-              ? {
-                  borderBottom: `${homePageBorderWidth} solid`,
-                  borderLeft: `${homePageBorderWidth} solid`,
-                }
-              : {}
-          }
-        >
-          <Nav home={onHomePage} />
+      <Row style={{ fontSize: 35 }} className={!isMobile() ? "mb-3" : "mb-2"}>
+        <Col>
+          <span>
+            <Link url="/">
+              <span
+                className={isMobile() ? "" : "px-1"}
+                style={location.pathname === "/" ? { color: "black" } : {}}
+              >
+                WORK
+              </span>
+            </Link>
+            <span className="px-1" />
+            <Link url="/music">
+              <span
+                className={isMobile() ? "" : "px-1"}
+                style={location.pathname === "/music" ? { color: "black" } : {}}
+              >
+                MUSIC
+              </span>
+            </Link>
+            <span className="px-1" />
+            <Link url="/3d">
+              <span
+                className={isMobile() ? "" : "px-1"}
+                style={location.pathname === "/3d" ? { color: "black" } : {}}
+              >
+                3D
+              </span>
+            </Link>
+            <span className="px-1" />
+            <Link url="/about">
+              <span
+                className={isMobile() ? "" : "px-1"}
+                style={location.pathname === "/about" ? { color: "black" } : {}}
+              >
+                ABOUT
+              </span>
+            </Link>
+            <span className="px-1" />
+            {!isMobile() ? (
+              <span style={{ fontSize: 35, background: "red" }}>
+                {"/////////////////////"}
+              </span>
+            ) : null}
+          </span>
         </Col>
       </Row>
-    </div>
-  ) : (
-    <div>
-      <Row>
-        <Col
-          style={{
-            borderBottom: `${borderWidth} solid`,
-            borderLeft: `${borderWidth} solid`,
-          }}
-        >
-          <div style={smallHeaderStyles}>
-            <MouseHighlight>Michael</MouseHighlight>{" "}
-            <MouseHighlight>Overton</MouseHighlight>{" "}
-            <MouseHighlight>Brown</MouseHighlight>
-          </div>
-        </Col>
-      </Row>
-      <Row className="mb-5">
-        <Col
-          style={{
-            borderBottom: `${borderWidth} solid`,
-            borderRight: `${borderWidth} solid`,
-          }}
-        >
-          <Nav home={onHomePage} />
-        </Col>
-      </Row>
+
+      <Row
+        className={!isMobile() ? "mb-4" : "mb-2"}
+        style={{ borderTop: `4px solid` }}
+      ></Row>
     </div>
   );
 };
