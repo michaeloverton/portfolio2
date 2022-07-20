@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import { Row, Col, Image } from "react-bootstrap";
-import { Highlight, MusicImage, Loading } from "./Layout";
+import { Row, Col } from "react-bootstrap";
+import { Highlight, MusicImage, Loading, ImageLink } from "./Layout";
 import React from "react";
 import { useIsMobile } from "./MobileProvider";
 import "./home.css";
@@ -72,7 +72,7 @@ const Music: React.FC = () => {
             <Col style={{ borderLeft: `4px solid` }}>
               <Row>
                 <Col md={6}>
-                  <Image src={srCoverThumb} width="100%" />
+                  <ImageLink thumb={srCoverThumb} imgSrc={srCover} />
                 </Col>
                 <Col>
                   <iframe
@@ -105,7 +105,7 @@ const Music: React.FC = () => {
 
               <Row>
                 <Col md={6}>
-                  <Image src={iceCoverThumb} width="100%" />
+                  <ImageLink thumb={iceCoverThumb} imgSrc={iceCover} />
                 </Col>
                 <Col>
                   <iframe
@@ -211,13 +211,13 @@ const Music: React.FC = () => {
             <Col style={{ borderLeft: `4px solid` }}>
               <Row>
                 <Col>
-                  <MusicImage src={show1Thumb} />
+                  <MusicImage thumb={show1Thumb} imgSrc={show1} />
 
-                  <MusicImage src={show2Thumb} />
+                  <MusicImage thumb={show2Thumb} imgSrc={show2} />
 
-                  <MusicImage src={show3Thumb} />
+                  <MusicImage thumb={show3Thumb} imgSrc={show3} />
 
-                  <MusicImage src={show4Thumb} />
+                  <MusicImage thumb={show4Thumb} imgSrc={show4} />
                 </Col>
               </Row>
 
@@ -274,15 +274,15 @@ const Music: React.FC = () => {
             <Col style={{ borderLeft: `4px solid` }}>
               <Row>
                 <Col>
-                  <MusicImage src={event1Thumb} />
+                  <MusicImage thumb={event1Thumb} imgSrc={event1} />
 
-                  <MusicImage src={event2Thumb} />
+                  <MusicImage thumb={event2Thumb} imgSrc={event2} />
 
-                  <MusicImage src={event3Thumb} />
+                  <MusicImage thumb={event3Thumb} imgSrc={event3} />
 
-                  <MusicImage src={event4Thumb} />
+                  <MusicImage thumb={event4Thumb} imgSrc={event4} />
 
-                  <MusicImage src={event5Thumb} />
+                  <MusicImage thumb={event5Thumb} imgSrc={event5} />
                 </Col>
               </Row>
             </Col>
@@ -299,7 +299,7 @@ const Music: React.FC = () => {
             <Col style={{ borderLeft: `4px solid` }}>
               <Row>
                 <Col>
-                  <MusicImage src={tapeThumb} />
+                  <MusicImage thumb={tapeThumb} imgSrc={tape} />
                 </Col>
               </Row>
             </Col>

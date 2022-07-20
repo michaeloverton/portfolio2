@@ -20,14 +20,14 @@ export const ImageRow: React.FC<ImageRowProps> = ({
 
   return (
     <Row>
-      {thumbs.map((src) =>
+      {thumbs.map((thumbSrc, index) =>
         !isMobile() ? (
-          <Col key={src} style={spacing ? {} : noSpacing}>
-            <Image src={src} width="100%" />
+          <Col key={thumbSrc} style={spacing ? {} : noSpacing}>
+            <ImageLink thumb={thumbSrc} imgSrc={images[index]} />
           </Col>
         ) : (
-          <Row key={src} style={spacing ? {} : noSpacing}>
-            <Image src={src} width="100%" />
+          <Row key={thumbSrc} style={spacing ? {} : noSpacing}>
+            <ImageLink thumb={thumbSrc} imgSrc={images[index]} />
           </Row>
         )
       )}
@@ -110,20 +110,44 @@ export const GameBlock: React.FC<GameBlockProps> = ({
         <Col>
           {children}
 
-          <Row className="mt-3 mb-2" style={{ fontSize: 20 }}>
-            <Col md={8}>{description}</Col>
-            <Col>
-              {link ? (
-                <Link fontSize={30} url={link} external>
-                  DOWNLOAD ON ITCH.IO
-                </Link>
-              ) : null}
-            </Col>
-          </Row>
+          {!isMobile() ? (
+            <div>
+              <Row className="mt-3 mb-2" style={{ fontSize: 20 }}>
+                <Col md={8}>{description}</Col>
+                <Col>
+                  {link ? (
+                    <Link fontSize={30} url={link} external>
+                      DOWNLOAD ON ITCH.IO
+                    </Link>
+                  ) : null}
+                </Col>
+              </Row>
 
-          <Row className="mt-2 mb-4" style={{ fontSize: 25 }}>
-            <Col>Roles: {roles}</Col>
-          </Row>
+              <Row className="mt-2 mb-4" style={{ fontSize: 25 }}>
+                <Col>Roles: {roles}</Col>
+              </Row>
+            </div>
+          ) : (
+            <div>
+              <Row className="mt-3 mb-2" style={{ fontSize: 20 }}>
+                <Col>{description}</Col>
+              </Row>
+
+              <Row className="mt-3 mb-3" style={{ fontSize: 25 }}>
+                <Col>Roles: {roles}</Col>
+              </Row>
+
+              <Row className="mt-2 mb-4" style={{ fontSize: 20 }}>
+                <Col>
+                  {link ? (
+                    <Link fontSize={30} url={link} external>
+                      DOWNLOAD ON ITCH.IO
+                    </Link>
+                  ) : null}
+                </Col>
+              </Row>
+            </div>
+          )}
         </Col>
       </Row>
 
@@ -176,6 +200,30 @@ export const Link: React.FC<LinkProps> = ({
   );
 };
 
+type ImageLinkProps = {
+  thumb: string;
+  imgSrc: string;
+  width?: string;
+};
+
+export const ImageLink: React.FC<ImageLinkProps> = ({
+  imgSrc,
+  thumb,
+  width,
+}) => {
+  return (
+    <RouterLink
+      className="image-link"
+      to={{
+        pathname: imgSrc,
+      }}
+      target="_blank"
+    >
+      <Image src={thumb} width={width ? width : "100%"} />
+    </RouterLink>
+  );
+};
+
 export const BioText: React.FC = ({ children }) => {
   const { isMobile } = useIsMobile();
 
@@ -191,13 +239,20 @@ export const Highlight: React.FC = ({ children }) => {
 };
 
 type MusicImageProps = {
-  src: string;
+  thumb: string;
+  imgSrc: string;
 };
 
-export const MusicImage: React.FC<MusicImageProps> = ({ src }) => {
+export const MusicImage: React.FC<MusicImageProps> = ({ thumb, imgSrc }) => {
   const { isMobile } = useIsMobile();
 
-  return <Image width={isMobile() ? "250px" : "200px"} src={src} />;
+  return (
+    <ImageLink
+      width={isMobile() ? "250px" : "200px"}
+      thumb={thumb}
+      imgSrc={imgSrc}
+    />
+  );
 };
 
 export const Loading: React.FC = () => {

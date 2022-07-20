@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { Row, Col, Image } from "react-bootstrap";
-import { ImageRow, Video, Loading } from "./Layout";
+import { Row, Col } from "react-bootstrap";
+import { ImageRow, Video, Loading, ImageLink } from "./Layout";
 import React from "react";
 import { useIsMobile } from "./MobileProvider";
 
@@ -59,7 +59,7 @@ const Art: React.FC = () => {
             </video>
           </Col>
           <Col md={6} style={{ margin: 0, padding: 0 }}>
-            <Image src={cageThumb} width="100%" />
+            <ImageLink thumb={cageThumb} imgSrc={cage} width="100%" />
           </Col>
         </Row>
 
@@ -80,7 +80,10 @@ const Art: React.FC = () => {
             </video>
           </Col>
           <Col md={6} style={{ margin: 0, padding: 0 }}>
-            <Image src={sphereCutRender1Thumb} width="100%" />
+            <ImageLink
+              thumb={sphereCutRender1Thumb}
+              imgSrc={sphereCutRender1}
+            />
           </Col>
         </Row>
 
@@ -94,7 +97,10 @@ const Art: React.FC = () => {
 
         <Row>
           <Col md={6} style={{ margin: 0, padding: 0 }}>
-            <Image src={sphereCutRender22Thumb} width="100%" />
+            <ImageLink
+              thumb={sphereCutRender22Thumb}
+              imgSrc={sphereCutRender22}
+            />
           </Col>
           <Col md={6} style={{ margin: 0, padding: 0 }}>
             <video
