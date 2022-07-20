@@ -49,6 +49,12 @@ const About: React.FC = () => {
             <Link url="https://phasein.itch.io" external>
               ITCH.IO
             </Link>
+
+            <span className="px-1" />
+
+            <Link url="mailto:m.overtonbrown@gmail.com" external>
+              EMAIL
+            </Link>
           </Col>
         </Row>
       ) : (
@@ -64,22 +70,28 @@ const About: React.FC = () => {
               <Link url="https://github.com/michaeloverton" external>
                 GITHUB
               </Link>
-            </Col>
-          </Row>
 
-          <Row className="text-left mt-1 mb-3">
-            <Col>
+              <span className="px-1" />
+
               <Link
                 url="https://www.instagram.com/michaelovertonbrown"
                 external
               >
                 INSTAGRAM
               </Link>
+            </Col>
+          </Row>
+
+          <Row className="text-left mt-1 mb-3">
+            <Col>
+              <Link url="https://phasein.itch.io" external>
+                ITCH.IO
+              </Link>
 
               <span className="px-1" />
 
-              <Link url="https://phasein.itch.io" external>
-                ITCH.IO
+              <Link url="mailto:m.overtonbrown@gmail.com" external>
+                EMAIL
               </Link>
             </Col>
           </Row>

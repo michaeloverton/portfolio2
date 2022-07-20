@@ -1,8 +1,14 @@
 import { Row, Col } from "react-bootstrap";
+import { useIsMobile } from "./MobileProvider";
 
 const Footer: React.FC = () => {
+  const { isMobile } = useIsMobile();
+
   return (
-    <div style={{ fontSize: 20 }} className="mt-1 pb-4">
+    <div
+      style={{ fontSize: 20 }}
+      className={`${isMobile() ? "mt-4" : "mt-2"} pb-4`}
+    >
       <Row>
         <Col>
           <span style={{ background: "red" }}>

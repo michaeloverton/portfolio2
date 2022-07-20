@@ -77,7 +77,7 @@ const Header: React.FC = () => {
             <span className="px-1" />
             {!isMobile() ? (
               <span style={{ fontSize: 35, background: "red" }}>
-                /////////////////////
+                {"/////////////////////"}
               </span>
             ) : null}
           </span>
