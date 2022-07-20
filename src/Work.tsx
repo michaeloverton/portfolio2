@@ -129,9 +129,9 @@ const Home2: React.FC = () => {
             Clock Out is an{" "}
             <Highlight>
               impossible, infinite office space that the player cannot escape.
-              Capitalism is a Möbius strip
-            </Highlight>
-            : the goal is unattainable and progress is an illusion. It is a PC
+              Capitalism is a Möbius strip:
+            </Highlight>{" "}
+            the goal is unattainable and progress is an illusion. It is a PC
             experience and is available as a demo.
           </>
         }

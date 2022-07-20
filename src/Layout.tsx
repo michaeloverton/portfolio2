@@ -69,8 +69,8 @@ export const GameBlock: React.FC<GameBlockProps> = ({
     <div>
       {isMobile() ? (
         <Row>
-          <Col className="mt-2 mb-1" style={{ fontSize: 25 }}>
-            <span style={{ background: "red" }}>{name}</span>
+          <Col className="mt-2 mb-1" style={{ fontSize: 50 }}>
+            {name}
           </Col>
         </Row>
       ) : null}

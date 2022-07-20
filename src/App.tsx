@@ -1,20 +1,36 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
 import Art from "./3d";
-import Work from "./Home5";
+import Work from "./Work";
 import About from "./About";
-import Music from "./Music2";
+import Music from "./Music";
 import Header from "./Header";
 import Footer from "./Footer";
 import { MobileProvider } from "./MobileProvider";
 
 function App() {
+  const [width, setWidth] = useState<number>(window.innerWidth);
+
+  const handleWindowResize = () => {
+    setWidth(window.innerWidth);
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", handleWindowResize);
+    return () => {
+      window.removeEventListener("resize", handleWindowResize);
+    };
+  }, []);
+
   return (
     <Router>
       <MobileProvider>
         <div className="App">
-          <div className="mx-auto main-column">
+          <div
+            className="mx-auto main-column"
+            style={{ width: width > 800 ? "80%" : "85%" }}
+          >
             <Header />
 
             <Switch>
