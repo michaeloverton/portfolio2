@@ -1,6 +1,6 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Row, Col, Image } from "react-bootstrap";
-import { ImageRow, Video } from "./Layout";
+import { ImageRow, Video, Loading } from "./Layout";
 import React from "react";
 import { useIsMobile } from "./MobileProvider";
 
@@ -34,6 +34,8 @@ import waves3Thumb from "./assets/thumbnails/art/waves3.png";
 
 const Art: React.FC = () => {
   const { isMobile } = useIsMobile();
+  const [loadedCount, setLoaded] = useState<number>(0);
+  const ITEMS_TO_LOAD = 6;
 
   // Scroll to top of page on component load.
   useEffect(() => {
@@ -42,61 +44,87 @@ const Art: React.FC = () => {
 
   return (
     <div>
-      <Row className={isMobile() ? "mt-3" : ""}>
-        <Col md={6} style={{ margin: 0, padding: 0 }}>
-          <video controls loop width={"100%"}>
-            <source src={`${cageFly}#t=3.8`} type="video/mp4" />
-          </video>
-        </Col>
-        <Col md={6} style={{ margin: 0, padding: 0 }}>
-          <Image src={cageThumb} width="100%" />
-        </Col>
-      </Row>
+      {loadedCount < ITEMS_TO_LOAD ? <Loading /> : null}
 
-      <ImageRow
-        images={[waves1, waves2, waves3]}
-        thumbs={[waves1Thumb, waves2Thumb, waves3Thumb]}
-      />
+      <div className={loadedCount < ITEMS_TO_LOAD ? "d-none" : ""}>
+        <Row className={isMobile() ? "mt-3" : ""}>
+          <Col md={6} style={{ margin: 0, padding: 0 }}>
+            <video
+              controls
+              loop
+              width={"100%"}
+              onLoadedData={() => setLoaded(loadedCount + 1)}
+            >
+              <source src={`${cageFly}#t=3.8`} type="video/mp4" />
+            </video>
+          </Col>
+          <Col md={6} style={{ margin: 0, padding: 0 }}>
+            <Image src={cageThumb} width="100%" />
+          </Col>
+        </Row>
 
-      <Row>
-        <Col md={6} style={{ margin: 0, padding: 0 }}>
-          <video controls loop width={"100%"}>
-            <source src={`${sphereCutOne}#t=0.001`} type="video/mp4" />
-          </video>
-        </Col>
-        <Col md={6} style={{ margin: 0, padding: 0 }}>
-          <Image src={sphereCutRender1Thumb} width="100%" />
-        </Col>
-      </Row>
+        <ImageRow
+          images={[waves1, waves2, waves3]}
+          thumbs={[waves1Thumb, waves2Thumb, waves3Thumb]}
+        />
 
-      <Video src={organicLoop} startTime="4.7" />
+        <Row>
+          <Col md={6} style={{ margin: 0, padding: 0 }}>
+            <video
+              controls
+              loop
+              width={"100%"}
+              onLoadedData={() => setLoaded(loadedCount + 1)}
+            >
+              <source src={`${sphereCutOne}#t=0.001`} type="video/mp4" />
+            </video>
+          </Col>
+          <Col md={6} style={{ margin: 0, padding: 0 }}>
+            <Image src={sphereCutRender1Thumb} width="100%" />
+          </Col>
+        </Row>
 
-      <ImageRow images={[organic3]} thumbs={[organic3Thumb]} />
+        <Video
+          src={organicLoop}
+          startTime="4.7"
+          onLoadedFunc={() => setLoaded(loadedCount + 1)}
+        />
 
-      <Row>
-        <Col md={6} style={{ margin: 0, padding: 0 }}>
-          <Image src={sphereCutRender22Thumb} width="100%" />
-        </Col>
-        <Col md={6} style={{ margin: 0, padding: 0 }}>
-          <video controls loop width={"100%"}>
-            <source src={`${sphereCutTwo}#t=0.001`} type="video/mp4" />
-          </video>
-        </Col>
-      </Row>
+        <ImageRow images={[organic3]} thumbs={[organic3Thumb]} />
 
-      <ImageRow images={[orb2, orb1]} thumbs={[orb2Thumb, orb1Thumb]} />
+        <Row>
+          <Col md={6} style={{ margin: 0, padding: 0 }}>
+            <Image src={sphereCutRender22Thumb} width="100%" />
+          </Col>
+          <Col md={6} style={{ margin: 0, padding: 0 }}>
+            <video
+              controls
+              loop
+              width={"100%"}
+              onLoadedData={() => setLoaded(loadedCount + 1)}
+            >
+              <source src={`${sphereCutTwo}#t=0.001`} type="video/mp4" />
+            </video>
+          </Col>
+        </Row>
 
-      <Video src={pulseCubes} />
+        <ImageRow images={[orb2, orb1]} thumbs={[orb2Thumb, orb1Thumb]} />
 
-      <Video src={triFlow} />
+        <Video
+          src={pulseCubes}
+          onLoadedFunc={() => setLoaded(loadedCount + 1)}
+        />
 
-      <Row
-        className={!isMobile() ? "mt-3 mb-4" : "mt-4 mb-2"}
-        style={{ borderTop: `4px solid` }}
-      ></Row>
+        <Video src={triFlow} onLoadedFunc={() => setLoaded(loadedCount + 1)} />
 
-      {/* DUMMY ROW TO PREVENT BOTTOM WHITESPACE */}
-      <Row></Row>
+        <Row
+          className={!isMobile() ? "mt-3 mb-4" : "mt-4 mb-2"}
+          style={{ borderTop: `4px solid` }}
+        ></Row>
+
+        {/* DUMMY ROW TO PREVENT BOTTOM WHITESPACE */}
+        <Row></Row>
+      </div>
     </div>
   );
 };

@@ -1,6 +1,7 @@
 import { Row, Col, Image } from "react-bootstrap";
 import { Link as RouterLink } from "react-router-dom";
 import { useIsMobile } from "./MobileProvider";
+import { useEffect, useState } from "react";
 import "./layout.css";
 
 type ImageRowProps = {
@@ -37,18 +38,37 @@ export const ImageRow: React.FC<ImageRowProps> = ({
 type VideoProps = {
   src: string;
   startTime?: string;
+  onLoadedFunc?: Function;
 };
 
-export const Video: React.FC<VideoProps> = ({ src, startTime }) => {
+export const Video: React.FC<VideoProps> = ({
+  src,
+  startTime,
+  onLoadedFunc,
+}) => {
   return (
     <Row>
       <Col style={{ margin: 0, padding: 0 }}>
-        <video controls loop width={"100%"}>
-          <source
-            src={`${src}#t=${startTime ? startTime : "0.001"}`}
-            type="video/mp4"
-          />
-        </video>
+        {onLoadedFunc ? (
+          <video
+            controls
+            loop
+            width={"100%"}
+            onLoadedData={() => onLoadedFunc()}
+          >
+            <source
+              src={`${src}#t=${startTime ? startTime : "0.001"}`}
+              type="video/mp4"
+            />
+          </video>
+        ) : (
+          <video controls loop width={"100%"}>
+            <source
+              src={`${src}#t=${startTime ? startTime : "0.001"}`}
+              type="video/mp4"
+            />
+          </video>
+        )}
       </Col>
     </Row>
   );
@@ -178,4 +198,46 @@ export const MusicImage: React.FC<MusicImageProps> = ({ src }) => {
   const { isMobile } = useIsMobile();
 
   return <Image width={isMobile() ? "250px" : "200px"} src={src} />;
+};
+
+export const Loading: React.FC = () => {
+  const { isMobile } = useIsMobile();
+
+  return (
+    <div>
+      <Row style={{ fontSize: 60 }}>
+        <Col>
+          LOADING
+          <CharacterRepeater char="." maxChars={10} />
+        </Col>
+      </Row>
+
+      <Row
+        className={!isMobile() ? "mb-4" : "mb-2"}
+        style={{ borderTop: `4px solid` }}
+      ></Row>
+    </div>
+  );
+};
+
+type CharacterRepeaterProps = {
+  char: string;
+  maxChars: number;
+};
+
+export const CharacterRepeater: React.FC<CharacterRepeaterProps> = ({
+  char,
+  maxChars,
+}) => {
+  const [chars, setChars] = useState<string>("");
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      chars.length >= maxChars ? setChars("") : setChars(chars + char);
+    }, 200);
+
+    return () => clearInterval(interval);
+  }, [chars, char, maxChars]);
+
+  return <span>{chars}</span>;
 };
