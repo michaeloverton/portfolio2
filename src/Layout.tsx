@@ -5,16 +5,21 @@ import "./layout.css";
 
 type ImageRowProps = {
   images: string[];
+  thumbs: string[];
   spacing?: boolean;
 };
 
-export const ImageRow: React.FC<ImageRowProps> = ({ images, spacing }) => {
+export const ImageRow: React.FC<ImageRowProps> = ({
+  images,
+  thumbs,
+  spacing,
+}) => {
   const { isMobile } = useIsMobile();
   const noSpacing = { margin: 0, padding: 0 };
 
   return (
     <Row>
-      {images.map((src) =>
+      {thumbs.map((src) =>
         !isMobile() ? (
           <Col key={src} style={spacing ? {} : noSpacing}>
             <Image src={src} width="100%" />
@@ -69,7 +74,7 @@ export const GameBlock: React.FC<GameBlockProps> = ({
     <div>
       {isMobile() ? (
         <Row>
-          <Col className="mt-2 mb-1" style={{ fontSize: 50 }}>
+          <Col className="mt-2" style={{ fontSize: 50 }}>
             {name}
           </Col>
         </Row>

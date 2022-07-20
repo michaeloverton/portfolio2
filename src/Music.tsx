@@ -3,6 +3,9 @@ import { Row, Col, Image } from "react-bootstrap";
 import { Highlight, MusicImage } from "./Layout";
 import React from "react";
 import { useIsMobile } from "./MobileProvider";
+import "./home.css";
+
+// Normal images
 import event1 from "./assets/music/events/qu.jpg";
 import event2 from "./assets/music/events/stingray.jpg";
 import event3 from "./assets/music/events/milton.jpg";
@@ -15,7 +18,20 @@ import show3 from "./assets/music/shows/lot3.png";
 import show4 from "./assets/music/shows/lot4.png";
 import srCover from "./assets/music/releases/sr388-cover.png";
 import iceCover from "./assets/music/releases/ice-cover.png";
-import "./home.css";
+
+// Thumbnails
+import event1Thumb from "./assets/thumbnails/music/qu.jpg";
+import event2Thumb from "./assets/thumbnails/music/stingray.jpg";
+import event3Thumb from "./assets/thumbnails/music/milton.jpg";
+import event4Thumb from "./assets/thumbnails/music/parker.jpg";
+import event5Thumb from "./assets/thumbnails/music/shx.jpg";
+import tapeThumb from "./assets/thumbnails/music/tape.jpeg";
+import show1Thumb from "./assets/thumbnails/music/lot1.jpeg";
+import show2Thumb from "./assets/thumbnails/music/lot2.png";
+import show3Thumb from "./assets/thumbnails/music/lot3.png";
+import show4Thumb from "./assets/thumbnails/music/lot4.png";
+import srCoverThumb from "./assets/thumbnails/music/sr388-cover.png";
+import iceCoverThumb from "./assets/thumbnails/music/ice-cover.png";
 
 const Music: React.FC = () => {
   const { isMobile } = useIsMobile();
@@ -51,7 +67,7 @@ const Music: React.FC = () => {
           <Col style={{ borderLeft: `4px solid` }}>
             <Row>
               <Col md={6}>
-                <Image src={srCover} width="100%" />
+                <Image src={srCoverThumb} width="100%" />
               </Col>
               <Col>
                 <iframe
@@ -82,7 +98,7 @@ const Music: React.FC = () => {
 
             <Row>
               <Col md={6}>
-                <Image src={iceCover} width="100%" />
+                <Image src={iceCoverThumb} width="100%" />
               </Col>
               <Col>
                 <iframe
@@ -184,13 +200,13 @@ const Music: React.FC = () => {
           <Col style={{ borderLeft: `4px solid` }}>
             <Row>
               <Col>
-                <MusicImage src={show1} />
+                <MusicImage src={show1Thumb} />
 
-                <MusicImage src={show2} />
+                <MusicImage src={show2Thumb} />
 
-                <MusicImage src={show3} />
+                <MusicImage src={show3Thumb} />
 
-                <MusicImage src={show4} />
+                <MusicImage src={show4Thumb} />
               </Col>
             </Row>
 
@@ -243,15 +259,15 @@ const Music: React.FC = () => {
           <Col style={{ borderLeft: `4px solid` }}>
             <Row>
               <Col>
-                <MusicImage src={event1} />
+                <MusicImage src={event1Thumb} />
 
-                <MusicImage src={event2} />
+                <MusicImage src={event2Thumb} />
 
-                <MusicImage src={event3} />
+                <MusicImage src={event3Thumb} />
 
-                <MusicImage src={event4} />
+                <MusicImage src={event4Thumb} />
 
-                <MusicImage src={event5} />
+                <MusicImage src={event5Thumb} />
               </Col>
             </Row>
           </Col>
@@ -268,7 +284,7 @@ const Music: React.FC = () => {
           <Col style={{ borderLeft: `4px solid` }}>
             <Row>
               <Col>
-                <MusicImage src={tape} />
+                <MusicImage src={tapeThumb} />
               </Col>
             </Row>
           </Col>

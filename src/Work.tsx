@@ -5,7 +5,7 @@ import React from "react";
 import { useIsMobile } from "./MobileProvider";
 import "./home.css";
 
-// Game assets
+// Main images
 import is2 from "./assets/games/infinite-silence/is2.png";
 import is11 from "./assets/games/infinite-silence/is11.png";
 import is6 from "./assets/games/infinite-silence/is6.png";
@@ -18,6 +18,20 @@ import ph5 from "./assets/games/phreaker/phreaker5.png";
 import phTitle from "./assets/games/phreaker/phTitle.png";
 import oh1 from "./assets/games/clock-out/oh1.png";
 import oh7 from "./assets/games/clock-out/oh7.png";
+
+// Thumbnails
+import is2Thumb from "./assets/thumbnails/games/is2.png";
+import is11Thumb from "./assets/thumbnails/games/is11.png";
+import is6Thumb from "./assets/thumbnails/games/is6.png";
+import isTitleThumb from "./assets/thumbnails/games/isTitle.png";
+import ph2Thumb from "./assets/thumbnails/games/phreaker2.png";
+import ph3Thumb from "./assets/thumbnails/games/phreaker3.png";
+import ph7Thumb from "./assets/thumbnails/games/ph7.png";
+import ph8Thumb from "./assets/thumbnails/games/phreaker8.png";
+import ph5Thumb from "./assets/thumbnails/games/phreaker5.png";
+import phTitleThumb from "./assets/thumbnails/games/phTitle.png";
+import oh1Thumb from "./assets/thumbnails/games/oh1.png";
+import oh7Thumb from "./assets/thumbnails/games/oh7.png";
 
 const Home2: React.FC = () => {
   const { isMobile } = useIsMobile();
@@ -42,9 +56,9 @@ const Home2: React.FC = () => {
         roles="Art, Design, Music, Code"
         link="https://phasein.itch.io/infinite-silence"
       >
-        <ImageRow images={[is2, is11]} />
+        <ImageRow images={[is2, is11]} thumbs={[is2Thumb, is11Thumb]} />
 
-        <ImageRow images={[is6, isTitle]} />
+        <ImageRow images={[is6, isTitle]} thumbs={[is6Thumb, isTitleThumb]} />
 
         <Row>
           <Col style={{ margin: 0, padding: 0 }}>
@@ -72,11 +86,11 @@ const Home2: React.FC = () => {
         roles="Art, Design, Code"
         link="https://phasein.itch.io/phreaker"
       >
-        <ImageRow images={[ph2, ph8]} />
+        <ImageRow images={[ph2, ph8]} thumbs={[ph2Thumb, ph8Thumb]} />
 
-        <ImageRow images={[ph3, ph5]} />
+        <ImageRow images={[ph3, ph5]} thumbs={[ph3Thumb, ph5Thumb]} />
 
-        <ImageRow images={[ph7, phTitle]} />
+        <ImageRow images={[ph7, phTitle]} thumbs={[ph7Thumb, phTitleThumb]} />
 
         <Row>
           <Col style={{ margin: 0, padding: 0 }}>
@@ -138,7 +152,7 @@ const Home2: React.FC = () => {
         roles="Art, Design, Code"
         link="https://phasein.itch.io/clock-out"
       >
-        <ImageRow images={[oh1, oh7]} />
+        <ImageRow images={[oh1, oh7]} thumbs={[oh1Thumb, oh7Thumb]} />
 
         <Row>
           <Col style={{ margin: 0, padding: 0 }}>
