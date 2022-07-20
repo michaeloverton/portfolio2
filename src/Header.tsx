@@ -23,9 +23,7 @@ const Header: React.FC = () => {
 
   return (
     <div>
-      <Row></Row>
-
-      <Row className="mt-2">
+      <Row className="pt-2">
         <Col
           style={{
             fontSize: scalingFontSize(1020, 85),
