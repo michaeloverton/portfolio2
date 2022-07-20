@@ -89,7 +89,7 @@ export const GameBlock: React.FC<GameBlockProps> = ({
             <Col md={8}>{description}</Col>
             <Col>
               {link ? (
-                <Link fontSize={30} url={link}>
+                <Link fontSize={30} url={link} external>
                   DOWNLOAD ON ITCH.IO
                 </Link>
               ) : null}
@@ -127,22 +127,23 @@ export const Link: React.FC<LinkProps> = ({
     styles.fontSize = fontSize;
   }
 
-  return (
-    // <a
-    //   className="external-link"
-    //   style={styles}
-    //   href={url}
-    //   target={external ? "_blank" : ""}
-    // >
-    //   {children}
-    // </a>
-
+  return external ? (
     <RouterLink
       className="external-link"
       to={{
         pathname: url,
       }}
-      target={external ? "_blank" : ""}
+      target="_blank"
+      style={styles}
+    >
+      {children}
+    </RouterLink>
+  ) : (
+    <RouterLink
+      className="external-link"
+      to={{
+        pathname: url,
+      }}
       style={styles}
     >
       {children}
