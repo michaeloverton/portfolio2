@@ -18,6 +18,9 @@ import ph5 from "./assets/games/phreaker/phreaker5.png";
 import phTitle from "./assets/games/phreaker/phTitle.png";
 import oh1 from "./assets/games/clock-out/oh1.png";
 import oh7 from "./assets/games/clock-out/oh7.png";
+import lmDemo from "./assets/games/light-moves/demo3.png";
+import lmCircles from "./assets/games/light-moves/circles2.png";
+import lmTri from "./assets/games/light-moves/tri1.png";
 
 // Thumbnails
 import is2Thumb from "./assets/thumbnails/games/is2.png";
@@ -32,6 +35,9 @@ import ph5Thumb from "./assets/thumbnails/games/phreaker5.png";
 import phTitleThumb from "./assets/thumbnails/games/phTitle.png";
 import oh1Thumb from "./assets/thumbnails/games/oh1.png";
 import oh7Thumb from "./assets/thumbnails/games/oh7.png";
+import lmDemoThumb from "./assets/thumbnails/games/demo3.png";
+import lmCirclesThumb from "./assets/thumbnails/games/circles2.png";
+import lmTriThumb from "./assets/thumbnails/games/tri1.png";
 
 const Home2: React.FC = () => {
   const { isMobile } = useIsMobile();
@@ -128,8 +134,27 @@ const Home2: React.FC = () => {
             <iframe
               width="100%"
               height={isMobile() ? 250 : 500}
+              src="https://www.youtube.com/embed/5f8s7v2FC-s"
+              title="Light Moves 1"
+              allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            ></iframe>
+          </Col>
+        </Row>
+
+        <ImageRow
+          images={[lmCircles, lmTri]}
+          thumbs={[lmCirclesThumb, lmTriThumb]}
+        />
+
+        <ImageRow images={[lmDemo]} thumbs={[lmDemoThumb]} />
+
+        <Row>
+          <Col style={{ margin: 0, padding: 0 }}>
+            <iframe
+              width="100%"
+              height={isMobile() ? 250 : 500}
               src="https://www.youtube.com/embed/Xa6xdAm_3NE"
-              title="Light Moves"
+              title="Light Moves 2"
               allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             ></iframe>
           </Col>
