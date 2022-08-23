@@ -1,5 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
 import "./App.css";
 import Art from "./3d";
 import Work from "./Work";
@@ -46,9 +51,11 @@ function App() {
                 <Art />
               </Route>
 
-              <Route path="/">
+              <Route exact path="/">
                 <Work />
               </Route>
+
+              <Redirect from="*" to="/" />
             </Switch>
 
             <Footer />

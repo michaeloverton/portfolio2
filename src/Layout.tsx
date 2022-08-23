@@ -296,3 +296,26 @@ export const CharacterRepeater: React.FC<CharacterRepeaterProps> = ({
 
   return <span>{chars}</span>;
 };
+
+type YoutubeVideoProps = {
+  url: string;
+  title: string;
+};
+
+export const YoutubeVideo: React.FC<YoutubeVideoProps> = ({ url, title }) => {
+  const { isMobile } = useIsMobile();
+
+  return (
+    <Row>
+      <Col style={{ margin: 0, padding: isMobile() ? "" : 0 }}>
+        <iframe
+          width="100%"
+          height={isMobile() ? 250 : 500}
+          src={url}
+          title={title}
+          allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        ></iframe>
+      </Col>
+    </Row>
+  );
+};

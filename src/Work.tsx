@@ -1,8 +1,7 @@
 import { useEffect } from "react";
-import { Row, Col } from "react-bootstrap";
-import { ImageRow, GameBlock, Link, Highlight } from "./Layout";
+import { Row } from "react-bootstrap";
+import { ImageRow, GameBlock, Link, Highlight, YoutubeVideo } from "./Layout";
 import React from "react";
-import { useIsMobile } from "./MobileProvider";
 import "./home.css";
 
 // Main images
@@ -18,7 +17,6 @@ import ph5 from "./assets/games/phreaker/phreaker5.png";
 import phTitle from "./assets/games/phreaker/phTitle.png";
 import oh1 from "./assets/games/clock-out/oh1.png";
 import oh7 from "./assets/games/clock-out/oh7.png";
-import lmDemo from "./assets/games/light-moves/demo3.png";
 import lmCircles from "./assets/games/light-moves/circles2.png";
 import lmTri from "./assets/games/light-moves/tri1.png";
 
@@ -35,13 +33,10 @@ import ph5Thumb from "./assets/thumbnails/games/phreaker5.png";
 import phTitleThumb from "./assets/thumbnails/games/phTitle.png";
 import oh1Thumb from "./assets/thumbnails/games/oh1.png";
 import oh7Thumb from "./assets/thumbnails/games/oh7.png";
-import lmDemoThumb from "./assets/thumbnails/games/demo3.png";
 import lmCirclesThumb from "./assets/thumbnails/games/circles2.png";
 import lmTriThumb from "./assets/thumbnails/games/tri1.png";
 
 const Home2: React.FC = () => {
-  const { isMobile } = useIsMobile();
-
   // Scroll to top of page on component load.
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -66,17 +61,10 @@ const Home2: React.FC = () => {
 
         <ImageRow images={[is6, isTitle]} thumbs={[is6Thumb, isTitleThumb]} />
 
-        <Row>
-          <Col style={{ margin: 0, padding: 0 }}>
-            <iframe
-              width="100%"
-              height={isMobile() ? 250 : 500}
-              src="https://www.youtube.com/embed/1f68IGGgu38"
-              title="Infinite Silence Gameplay"
-              allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            ></iframe>
-          </Col>
-        </Row>
+        <YoutubeVideo
+          url="https://www.youtube.com/embed/1f68IGGgu38"
+          title="Infinite Silence Gameplay"
+        />
       </GameBlock>
 
       <GameBlock
@@ -98,17 +86,10 @@ const Home2: React.FC = () => {
 
         <ImageRow images={[ph7, phTitle]} thumbs={[ph7Thumb, phTitleThumb]} />
 
-        <Row>
-          <Col style={{ margin: 0, padding: 0 }}>
-            <iframe
-              width="100%"
-              height={isMobile() ? 300 : 500}
-              src="https://www.youtube.com/embed/cQt9zGCgR20"
-              title="Phreaker Trailer"
-              allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            ></iframe>
-          </Col>
-        </Row>
+        <YoutubeVideo
+          url="https://www.youtube.com/embed/cQt9zGCgR20"
+          title="Phreaker Trailer"
+        />
       </GameBlock>
 
       <GameBlock
@@ -129,36 +110,20 @@ const Home2: React.FC = () => {
         }
         roles="Design, Code"
       >
-        <Row>
-          <Col style={{ margin: 0, padding: 0 }}>
-            <iframe
-              width="100%"
-              height={isMobile() ? 250 : 500}
-              src="https://www.youtube.com/embed/5f8s7v2FC-s"
-              title="Light Moves 1"
-              allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            ></iframe>
-          </Col>
-        </Row>
+        <YoutubeVideo
+          url="https://www.youtube.com/embed/5f8s7v2FC-s"
+          title="Light Moves 1"
+        />
 
         <ImageRow
           images={[lmCircles, lmTri]}
           thumbs={[lmCirclesThumb, lmTriThumb]}
         />
 
-        <ImageRow images={[lmDemo]} thumbs={[lmDemoThumb]} />
-
-        <Row>
-          <Col style={{ margin: 0, padding: 0 }}>
-            <iframe
-              width="100%"
-              height={isMobile() ? 250 : 500}
-              src="https://www.youtube.com/embed/Xa6xdAm_3NE"
-              title="Light Moves 2"
-              allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            ></iframe>
-          </Col>
-        </Row>
+        <YoutubeVideo
+          url="https://www.youtube.com/embed/Xa6xdAm_3NE"
+          title="Light Moves 2"
+        />
       </GameBlock>
 
       <GameBlock
@@ -179,17 +144,10 @@ const Home2: React.FC = () => {
       >
         <ImageRow images={[oh1, oh7]} thumbs={[oh1Thumb, oh7Thumb]} />
 
-        <Row>
-          <Col style={{ margin: 0, padding: 0 }}>
-            <iframe
-              width="100%`"
-              height={isMobile() ? 300 : 500}
-              src="https://www.youtube.com/embed/8f6KJlP-cYo"
-              title="Clock Out Gameplay"
-              allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            ></iframe>
-          </Col>
-        </Row>
+        <YoutubeVideo
+          url="https://www.youtube.com/embed/8f6KJlP-cYo"
+          title="Clock Out Gameplay"
+        />
       </GameBlock>
 
       {/* DUMMY ROW TO PREVENT BOTTOM WHITESPACE */}
