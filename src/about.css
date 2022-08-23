@@ -1,0 +1,9 @@
+.profile-pic {
+  filter: grayscale(0%) brightness(100%) hue-rotate(90deg) saturate(400%)
+    contrast(1);
+}
+
+.banner {
+  width: 100%;
+  overflow: hidden;
+}

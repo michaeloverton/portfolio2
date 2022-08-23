@@ -1,47 +1,65 @@
-import React from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
 import "./App.css";
-import { Container, Row, Col } from "react-bootstrap";
-import Games from "./Games";
+import Art from "./3d";
+import Work from "./Work";
+import About from "./About";
 import Music from "./Music";
-import Art from "./Art";
-import Info from "./Info";
 import Header from "./Header";
 import Footer from "./Footer";
 import { MobileProvider } from "./MobileProvider";
 
 function App() {
+  const [width, setWidth] = useState<number>(window.innerWidth);
+
+  const handleWindowResize = () => {
+    setWidth(window.innerWidth);
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", handleWindowResize);
+    return () => {
+      window.removeEventListener("resize", handleWindowResize);
+    };
+  }, []);
+
   return (
     <Router>
       <MobileProvider>
         <div className="App">
-          <Container>
-            <Row>
-              <Col xl={10} lg={11} md={12} sm={12} className="mx-auto">
-                <Header />
+          <div
+            className="mx-auto main-column"
+            style={{ width: width > 800 ? "80%" : "85%" }}
+          >
+            <Header />
 
-                <Switch>
-                  <Route path="/games">
-                    <Games />
-                  </Route>
+            <Switch>
+              <Route path="/music">
+                <Music />
+              </Route>
 
-                  <Route path="/music">
-                    <Music />
-                  </Route>
+              <Route path="/about">
+                <About />
+              </Route>
 
-                  <Route path="/art">
-                    <Art />
-                  </Route>
+              <Route path="/3d">
+                <Art />
+              </Route>
 
-                  <Route path="/info">
-                    <Info />
-                  </Route>
-                </Switch>
+              <Route exact path="/">
+                <Work />
+              </Route>
 
-                <Footer />
-              </Col>
-            </Row>
-          </Container>
+              <Redirect from="*" to="/" />
+            </Switch>
+
+            <Footer />
+          </div>
         </div>
       </MobileProvider>
     </Router>

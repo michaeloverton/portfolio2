@@ -1,18 +1,27 @@
 import { Row, Col } from "react-bootstrap";
+import { useIsMobile } from "./MobileProvider";
 
 const Footer: React.FC = () => {
-  const footerStyles = {
-    fontSize: 15,
-    color: "#deffdb",
-  };
+  const { isMobile } = useIsMobile();
 
   return (
-    <div style={footerStyles} className="mt-3 pb-3">
+    <div
+      style={{ fontSize: 20 }}
+      className={`${isMobile() ? "mt-4" : "mt-1"} pb-4`}
+    >
       <Row>
-        <Col>email: m.overtonbrown at gmail.com</Col>
+        <Col>
+          <span style={{ background: "red" }}>
+            EMAIL: M.OVERTONBROWN@GMAIL.COM
+          </span>
+        </Col>
       </Row>
       <Row>
-        <Col>© michael brown {new Date().getFullYear()}</Col>
+        <Col>
+          <span style={{ background: "red" }}>
+            © MICHAEL OVERTON BROWN {new Date().getFullYear()}
+          </span>
+        </Col>
       </Row>
     </div>
   );
