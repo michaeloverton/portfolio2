@@ -78,6 +78,7 @@ type GameBlockProps = {
   name: string;
   description: React.ReactNode;
   roles: string;
+  tech: string;
   link?: string;
 };
 
@@ -86,6 +87,7 @@ export const GameBlock: React.FC<GameBlockProps> = ({
   name,
   description,
   roles,
+  tech,
   link,
 }) => {
   const { isMobile } = useIsMobile();
@@ -123,8 +125,12 @@ export const GameBlock: React.FC<GameBlockProps> = ({
                 </Col>
               </Row>
 
-              <Row className="mt-2 mb-4" style={{ fontSize: 25 }}>
-                <Col>Roles: {roles}</Col>
+              <Row className="mt-3" style={{ fontSize: 25 }}>
+                <Col><Highlight>Roles:</Highlight> {roles}</Col>
+              </Row>
+
+              <Row className="mb-4" style={{ fontSize: 25 }}>
+                <Col><Highlight>Tech:</Highlight> {tech}</Col>
               </Row>
             </div>
           ) : (
@@ -133,8 +139,12 @@ export const GameBlock: React.FC<GameBlockProps> = ({
                 <Col>{description}</Col>
               </Row>
 
-              <Row className="mt-3 mb-3" style={{ fontSize: 25 }}>
-                <Col>Roles: {roles}</Col>
+              <Row className="mt-3" style={{ fontSize: 25 }}>
+                <Col><Highlight>Roles:</Highlight> {roles}</Col>
+              </Row>
+
+              <Row className="mb-3" style={{ fontSize: 25 }}>
+                <Col><Highlight>Tech:</Highlight> {tech}</Col>
               </Row>
 
               <Row className="mt-2 mb-4" style={{ fontSize: 20 }}>

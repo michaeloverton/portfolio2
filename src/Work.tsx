@@ -19,6 +19,10 @@ import oh1 from "./assets/games/clock-out/oh1.png";
 import oh7 from "./assets/games/clock-out/oh7.png";
 import lmCircles from "./assets/games/light-moves/circles2.png";
 import lmTri from "./assets/games/light-moves/tri1.png";
+import cyb1 from "./assets/games/cyberia/cyberia1.png";
+import cyb2 from "./assets/games/cyberia/cyberia2.png";
+import cyb3 from "./assets/games/cyberia/cyberia3.png";
+import cyb4 from "./assets/games/cyberia/cyberia4.png";
 
 // Thumbnails
 import is2Thumb from "./assets/thumbnails/games/is2.png";
@@ -45,6 +49,32 @@ const Home2: React.FC = () => {
   return (
     <div>
       <GameBlock
+        name="CYBERIA"
+        description={
+          <>
+            <Highlight>CYBERIA is a dream for some and a nightmare for others.</Highlight> {" "}
+            It is an experiment in "topoanalysis", which is the "study of human identity as 
+            it relates to the places in people's lives". It is an amalgamation of some of my favorite club spaces, 
+            reconstructed from memory, and connected in a topologically unreal way.{" "}
+            <Highlight>It is a club that is also a DOOM map.</Highlight>{" "}
+            The space is recursive, preventing easy construction of a mental map of the environment. 
+          </>
+        }
+        roles="Art, SFX, Design, Code"
+        tech="Unity, Blender, FMOD, Ableton Live"
+        link="https://phasein.itch.io/cyberia"
+      >
+        <ImageRow images={[cyb1, cyb2]} thumbs={[cyb1, cyb2]} />
+
+        <ImageRow images={[cyb3, cyb4]} thumbs={[cyb3, cyb4]} />
+
+        <YoutubeVideo
+          url="https://www.youtube.com/embed/3JfThC3eAQI"
+          title="CYBERIA Teaser"
+        />
+      </GameBlock>
+
+      <GameBlock
         name="INFINITE SILENCE"
         description={
           <>
@@ -55,6 +85,7 @@ const Home2: React.FC = () => {
           </>
         }
         roles="Art, Design, Music, Code"
+        tech="Unity, Blender, Ableton Live"
         link="https://phasein.itch.io/infinite-silence"
       >
         <ImageRow images={[is2, is11]} thumbs={[is2Thumb, is11Thumb]} />
@@ -78,6 +109,7 @@ const Home2: React.FC = () => {
           </>
         }
         roles="Art, Design, Code"
+        tech="Unity, Blender, Ableton Live, Oculus Quest 2"
         link="https://phasein.itch.io/phreaker"
       >
         <ImageRow images={[ph2, ph8]} thumbs={[ph2Thumb, ph8Thumb]} />
@@ -109,6 +141,7 @@ const Home2: React.FC = () => {
           </>
         }
         roles="Design, Code"
+        tech="Unity, Blender, Ableton Live, Oculus Quest 2"
       >
         <YoutubeVideo
           url="https://www.youtube.com/embed/5f8s7v2FC-s"
@@ -140,6 +173,7 @@ const Home2: React.FC = () => {
           </>
         }
         roles="Art, Design, Code"
+        tech="Unity"
         link="https://phasein.itch.io/clock-out"
       >
         <ImageRow images={[oh1, oh7]} thumbs={[oh1Thumb, oh7Thumb]} />
