@@ -24,6 +24,31 @@ import cyb2 from "./assets/games/cyberia/cyberia2.png";
 import cyb3 from "./assets/games/cyberia/cyberia3.png";
 import cyb4 from "./assets/games/cyberia/cyberia4.png";
 
+// Object Permanence
+import op1 from "./assets/games/object-permanence/op1.png";
+import op2 from "./assets/games/object-permanence/op2.png";
+import op3 from "./assets/games/object-permanence/op3.png";
+import op4 from "./assets/games/object-permanence/op4.png";
+
+// MASS
+import m1 from "./assets/games/mass/mass1.png";
+import m2 from "./assets/games/mass/mass2.png";
+import m3 from "./assets/games/mass/mass3.png";
+import m4 from "./assets/games/mass/mass4.png";
+
+// DECAY
+import d1 from "./assets/games/decay/decay1.png";
+import d2 from "./assets/games/decay/decay2.png";
+import d3 from "./assets/games/decay/decay3.png";
+import d4 from "./assets/games/decay/decay4.png";
+
+// DOUBLE/STAR
+import ds1 from "./assets/games/double-star/ds1.png";
+import ds2 from "./assets/games/double-star/ds2.png";
+import ds3 from "./assets/games/double-star/ds3.png";
+import ds4 from "./assets/games/double-star/ds4.png";
+import ds5 from "./assets/games/double-star/ds5.png";
+
 // Thumbnails
 import is2Thumb from "./assets/thumbnails/games/is2.png";
 import is11Thumb from "./assets/thumbnails/games/is11.png";
@@ -49,15 +74,121 @@ const Home2: React.FC = () => {
   return (
     <div>
       <GameBlock
+        name="DECAY"
+        description={
+          <>
+            DECAY is an experimental animation created using Houdini and Unreal
+            Engine 5.{" "}
+            <Highlight>
+              It is a contemplation on the decay of digital spaces.
+            </Highlight>{" "}
+            What happens to these spaces when they are forgotten? What rules
+            does digital decay follow?
+          </>
+        }
+        roles="Art, Animation"
+        tech="Houdini, Unreal Engine 5"
+      >
+        <ImageRow images={[d1, d2]} thumbs={[d1, d2]} />
+
+        <ImageRow images={[d3, d4]} thumbs={[d3, d4]} />
+
+        <YoutubeVideo
+          url="https://www.youtube.com/embed/jClLf0MC9nE"
+          title="DECAY"
+        />
+      </GameBlock>
+
+      <GameBlock
+        name="DOUBLE/STAR"
+        description={
+          <>
+            DOUBLE/STAR is an adaptation of Robert Heinlein's book of the same
+            name. It is an{" "}
+            <Highlight>
+              ambient and eerie sound-based exploration game
+            </Highlight>
+            .
+          </>
+        }
+        roles="Art, SFX, Design, Code"
+        tech="Houdini, Unreal Engine 5, FMOD"
+      >
+        <ImageRow images={[ds4, ds2]} thumbs={[ds4, ds2]} />
+
+        <ImageRow images={[ds5, ds1]} thumbs={[ds5, ds1]} />
+
+        <YoutubeVideo
+          url="https://www.youtube.com/embed/-QjuqbvksTw"
+          title="DOUBLE/STAR"
+        />
+      </GameBlock>
+
+      <GameBlock
+        name="MASS"
+        description={
+          <>
+            <Highlight>
+              MASS is a Catholicism-inflected body horror music space "game" for
+              Windows.
+            </Highlight>{" "}
+            Traversal of the space allows the player to create interactive
+            music: "playing" the experience is "performing" the music.
+          </>
+        }
+        roles="Art, SFX, Music, Design, Code"
+        tech="Unity, Blender, FMOD, Ableton Live"
+        link="https://phasein.itch.io/mass"
+      >
+        <ImageRow images={[m1, m2]} thumbs={[m1, m2]} />
+
+        <ImageRow images={[m3, m4]} thumbs={[m3, m4]} />
+
+        <YoutubeVideo
+          url="https://www.youtube.com/embed/lagvz8v3sBE"
+          title="MASS"
+        />
+      </GameBlock>
+
+      <GameBlock
+        name="OBJECT PERMANENCE"
+        description={
+          <>
+            When I was four, my house burned down.{" "}
+            <Highlight>OBJECT PERMANENCE is an experiment on myself</Highlight>:
+            can I remember that house? Are my memories real? How does it feel to
+            recreate and enter a traumatic memory? I can tell you: it feels
+            weird.
+          </>
+        }
+        roles="Art, Design, Code"
+        tech="Unity, Blender, FMOD"
+        link="https://phasein.itch.io/object-permanence"
+      >
+        <ImageRow images={[op1, op2]} thumbs={[op1, op2]} />
+
+        <ImageRow images={[op3, op4]} thumbs={[op3, op4]} />
+
+        <YoutubeVideo
+          url="https://www.youtube.com/embed/tH9ruh9ACOg"
+          title="OBJECT PERMANENCE"
+        />
+      </GameBlock>
+
+      <GameBlock
         name="CYBERIA"
         description={
           <>
-            <Highlight>CYBERIA is a dream for some and a nightmare for others.</Highlight> {" "}
-            It is an experiment in "topoanalysis", which is the "study of human identity as 
-            it relates to the places in people's lives". It is an amalgamation of some of my favorite club spaces, 
-            reconstructed from memory, and connected in a topologically unreal way.{" "}
-            <Highlight>It is a club that is also a DOOM map.</Highlight>{" "}
-            The space is recursive, preventing easy construction of a mental map of the environment. 
+            <Highlight>
+              CYBERIA is a dream for some and a nightmare for others.
+            </Highlight>{" "}
+            It is an experiment in "topoanalysis", which is the "study of human
+            identity as it relates to the places in people's lives". It is an
+            amalgamation of some of my favorite club spaces, reconstructed from
+            memory, and connected in a topologically unreal way.{" "}
+            <Highlight>It is a club that is also a DOOM map.</Highlight> The
+            space is recursive, preventing easy construction of a mental map of
+            the environment.
           </>
         }
         roles="Art, SFX, Design, Code"
@@ -69,7 +200,7 @@ const Home2: React.FC = () => {
         <ImageRow images={[cyb3, cyb4]} thumbs={[cyb3, cyb4]} />
 
         <YoutubeVideo
-          url="https://www.youtube.com/embed/3JfThC3eAQI"
+          url="https://www.youtube.com/embed/6JNgkxGW4xI"
           title="CYBERIA Teaser"
         />
       </GameBlock>

@@ -72,7 +72,7 @@ const Music: React.FC = () => {
             <Col style={{ borderLeft: `4px solid` }}>
               <Row>
                 <Col md={6}>
-                  <ImageLink thumb={srCoverThumb} imgSrc={srCover} />
+                  <ImageLink thumb={srCover} imgSrc={srCover} />
                 </Col>
                 <Col>
                   <iframe
@@ -105,7 +105,7 @@ const Music: React.FC = () => {
 
               <Row>
                 <Col md={6}>
-                  <ImageLink thumb={iceCoverThumb} imgSrc={iceCover} />
+                  <ImageLink thumb={iceCover} imgSrc={iceCover} />
                 </Col>
                 <Col>
                   <iframe
