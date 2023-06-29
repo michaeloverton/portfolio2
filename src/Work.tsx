@@ -74,19 +74,25 @@ const Home2: React.FC = () => {
   return (
     <div>
       <GameBlock
-        name="DECAY"
+        name="METASTASIS"
         description={
           <>
-            DECAY is an experimental animation created using Houdini and Unreal
-            Engine 5.{" "}
+            <Highlight>Metaverse, metahuman, metastasis</Highlight>: humankind
+            careens toward a future of ecological collapse through
+            overproduction, resource mismanagement, and waste, and these
+            concepts are reflected in human-created digital realities. What are
+            the principles of collapse in these digital spaces?
+            <br />
+            <br />
             <Highlight>
-              It is a contemplation on the decay of digital spaces.
-            </Highlight>{" "}
-            What happens to these spaces when they are forgotten? What rules
-            does digital decay follow?
+              Metastasis was a Boston Cyberarts official selection for Waveforms
+              2023
+            </Highlight>
+            , an art occurrence at the Boston Museum of Science. It was played
+            on the OMNI, a domed IMAX screen, on July 13, 2023.
           </>
         }
-        roles="Art, Animation"
+        roles="Art, Animation, Music"
         tech="Houdini, Unreal Engine 5"
       >
         <ImageRow images={[d1, d2]} thumbs={[d1, d2]} />
@@ -94,8 +100,8 @@ const Home2: React.FC = () => {
         <ImageRow images={[d3, d4]} thumbs={[d3, d4]} />
 
         <YoutubeVideo
-          url="https://www.youtube.com/embed/jClLf0MC9nE"
-          title="DECAY"
+          url="https://www.youtube.com/embed/_8Zmd9K7YzM"
+          title="Metastasis"
         />
       </GameBlock>
 

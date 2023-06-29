@@ -47,7 +47,9 @@ const Header: React.FC = () => {
                 WORK
               </span>
             </Link>
+
             <span className="px-1" />
+
             <Link url="/music">
               <span
                 className={isMobile() ? "" : "px-1"}
@@ -56,7 +58,8 @@ const Header: React.FC = () => {
                 MUSIC
               </span>
             </Link>
-            <span className="px-1" />
+
+            {/* <span className="px-1" />
             <Link url="/3d">
               <span
                 className={isMobile() ? "" : "px-1"}
@@ -64,8 +67,10 @@ const Header: React.FC = () => {
               >
                 3D
               </span>
-            </Link>
+            </Link> */}
+
             <span className="px-1" />
+
             <Link url="/about">
               <span
                 className={isMobile() ? "" : "px-1"}
@@ -74,7 +79,9 @@ const Header: React.FC = () => {
                 ABOUT
               </span>
             </Link>
+
             <span className="px-1" />
+
             {!isMobile() ? (
               <span style={{ fontSize: 35, background: "red" }}>
                 {"/////////////////////"}
