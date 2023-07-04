@@ -1,3 +1,12 @@
+.expand-button {
+  cursor: default;
+}
+
+.expand-button:hover {
+  color: black;
+  cursor: pointer;
+}
+
 .external-link {
   color: white;
   text-decoration: none;
@@ -5,7 +14,7 @@
 
 .external-link:hover {
   /* background-color: #f0ff00; */
-  color: #0f1117;
+  color: black;
   /* cursor: default; */
 }
 

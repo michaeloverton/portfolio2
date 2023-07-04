@@ -6,13 +6,22 @@
   /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
 /*} */
 
+@font-face {
+  font-family: 'Times New Roman MT Std';
+  src: url('assets/fonts/TimesNewRomanMTStd-BoldCond.woff2') format('woff2'),
+      url('assets/fonts/TimesNewRomanMTStd-BoldCond.woff2') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
 .App {
-  background-color: #0f1117;
+  background-color: white;
   /* background-color: black; */
   /* background-image: url("assets/trippy-static.jpeg");
   background-size: 1000px 1000px; */
   min-height: 100vh;
-  font-family: /*"CustomFont",*/ "Anton", Impact, sans-serif;
+  font-family: /*"CustomFont",*/ "Times New Roman MT Std", "Anton", Impact, sans-serif;
   /* color: #15ff00; */
   color: white;
   /* border-color: #00ff4c !important; */

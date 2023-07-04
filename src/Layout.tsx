@@ -3,6 +3,103 @@ import { Link as RouterLink } from "react-router-dom";
 import { useIsMobile } from "./MobileProvider";
 import { useEffect, useState } from "react";
 import "./layout.css";
+import "./header.css";
+
+type TitledImageRowProps = {
+  title: string;
+  images: string[];
+  thumbs: string[];
+  spacing?: boolean;
+  onClick?: Function;
+};
+
+export const TitledImageRow: React.FC<TitledImageRowProps> = ({
+  title,
+  images,
+  thumbs,
+  spacing,
+  onClick,
+}) => {
+  const { isMobile } = useIsMobile();
+  const noSpacing = { margin: 0, padding: 0 };
+
+  return (
+    <Row style={{ position: "relative" }}>
+      <Col lg={2} style={{ marginRight: 0, paddingRight: 0 }}>
+        <Row
+          className="header-stretch"
+          style={{
+            color: "black",
+            textAlign: "left",
+          }}
+        >
+          <div style={{ paddingRight: 5 }}>{title}</div>
+        </Row>
+
+        <Row>
+          <div
+            className="text-start"
+            style={{
+              fontFamily: "Arial",
+              fontSize: 26,
+            }}
+          >
+            <div
+              className="header-link-stretch expand-button"
+              style={{ background: "#b4fc04" }}
+              onClick={onClick ? () => onClick() : () => {}}
+            >
+              EXPAND
+            </div>
+          </div>
+        </Row>
+      </Col>
+
+      {thumbs.map((thumbSrc, index) =>
+        !isMobile() ? (
+          <Col key={thumbSrc} style={spacing ? {} : noSpacing}>
+            <ImageLink thumb={thumbSrc} imgSrc={images[index]} />
+          </Col>
+        ) : (
+          <Row key={thumbSrc} style={spacing ? {} : noSpacing}>
+            <ImageLink thumb={thumbSrc} imgSrc={images[index]} />
+          </Row>
+        )
+      )}
+      {/* <Col lg={1} style={{ background: "green" }}>
+        THING
+      </Col> */}
+      {/* <div
+        // className="header-stretch"
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+          pointerEvents: "none",
+        }}
+      >
+        {title}
+      </div>
+
+      <div
+        // className="header-stretch"
+        style={{
+          position: "absolute",
+          top: "90%",
+          left: "90%",
+          width: "100%",
+          height: "100%",
+          pointerEvents: "none",
+          color: "red",
+        }}
+      >
+        OTHER THING
+      </div> */}
+    </Row>
+  );
+};
 
 type ImageRowProps = {
   images: string[];
@@ -126,11 +223,15 @@ export const GameBlock: React.FC<GameBlockProps> = ({
               </Row>
 
               <Row className="mt-3" style={{ fontSize: 25 }}>
-                <Col><Highlight>Roles:</Highlight> {roles}</Col>
+                <Col>
+                  <Highlight>Roles:</Highlight> {roles}
+                </Col>
               </Row>
 
               <Row className="mb-4" style={{ fontSize: 25 }}>
-                <Col><Highlight>Tech:</Highlight> {tech}</Col>
+                <Col>
+                  <Highlight>Tech:</Highlight> {tech}
+                </Col>
               </Row>
             </div>
           ) : (
@@ -140,11 +241,15 @@ export const GameBlock: React.FC<GameBlockProps> = ({
               </Row>
 
               <Row className="mt-3" style={{ fontSize: 25 }}>
-                <Col><Highlight>Roles:</Highlight> {roles}</Col>
+                <Col>
+                  <Highlight>Roles:</Highlight> {roles}
+                </Col>
               </Row>
 
               <Row className="mb-3" style={{ fontSize: 25 }}>
-                <Col><Highlight>Tech:</Highlight> {tech}</Col>
+                <Col>
+                  <Highlight>Tech:</Highlight> {tech}
+                </Col>
               </Row>
 
               <Row className="mt-2 mb-4" style={{ fontSize: 20 }}>
@@ -181,7 +286,7 @@ export const Link: React.FC<LinkProps> = ({
   fontSize,
   external,
 }) => {
-  const styles: React.CSSProperties = { background: "red" };
+  const styles: React.CSSProperties = { background: "#b4fc04" };
   if (fontSize) {
     styles.fontSize = fontSize;
   }
@@ -310,17 +415,32 @@ export const CharacterRepeater: React.FC<CharacterRepeaterProps> = ({
 type YoutubeVideoProps = {
   url: string;
   title: string;
+  desktopHeight?: number;
+  mobileHeight?: number;
 };
 
-export const YoutubeVideo: React.FC<YoutubeVideoProps> = ({ url, title }) => {
+export const YoutubeVideo: React.FC<YoutubeVideoProps> = ({
+  url,
+  title,
+  desktopHeight,
+  mobileHeight,
+}) => {
   const { isMobile } = useIsMobile();
 
   return (
     <Row>
       <Col style={{ margin: 0, padding: isMobile() ? "" : 0 }}>
         <iframe
-          width="100%"
-          height={isMobile() ? 250 : 500}
+          width="95%"
+          height={
+            isMobile()
+              ? mobileHeight
+                ? mobileHeight
+                : 250
+              : desktopHeight
+              ? desktopHeight
+              : 500
+          }
           src={url}
           title={title}
           allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

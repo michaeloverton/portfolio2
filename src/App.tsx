@@ -8,10 +8,12 @@ import {
 import "./App.css";
 import Art from "./3d";
 import Work from "./Work";
+import Work2 from "./Work2";
 import About from "./About";
 import Music from "./Music";
 import Header from "./Header";
 import Footer from "./Footer";
+import Header2 from "./Header2";
 import { MobileProvider } from "./MobileProvider";
 
 function App() {
@@ -34,9 +36,9 @@ function App() {
         <div className="App">
           <div
             className="mx-auto main-column"
-            style={{ width: width > 800 ? "80%" : "85%" }}
+            style={{ width: width > 800 ? "90%" : "95%" }}
           >
-            <Header />
+            <Header2 />
 
             <Switch>
               <Route path="/music">
@@ -51,6 +53,10 @@ function App() {
                 <Art />
               </Route>
 
+              <Route exact path="/work2">
+                <Work2 />
+              </Route>
+
               <Route exact path="/">
                 <Work />
               </Route>
@@ -58,7 +64,7 @@ function App() {
               <Redirect from="*" to="/" />
             </Switch>
 
-            <Footer />
+            {/* <Footer /> */}
           </div>
         </div>
       </MobileProvider>
