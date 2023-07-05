@@ -1,9 +1,200 @@
-import { Row, Col, Image } from "react-bootstrap";
+import { Row, Col, Image, Collapse } from "react-bootstrap";
 import { Link as RouterLink } from "react-router-dom";
 import { useIsMobile } from "./MobileProvider";
-import { useEffect, useState } from "react";
+import { ReactChild, ReactChildren, useEffect, useState } from "react";
 import "./layout.css";
 import "./header.css";
+
+type CollapsableGameInfoProps = {
+  title: string;
+  images: string[];
+  thumbs: string[];
+  spacing?: boolean;
+  tech: string;
+  roles: string;
+  youtubeEmbedLink: string;
+  itchLink?: string;
+  setShowModal: Function;
+  setModalImageSrc: Function;
+  children: ReactChild;
+};
+
+export function CollapsableGameInfo(props: CollapsableGameInfoProps) {
+  const { isMobile } = useIsMobile();
+  const noSpacing = { margin: 0, padding: 0 };
+  const {
+    title,
+    images,
+    thumbs,
+    spacing,
+    setShowModal,
+    setModalImageSrc,
+    tech,
+    roles,
+    youtubeEmbedLink,
+    itchLink,
+    children,
+  } = props;
+
+  const [expanded, setExpanded] = useState(false);
+
+  return (
+    <div>
+      <Row style={{ position: "relative" }}>
+        <Col lg={2} style={{ marginRight: 0, paddingRight: 0 }}>
+          <Row
+            className="header-stretch"
+            style={{
+              color: "black",
+              textAlign: "left",
+            }}
+          >
+            <div style={{ paddingRight: 5 }}>{title}</div>
+          </Row>
+
+          <Row>
+            <div
+              className="text-start"
+              style={{
+                fontFamily: "Arial",
+                fontSize: 26,
+              }}
+            >
+              <div
+                className="header-link-stretch expand-button"
+                style={{ background: "#b4fc04" }}
+                onClick={() => setExpanded(!expanded)}
+              >
+                EXPAND
+              </div>
+            </div>
+          </Row>
+        </Col>
+
+        {thumbs.map((thumbSrc, index) =>
+          !isMobile() ? (
+            <Col key={thumbSrc} style={spacing ? {} : noSpacing}>
+              <Image
+                className="image-link"
+                src={thumbSrc}
+                width={"100%"}
+                onClick={() => {
+                  setModalImageSrc(images[index]);
+                  setShowModal(true);
+                }}
+              />
+            </Col>
+          ) : (
+            <Row key={thumbSrc} style={spacing ? {} : noSpacing}>
+              <ImageLink thumb={thumbSrc} imgSrc={images[index]} />
+            </Row>
+          )
+        )}
+      </Row>
+
+      <Collapse in={expanded}>
+        <div>
+          <Row className="mt-3 mb-3">
+            <Col
+              className=" mr-3"
+              style={{
+                color: "black",
+                textAlign: "left",
+                fontFamily: "Arial",
+                fontSize: 12,
+              }}
+            >
+              <div className="mx-auto" style={{ width: "85%" }}>
+                <Row
+                  className="mt-2 mb-4"
+                  style={{ borderTop: `1px solid black` }}
+                ></Row>
+
+                {children}
+
+                <Row
+                  className="mt-4 mb-3"
+                  style={{ borderTop: `1px solid black` }}
+                ></Row>
+
+                <Row
+                  className="header-stretch mt-4"
+                  style={{
+                    color: "black",
+                    textAlign: "right",
+                    fontFamily: "Arial",
+                    fontSize: 14,
+                  }}
+                >
+                  <div style={{ paddingRight: 5, textTransform: "uppercase" }}>
+                    TECH: {tech}
+                  </div>
+                </Row>
+
+                <Row
+                  className="header-stretch mt-3"
+                  style={{
+                    color: "black",
+                    textAlign: "right",
+                    fontFamily: "Arial",
+                    fontSize: 14,
+                  }}
+                >
+                  <div style={{ paddingRight: 5, textTransform: "uppercase" }}>
+                    ROLES: {roles}
+                  </div>
+                </Row>
+
+                {itchLink && (
+                  <Row
+                    className="header-stretch mt-3"
+                    style={{
+                      color: "black",
+                      textAlign: "right",
+                      fontFamily: "Arial",
+                      fontSize: 14,
+                    }}
+                  >
+                    <div
+                      style={{
+                        paddingRight: 5,
+                        textTransform: "uppercase",
+                      }}
+                    >
+                      <RouterLink
+                        className="external-link"
+                        style={{ background: "#b4fc04", paddingLeft: "20px" }}
+                        to={{
+                          pathname: itchLink,
+                        }}
+                        target="_blank"
+                      >
+                        DOWNLOAD
+                      </RouterLink>
+                    </div>
+                  </Row>
+                )}
+              </div>
+            </Col>
+
+            <Col>
+              <YoutubeVideo
+                url={youtubeEmbedLink}
+                title={title}
+                desktopHeight={300}
+              />
+            </Col>
+          </Row>
+
+          <Row
+            className={"mb-3"}
+            style={{ borderTop: `1px solid black` }}
+          ></Row>
+        </div>
+      </Collapse>
+    </div>
+  );
+}
 
 type TitledImageRowProps = {
   title: string;
@@ -66,37 +257,6 @@ export const TitledImageRow: React.FC<TitledImageRowProps> = ({
           </Row>
         )
       )}
-      {/* <Col lg={1} style={{ background: "green" }}>
-        THING
-      </Col> */}
-      {/* <div
-        // className="header-stretch"
-        style={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          width: "100%",
-          height: "100%",
-          pointerEvents: "none",
-        }}
-      >
-        {title}
-      </div>
-
-      <div
-        // className="header-stretch"
-        style={{
-          position: "absolute",
-          top: "90%",
-          left: "90%",
-          width: "100%",
-          height: "100%",
-          pointerEvents: "none",
-          color: "red",
-        }}
-      >
-        OTHER THING
-      </div> */}
     </Row>
   );
 };
@@ -350,7 +510,11 @@ export const BioText: React.FC = ({ children }) => {
 };
 
 export const Highlight: React.FC = ({ children }) => {
-  return <span style={{ background: "red" }}>{children}</span>;
+  return (
+    <span style={{ background: "#b4fc04", fontWeight: "bold" }}>
+      {children}
+    </span>
+  );
 };
 
 type MusicImageProps = {

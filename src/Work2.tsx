@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Row, Col } from "react-bootstrap";
+import { Row, Col, Modal, Image } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Collapse from "react-bootstrap/Collapse";
 import {
@@ -9,6 +9,7 @@ import {
   Highlight,
   YoutubeVideo,
   TitledImageRow,
+  CollapsableGameInfo,
 } from "./Layout";
 import React from "react";
 import "./home.css";
@@ -82,92 +83,159 @@ const Home2: React.FC = () => {
   }, []);
 
   const [open, setOpen] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+  const [modalImageSrc, setModalImageSrc] = useState("");
 
   return (
     <div>
-      {/* <Row className="header-stretch" style={{ color: "black" }}>
-        METASTASIS
-      </Row> */}
-
-      <Row>
-        <TitledImageRow
-          title="METASTASIS"
-          images={[d1, d2, d3, d4]}
-          thumbs={[d1, d2, d3, d4]}
-          onClick={() => {
-            setOpen(!open);
-          }}
+      <Modal
+        size="xl"
+        show={showModal}
+        onHide={() => setShowModal(false)}
+        animation={false}
+      >
+        <Image
+          onClick={() => setShowModal(false)}
+          width={"100%"}
+          src={modalImageSrc}
         />
-      </Row>
+      </Modal>
 
-      <Collapse in={open}>
+      <CollapsableGameInfo
+        title="METASTASIS"
+        images={[d1, d2, d3, d4]}
+        thumbs={[d1, d2, d3, d4]}
+        setShowModal={setShowModal}
+        setModalImageSrc={setModalImageSrc}
+        tech={"UNREAL ENGINE 5, HOUDINI"}
+        roles={"ART, ANIMATION, MUSIC"}
+        youtubeEmbedLink="https://www.youtube.com/embed/_8Zmd9K7YzM"
+      >
         <div>
-          <Row className="mt-3 mb-3">
-            <Col
-              className="mt-3 mr-3"
-              style={{
-                color: "black",
-                textAlign: "left",
-                fontFamily: "Arial",
-                fontSize: 12,
-              }}
-            >
-              <div>
-                Metaverse, metahuman, metastasis: humankind careens toward a
-                future of ecological collapse through overproduction, resource
-                mismanagement, and waste, and these concepts are reflected in
-                human-created digital realities. What are the principles of
-                collapse in these digital spaces?
-                <br />
-                <br />
-                Metastasis was a Boston Cyberarts official selection for
-                Waveforms 2023, an art occurrence at the Boston Museum of
-                Science. It was played on the OMNI, a domed IMAX screen, on July
-                13, 2023.
-              </div>
-            </Col>
-            <Col>
-              <YoutubeVideo
-                url="https://www.youtube.com/embed/_8Zmd9K7YzM"
-                title="Metastasis"
-                desktopHeight={300}
-              />
-            </Col>
-          </Row>
+          <div className="mb-2">
+            Metaverse, metahuman, metastasis: humankind careens toward a future
+            of ecological collapse through overproduction, resource
+            mismanagement, and waste, and these concepts are reflected in
+            human-created digital realities. What are the principles of collapse
+            in these digital spaces?
+          </div>
 
-          <Row
-            className={"mb-3"}
-            style={{ borderTop: `1px solid black` }}
-          ></Row>
+          <div>
+            <Highlight>
+              Metastasis was a Boston Cyberarts official selection for Waveforms
+              2023
+            </Highlight>
+            , an art occurrence at the Boston Museum of Science. It was played
+            on the OMNI, a domed IMAX screen, on July 13, 2023.
+          </div>
         </div>
-      </Collapse>
+      </CollapsableGameInfo>
 
-      <Row>
-        <TitledImageRow
-          title="DOUBLE/STAR"
-          images={[ds4, ds2, ds5, ds1]}
-          thumbs={[ds4, ds2, ds5, ds1]}
-        />
-      </Row>
+      <CollapsableGameInfo
+        title="DOUBLE/STAR"
+        images={[ds4, ds2, ds5, ds1]}
+        thumbs={[ds4, ds2, ds5, ds1]}
+        setShowModal={setShowModal}
+        setModalImageSrc={setModalImageSrc}
+        roles="ART, SFX, DESIGN, CODE"
+        tech="HOUDINI, UNREAL ENGINE 5, FMOD"
+        youtubeEmbedLink="https://www.youtube.com/embed/-QjuqbvksTw"
+      >
+        <div className="mb-2">
+          DOUBLE/STAR is an adaptation of Robert Heinlein's book of the same
+          name. It is an{" "}
+          <Highlight>ambient and eerie sound-based exploration game</Highlight>.
+        </div>
+      </CollapsableGameInfo>
 
-      <Row>
-        <TitledImageRow
-          title="MASS"
-          images={[m1, m2, m3, m4]}
-          thumbs={[m1, m2, m3, m4]}
-        />
-      </Row>
+      <CollapsableGameInfo
+        title="MASS"
+        images={[m1, m2, m3, m4]}
+        thumbs={[m1, m2, m3, m4]}
+        setShowModal={setShowModal}
+        setModalImageSrc={setModalImageSrc}
+        roles="Art, SFX, Music, Design, Code"
+        tech="Unity, Blender, FMOD, Ableton Live"
+        youtubeEmbedLink="https://www.youtube.com/embed/lagvz8v3sBE"
+        itchLink="https://phasein.itch.io/mass"
+      >
+        <div className="mb-2">
+          <Highlight>
+            MASS is a Catholicism-inflected body horror music space "game" for
+            Windows.
+          </Highlight>{" "}
+          Traversal of the space allows the player to create interactive music:
+          "playing" the experience is "performing" the music.
+        </div>
+      </CollapsableGameInfo>
 
-      <Row>
-        <TitledImageRow
-          title="CYBERIA"
-          images={[cyb1, cyb2, cyb3, cyb4]}
-          thumbs={[cyb1, cyb2, cyb3, cyb4]}
-          onClick={() => {
-            setOpen(!open);
-          }}
-        />
-      </Row>
+      <CollapsableGameInfo
+        title="CYBERIA"
+        images={[cyb1, cyb2, cyb3, cyb4]}
+        thumbs={[cyb1, cyb2, cyb3, cyb4]}
+        setShowModal={setShowModal}
+        setModalImageSrc={setModalImageSrc}
+        roles="Art, SFX, Design, Code"
+        tech="Unity, Blender, FMOD, Ableton Live"
+        youtubeEmbedLink="https://www.youtube.com/embed/6JNgkxGW4xI"
+        itchLink="https://phasein.itch.io/cyberia"
+      >
+        <div className="mb-2">
+          <Highlight>
+            CYBERIA is a dream for some and a nightmare for others.
+          </Highlight>{" "}
+          It is an experiment in "topoanalysis", which is the "study of human
+          identity as it relates to the places in people's lives". It is an
+          amalgamation of some of my favorite club spaces, reconstructed from
+          memory, and connected in a topologically unreal way.{" "}
+          <Highlight>It is a club that is also a DOOM map.</Highlight> The space
+          is recursive, preventing easy construction of a mental map of the
+          environment
+        </div>
+      </CollapsableGameInfo>
+
+      <CollapsableGameInfo
+        title="INFINITE SILENCE"
+        images={[is2, is11, is6, isTitle]}
+        thumbs={[is2, is11, is6, isTitle]}
+        setShowModal={setShowModal}
+        setModalImageSrc={setModalImageSrc}
+        roles="Art, Design, Music, Code"
+        tech="Unity, Blender, Ableton Live"
+        youtubeEmbedLink="https://www.youtube.com/embed/1f68IGGgu38"
+        itchLink="https://phasein.itch.io/infinite-silence"
+      >
+        <div className="mb-2">
+          Infinite Silence is an interactive EP and experiment in{" "}
+          <Highlight>non-linear, player-driven music</Highlight> consisting of
+          three interconnected spaces stacked vertically, with each space
+          representing a track of the EP.
+        </div>
+      </CollapsableGameInfo>
+
+      <CollapsableGameInfo
+        title="LIGHT MOVES"
+        images={[lmCircles, lmTri]}
+        thumbs={[lmCirclesThumb, lmTriThumb]}
+        setShowModal={setShowModal}
+        setModalImageSrc={setModalImageSrc}
+        roles="Design, Code"
+        tech="Unity, Blender, Ableton Live, Oculus Quest 2"
+        youtubeEmbedLink="https://www.youtube.com/embed/5f8s7v2FC-s"
+      >
+        <div className="mb-2">
+          Light Moves is a virtual reality art experience created in
+          collaboration with visual artist{" "}
+          <Link url="http://www.nataljakent.com/" external>
+            Natalja Kent
+          </Link>{" "}
+          for the Meta Quest 2. It was showing at{" "}
+          <Link url="https://www.forelandcatskill.com/" external>
+            Foreland Art Campus
+          </Link>{" "}
+          in July 2022.
+        </div>
+      </CollapsableGameInfo>
 
       <Row>
         <TitledImageRow
