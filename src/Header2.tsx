@@ -24,11 +24,11 @@ const Header2: React.FC = () => {
 
   return (
     <div>
-      <Row className="mt-5">
+      {/* <Row className="mt-5">
         <Col
           style={{
             // fontSize: scalingFontSize(1020, 20),
-            fontSize: 16,
+            fontSize: 18,
             textAlign: "left",
           }}
         >
@@ -39,6 +39,24 @@ const Header2: React.FC = () => {
             MICHAEL OVERTON BROWN
           </span>
         </Col>
+      </Row> */}
+
+      <Row
+        className="header-stretch mt-5"
+        style={{
+          color: "black",
+          textAlign: "left",
+          fontFamily: "Arial",
+          fontSize: 18,
+        }}
+      >
+        <div
+          style={{
+            textTransform: "uppercase",
+          }}
+        >
+          MICHAEL OVERTON BROWN
+        </div>
       </Row>
 
       <Row

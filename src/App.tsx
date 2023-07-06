@@ -64,7 +64,7 @@ function App() {
               <Redirect from="*" to="/" />
             </Switch>
 
-            {/* <Footer /> */}
+            <Footer />
           </div>
         </div>
       </MobileProvider>
